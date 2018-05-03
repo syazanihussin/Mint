@@ -1,8 +1,8 @@
 <?php
-include('class/mysql_crud.php');
+header('content-type: application/json; charset=utf-8');
+include('../class/mysql_crud.php');
 $db = new Database();
 $db->connect();
-$data = $db->escapeString("name5@email.com"); // Escape any input before insert
-$db->insert('CRUDClass',array('name'=>'Name 5','email'=>$data));  // Table name, column names and respective values
+$db->insert($_POST['table'],$_POST['column'],$_POST['inserting']);  // Table name, column names, datas
 $res = $db->getResult();  
-print_r($res);
+echo json_encode($res); //echo inserted id, return 1 data

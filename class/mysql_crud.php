@@ -123,10 +123,10 @@ class Database{
     }
 	
 	// Function to insert into the database
-    public function insert($table,$params=array()){
+    public function insert($table,$column,$inserting){
     	// Check to see if the table exists
     	 if($this->tableExists($table)){
-    	 	$sql='INSERT INTO `'.$table.'` (`'.implode('`, `',array_keys($params)).'`) VALUES ("' . implode('", "', $params) . '")';
+    	 	$sql='INSERT INTO '.$table.' ('.$column.') VALUES (' .$inserting. ')';
             $this->myQuery = $sql; // Pass back the SQL
             // Make the query to insert to the database
             if($ins = $this->myconn->query($sql)){
@@ -166,17 +166,11 @@ class Database{
     }
 	
 	// Function to update row in database
-    public function update($table,$params=array(),$where){
+    public function update($table,$updating,$where){
     	// Check to see if table exists
     	if($this->tableExists($table)){
-    		// Create Array to hold all the columns to update
-            $args=array();
-			foreach($params as $field=>$value){
-				// Seperate each column out with it's corresponding value
-				$args[]=$field.'="'.$value.'"';
-			}
-			// Create the query
-			$sql='UPDATE '.$table.' SET '.implode(',',$args).' WHERE '.$where;
+    		// Create the query
+			$sql='UPDATE '.$table.' SET '.$updating.' WHERE '.$where;
 			// Make query to database
             $this->myQuery = $sql; // Pass back the SQL
             if($query = $this->myconn->query($sql)){

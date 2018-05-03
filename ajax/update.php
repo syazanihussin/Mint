@@ -1,7 +1,8 @@
 <?php
-include('class/mysql_crud.php');
+header('content-type: application/json; charset=utf-8');
+include('../class/mysql_crud.php');
 $db = new Database();
 $db->connect();
-$db->update('CRUDClass',array('name'=>"Name 4",'email'=>"name4@email.com"),'id="1" AND name="Name 1"'); // Table name, column names and values, WHERE conditions
+$db->update($_POST['table'], $_POST['updating'], $_POST['where']); // Table name, column names and values, WHERE conditions
 $res = $db->getResult();
-print_r($res);
+echo json_encode($res); // echo num of row affected, return 1 data
