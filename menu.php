@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Sign Up :: w3layouts</title>
+<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Menu :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -42,16 +42,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -71,54 +71,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.php">Staple<span>Best Food Collection</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>	
+								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+									<a href="#" class="dropdown-toggle active" data-toggle="dropdown">Menu <b class="caret"></b></a>
 									<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
+													<li><a href="menu.php">Breakfast</a></li> 
+													<li><a href="menu.php">Lunch</a></li> 
+													<li><a href="menu.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<li><a href="menu.php">Indian Recipes</a></li> 
+													<li><a href="menu.php">American Recipes</a></li> 
+													<li><a href="menu.php">French Recipes</a></li> 
+													<li><a href="menu.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
+													<li><a href="menu.php">Diet</a></li> 
+													<li><a href="menu.php">Mini</a></li> 
+													<li><a href="menu.php">Regular</a></li> 
+													<li><a href="menu.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li> 
+								<li><a href="about.php">About</a></li> 
 								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>     
+										<li><a href="icons.php">Web Icons</a></li>
+										<li><a href="codes.php">Short Codes</a></li>     
 									</ul>
 								</li>  
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -127,7 +127,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<input type="hidden" name="display" value="1" />
 								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 							</form>   
-						</div> 
+						</div>
 					</nav>
 				</div>
 			</div>
@@ -146,38 +146,113 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Sign Up</li>
+			<li class="active">Menu</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- sign up-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
-			<div class="login-agileinfo"> 
-				<form action="#" method="post"> 
-					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="email" name="Your Email" placeholder="Your Email" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
-					<input class="agile-ltext" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> I agree to the terms of service</span> 
-								</label> 
-							</li> 
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" value="Sign Up">
-				</form>
-				<p>Already have an account?  <a href="login.html"> Login Now!</a></p> 
-			</div>	 
+	<!-- menu list -->   	
+	<div class="wthree-menu">  
+		<img src="images/i2.jpg" class="w3order-img" alt=""/>
+		<div class="container">
+			<h3 class="w3ls-title">Menu</h3>
+			<p class="w3lsorder-text">Here your Staple Food Varieties</p>
+			<div class="menu-agileinfo">  
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Breakfast</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Salads</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Hot Food</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Breads</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Deli Pots & Little Pots</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Snacks & Treats</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Drinks</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> South Indian</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Catering</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Soups</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Lunchbox</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"> Dinner</a>
+				</div> 
+				<div class="clearfix"> </div> 
+			</div> 
+			<div class="w3spl-menu">
+				<h3 class="w3ls-title">Seasonal  Menu</h3>
+				<p class="w3lsorder-text">Here your Staple Food Varieties</p>
+				<div class="menu-agileinfo">  
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Fondue Savoyarde</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Garbure</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Poulet</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Cherry Clafouti</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php"> Spinach Soufflé</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Baeckeoffe</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Ratatouille</a>
+					</div> 
+					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+						<a href="products.php">Piperade</a>
+					</div>  
+					<div class="clearfix"> </div> 
+				</div> 
+			</div>
+		</div> 
+	</div>
+	<!-- //menu list -->    
+	<!-- add-products -->
+	<div class="add-products">  
+		<div class="container">
+			<h3 class="w3ls-title w3ls-title1">Today's Offers</h3>
+			<div class="add-products-row">
+				<div class="w3ls-add-grids">
+					<a href="products.php"> 
+						<h4>Get <span>10%<br>Cashback</span></h4>
+						<h5>Special Offer Today Only</h5>
+						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+					</a>
+				</div>
+				<div class="w3ls-add-grids w3ls-add-grids-right">
+					<a href="products.php"> 
+						<h4>GET Upto<span><br>5% Offer</span></h4>
+						<h5>On Order Lunch Today</h5>
+						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+					</a>
+				</div> 
+				<div class="clearfix"> </div> 
+			</div>  	 
 		</div>
 	</div>
-	<!-- //sign up-page -->  
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -217,36 +292,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>  
-						<li><a href="careers.html">Careers</a></li>  
-						<li><a href="help.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>  
+						<li><a href="careers.php">Careers</a></li>  
+						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.html">FAQ</a></li> 
-						<li><a href="login.html">Returns</a></li>   
-						<li><a href="login.html">Order Status</a></li> 
-						<li><a href="offers.html">Offers</a></li> 
+						<li><a href="faq.php">FAQ</a></li> 
+						<li><a href="login.php">Returns</a></li>   
+						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
-					</ul>    
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li> 
-						<li><a href="menu.html">Lunch</a></li>
-						<li><a href="menu.html">Dinner</a></li>
-						<li><a href="menu.html">Flavours</a></li> 
+						<li><a href="menu.php">All Day Menu</a></li> 
+						<li><a href="menu.php">Lunch</a></li>
+						<li><a href="menu.php">Dinner</a></li>
+						<li><a href="menu.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

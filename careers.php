@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Contact Us :: w3layouts</title>
+<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Careers :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -42,16 +42,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -71,11 +71,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.php">Staple<span>Best Food Collection</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>	
+								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
@@ -84,41 +84,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
+													<li><a href="menu.php">Breakfast</a></li> 
+													<li><a href="menu.php">Lunch</a></li> 
+													<li><a href="menu.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<li><a href="menu.php">Indian Recipes</a></li> 
+													<li><a href="menu.php">American Recipes</a></li> 
+													<li><a href="menu.php">French Recipes</a></li> 
+													<li><a href="menu.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
+													<li><a href="menu.php">Diet</a></li> 
+													<li><a href="menu.php">Mini</a></li> 
+													<li><a href="menu.php">Regular</a></li> 
+													<li><a href="menu.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li> 
+								<li><a href="about.php">About</a></li> 
 								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>     
+										<li><a href="icons.php">Web Icons</a></li>
+										<li><a href="codes.php">Short Codes</a></li>     
 									</ul>
 								</li>  
-								<li><a href="contact.html" class="active">Contact Us</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -146,71 +146,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Contact Us</li>
+			<li class="active">Careers</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- contact -->
-	<div id="contact" class="contact cd-section">
-		<div class="container">
-			<h3 class="w3ls-title">Contact us</h3>
-			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
-			<div class="contact-row agileits-w3layouts">  
-				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
-					<div class="contact-grid agileits">
-						<h4>DROP US A LINE </h4>
-						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
-							<input type="submit" value="Submit" >
-						</form> 
-					</div>
+	<!-- careers-page -->
+	<div class="careers about">
+		<div class="container"> 
+			<h3 class="w3ls-title w3ls-title1">Careers</h3> 
+			<h5>About Job</h5>
+			<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas faucibus ipsum et libero euismod iaculis. Integer consectetur congue laoreet. Morbi eget leo elementum, vulputate eros et, egestas diam. Nam egestas, quam id viverra congue, elit mi eleifend libero, eget vulputate ante lorem vel quam. Sed suscipit ligula eu mi bibendum, vel mollis enim finibus. Suspendisse vitae est tortor. Donec aliquet leo vitae ligula mattis, vitae auctor mi pellentesque. Integer eu dui accumsan, convallis neque id, malesuada urna. </p>
+			<div class="w3careers-row">
+				<h5>Here  are some Career Solutions :</h5>
+				<div class="col-md-6 w3careers-grids">
+					<h6>1. INNOVATION</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
 				</div>
-				<div class="col-xs-6 col-sm-6 contact-w3lsright">
-					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Visit Us</h5>
-							<p>Broome St, Canada, NY 10002, New York </p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row w3-agileits">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Mail Us</h5>
-							<p><a href="mailto:info@example.com"> mail@example.com</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Call Us</h5>
-							<p>+01 222 333 4444</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>  
+				<div class="col-md-6 w3careers-grids">
+					<h6>2. NEW TRENDS</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>3. OPENNESS</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>4. OWNERSHIP</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+				</div>
+				<div class="col-md-6 w3careers-grids">
+					<h6>5. HONESTY</h6>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
 				</div>
 				<div class="clearfix"> </div>
-			</div>	
-		</div>	
-		<!-- map -->
-		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
+			</div>
 		</div>
-		<!-- //map --> 
 	</div>
-	<!-- //contact -->   
+	<!-- //careers-page -->  
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -250,36 +222,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>  
-						<li><a href="careers.html">Careers</a></li>  
-						<li><a href="help.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>  
+						<li><a href="careers.php">Careers</a></li>  
+						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.html">FAQ</a></li> 
-						<li><a href="login.html">Returns</a></li>   
-						<li><a href="login.html">Order Status</a></li> 
-						<li><a href="offers.html">Offers</a></li> 
+						<li><a href="faq.php">FAQ</a></li> 
+						<li><a href="login.php">Returns</a></li>   
+						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>     
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li> 
-						<li><a href="menu.html">Lunch</a></li>
-						<li><a href="menu.html">Dinner</a></li>
-						<li><a href="menu.html">Flavours</a></li> 
+						<li><a href="menu.php">All Day Menu</a></li> 
+						<li><a href="menu.php">Lunch</a></li>
+						<li><a href="menu.php">Dinner</a></li>
+						<li><a href="menu.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

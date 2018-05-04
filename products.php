@@ -43,16 +43,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -72,11 +72,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.php">Staple<span>Best Food Collection</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>	
+								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
@@ -85,41 +85,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
+													<li><a href="menu.php">Breakfast</a></li> 
+													<li><a href="menu.php">Lunch</a></li> 
+													<li><a href="menu.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<li><a href="menu.php">Indian Recipes</a></li> 
+													<li><a href="menu.php">American Recipes</a></li> 
+													<li><a href="menu.php">French Recipes</a></li> 
+													<li><a href="menu.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
+													<li><a href="menu.php">Diet</a></li> 
+													<li><a href="menu.php">Mini</a></li> 
+													<li><a href="menu.php">Regular</a></li> 
+													<li><a href="menu.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li> 
+								<li><a href="about.php">About</a></li> 
 								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>     
+										<li><a href="icons.php">Web Icons</a></li>
+										<li><a href="codes.php">Short Codes</a></li>     
 									</ul>
 								</li>  
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -527,15 +527,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="related-row">
 					<h4>Related Searches</h4>
 					<ul>
-						<li><a href="products.html">Salads </a></li>
-						<li><a href="products.html">Vegetarian</a></li>
-						<li><a href="products.html">Dinner</a></li>
-						<li><a href="products.html">Diet Soup</a></li>
-						<li><a href="products.html">Sweets</a></li>
-						<li><a href="products.html">Seasonal</a></li>
-						<li><a href="products.html">Breakfast</a></li>
-						<li><a href="products.html">Italian Food</a></li>
-						<li><a href="products.html">Meals</a></li> 
+						<li><a href="products.php">Salads </a></li>
+						<li><a href="products.php">Vegetarian</a></li>
+						<li><a href="products.php">Dinner</a></li>
+						<li><a href="products.php">Diet Soup</a></li>
+						<li><a href="products.php">Sweets</a></li>
+						<li><a href="products.php">Seasonal</a></li>
+						<li><a href="products.php">Breakfast</a></li>
+						<li><a href="products.php">Italian Food</a></li>
+						<li><a href="products.php">Meals</a></li> 
 					</ul>
 				</div>
 				<div class="related-row">
@@ -566,56 +566,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-md-9 spldishes-grids">
 					<!-- Owl-Carousel -->
 					<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a> 
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
-						<a href="products.html" class="item g1">
+						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Duis congue</h4>
@@ -730,36 +730,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>  
-						<li><a href="careers.html">Careers</a></li>  
-						<li><a href="help.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>  
+						<li><a href="careers.php">Careers</a></li>  
+						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.html">FAQ</a></li> 
-						<li><a href="login.html">Returns</a></li>   
-						<li><a href="login.html">Order Status</a></li> 
-						<li><a href="offers.html">Offers</a></li> 
+						<li><a href="faq.php">FAQ</a></li> 
+						<li><a href="login.php">Returns</a></li>   
+						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
 					</ul>     
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li> 
-						<li><a href="menu.html">Lunch</a></li>
-						<li><a href="menu.html">Dinner</a></li>
-						<li><a href="menu.html">Flavours</a></li> 
+						<li><a href="menu.php">All Day Menu</a></li> 
+						<li><a href="menu.php">Lunch</a></li>
+						<li><a href="menu.php">Dinner</a></li>
+						<li><a href="menu.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Careers :: w3layouts</title>
+<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Login :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -42,16 +42,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<li class="head-dpdn">
-								<a href="login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="signup.html"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="offers.html"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
-								<a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -71,11 +71,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.html">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.php">Staple<span>Best Food Collection</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>	
+								<li><a href="index.php">Home</a></li>	
 								<!-- Mega Menu -->
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
@@ -84,41 +84,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.html">Breakfast</a></li> 
-													<li><a href="menu.html">Lunch</a></li> 
-													<li><a href="menu.html">Dinner</a></li> 
+													<li><a href="menu.php">Breakfast</a></li> 
+													<li><a href="menu.php">Lunch</a></li> 
+													<li><a href="menu.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<li><a href="menu.php">Indian Recipes</a></li> 
+													<li><a href="menu.php">American Recipes</a></li> 
+													<li><a href="menu.php">French Recipes</a></li> 
+													<li><a href="menu.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
+													<li><a href="menu.php">Diet</a></li> 
+													<li><a href="menu.php">Mini</a></li> 
+													<li><a href="menu.php">Regular</a></li> 
+													<li><a href="menu.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
 								</li>
-								<li><a href="about.html">About</a></li> 
+								<li><a href="about.php">About</a></li> 
 								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="icons.html">Web Icons</a></li>
-										<li><a href="codes.html">Short Codes</a></li>     
+										<li><a href="icons.php">Web Icons</a></li>
+										<li><a href="codes.php">Short Codes</a></li>     
 									</ul>
 								</li>  
-								<li><a href="contact.html">Contact Us</a></li>
+								<li><a href="contact.php">Contact Us</a></li>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -146,43 +146,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Careers</li>
+			<li class="active">Login</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- careers-page -->
-	<div class="careers about">
+	<!-- login-page -->
+	<div class="login-page about">
+		<img class="login-w3img" src="images/img3.jpg" alt="">
 		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Careers</h3> 
-			<h5>About Job</h5>
-			<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas faucibus ipsum et libero euismod iaculis. Integer consectetur congue laoreet. Morbi eget leo elementum, vulputate eros et, egestas diam. Nam egestas, quam id viverra congue, elit mi eleifend libero, eget vulputate ante lorem vel quam. Sed suscipit ligula eu mi bibendum, vel mollis enim finibus. Suspendisse vitae est tortor. Donec aliquet leo vitae ligula mattis, vitae auctor mi pellentesque. Integer eu dui accumsan, convallis neque id, malesuada urna. </p>
-			<div class="w3careers-row">
-				<h5>Here  are some Career Solutions :</h5>
-				<div class="col-md-6 w3careers-grids">
-					<h6>1. INNOVATION</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
-				</div>
-				<div class="col-md-6 w3careers-grids">
-					<h6>2. NEW TRENDS</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
-				</div>
-				<div class="col-md-6 w3careers-grids">
-					<h6>3. OPENNESS</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
-				</div>
-				<div class="col-md-6 w3careers-grids">
-					<h6>4. OWNERSHIP</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
-				</div>
-				<div class="col-md-6 w3careers-grids">
-					<h6>5. HONESTY</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
+			<div class="login-agileinfo"> 
+				<form action="#" method="post"> 
+					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
+					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
+					<div class="wthreelogin-text"> 
+						<ul> 
+							<li>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
+									<span> Remember me ?</span> 
+								</label> 
+							</li>
+							<li><a href="#">Forgot password?</a> </li>
+						</ul>
+						<div class="clearfix"> </div>
+					</div>   
+					<input type="submit" value="LOGIN">
+				</form>
+				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
+			</div>	 
 		</div>
 	</div>
-	<!-- //careers-page -->  
+	<!-- //login-page -->  
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -208,7 +202,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form> 
+				</form>  
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
@@ -222,36 +216,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>company</h3>
 					<ul>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="contact.html">Contact Us</a></li>  
-						<li><a href="careers.html">Careers</a></li>  
-						<li><a href="help.html">Partner With Us</a></li>   
+						<li><a href="about.php">About Us</a></li>
+						<li><a href="contact.php">Contact Us</a></li>  
+						<li><a href="careers.php">Careers</a></li>  
+						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.html">FAQ</a></li> 
-						<li><a href="login.html">Returns</a></li>   
-						<li><a href="login.html">Order Status</a></li> 
-						<li><a href="offers.html">Offers</a></li> 
+						<li><a href="faq.php">FAQ</a></li> 
+						<li><a href="login.php">Returns</a></li>   
+						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>policy info</h3>
 					<ul>  
-						<li><a href="terms.html">Terms & Conditions</a></li>  
-						<li><a href="privacy.html">Privacy Policy</a></li>
-						<li><a href="login.html">Return Policy</a></li> 
-					</ul>     
+						<li><a href="terms.php">Terms & Conditions</a></li>  
+						<li><a href="privacy.php">Privacy Policy</a></li>
+						<li><a href="login.php">Return Policy</a></li> 
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.html">All Day Menu</a></li> 
-						<li><a href="menu.html">Lunch</a></li>
-						<li><a href="menu.html">Dinner</a></li>
-						<li><a href="menu.html">Flavours</a></li> 
+						<li><a href="menu.php">All Day Menu</a></li> 
+						<li><a href="menu.php">Lunch</a></li>
+						<li><a href="menu.php">Dinner</a></li>
+						<li><a href="menu.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
