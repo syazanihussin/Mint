@@ -8,10 +8,6 @@ class Customer {
         $da = new DataAccess();
         $data = $da->read('user', 'userName, password');
 
-        foreach($data) {
-            if($data[index].userName )
-
-        }
 
     }
 

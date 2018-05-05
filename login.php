@@ -25,6 +25,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+<script>
+    $(document).ready(function(){
+ 		$(function(){
+            $.ajax({
+                url:"ajax/authenticate.php",
+                dataType:"json",
+                type: "POST",
+                data: {table : 'user', column : 'userName, password', where : 'userName = "" AND password = ""'},
+                success:function(data){
+                    $.each(data, function(index){
+                        $("#names").append("<li>Username: "+data[index].userName+"</li>")
+                        $("#names").append("<li>Password: "+data[index].password+"</li>")
+                        $("#names").append("<li>Email: "+data[index].email+"</li>")
+                        $("#names").append("<li>Address: "+data[index].address+"</li>")
+                    });
+                }
+            });
+        });
+	});
+</script>
+
 </head>
 <body> 
 	<!-- banner -->

@@ -15,7 +15,7 @@
                         url:"ajax/select.php",
                         dataType:"json",
                         type: "POST",
-                        data: {table : 'user', column : 'userName, password, email, address'},
+                        data: { table : 'user', column : 'userName, password, email, address'},
                         success:function(data){
                             $.each(data, function(index){
                                 $("#names").append("<li>Username: "+data[index].userName+"</li>")
