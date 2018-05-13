@@ -26,9 +26,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8"></script>
-		
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places"></script>
+
 </head>
+
 <body> 
 	<!-- banner -->
 	<div class="banner">
@@ -155,27 +156,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
 				<div class="agileits_search">
-					<form action="#" method="post">
-						<input name="Search" type="text" id="places" placeholder="Enter Your Area Name" required="">
-						<script>
-							function initialize() {
-								var input = document.getElementById('places');
-								new google.maps.places.Autocomplete(input);
-							}
+					<input id="locationTextField" type="text" size="50">
+					<script>
+						function init() {
+							var input = document.getElementById('locationTextField');
+							var autocomplete = new google.maps.places.Autocomplete(input);
+						}
 
-							google.maps.event.addDomListener(window, 'load', initialize);
-						</script>
-						<select id="agileinfo_search" name="agileinfo_search" required="">
-							<option value="">Popular Cities</option>
-							<option value="navs">New York</option>
-							<option value="quotes">Los Angeles</option>
-							<option value="videos">Chicago</option>
-							<option value="news">Phoenix</option>
-							<option value="notices">Fort Worth</option>
-							<option value="all">Other</option>
-						</select>
-						<input type="submit" value="Search">
-					</form>
+						google.maps.event.addDomListener(window, 'load', init);
+					</script>
+					<input type="submit" id="search" value="Search">
 				</div> 
 			</div>
 		</div>
