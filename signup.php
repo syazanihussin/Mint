@@ -25,6 +25,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+		<script>
+			$(document).ready(function(){
+ 				$("#signup").click(function(){
+
+                    var userName = $("#username").val();
+                    var password = $("#password").val();
+                    var email = $("#email").val();
+					var phoneNo = $("#phone").val();
+                    
+					$.ajax({
+                        url:"ajax/insert.php",
+                        dataType:"json",
+                        type: "POST",
+                        data: {table : 'customer', column : 'username, password, phoneNo, email', inserting : '"'+userName+'","'+password+'","'+phoneNo+'","'+email+'"', session : userName, message : 'signup'},
+        			    success:function(data){
+                            window.location.replace("index.php");
+                        }
+                    });
+                });
+			});
+        </script>
 </head>
 <body> 
 	<!-- banner -->
@@ -156,23 +177,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
 			<div class="login-agileinfo"> 
-				<form action="#" method="post"> 
-					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="email" name="Your Email" placeholder="Your Email" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
-					<input class="agile-ltext" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
+				
+					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Username" required="">
+					<input class="agile-ltext" id="email" type="email" name="Your Email" placeholder="Your Email" required="">
+					<input class="agile-ltext" id="phone" type="text" name="Your Phone No" placeholder="Your Phone No" required="">
+					<input class="agile-ltext" id="password" type="password" name="password" placeholder="Password" required="">
+					<input class="agile-ltext"  id="confirmpassword" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
 					<div class="wthreelogin-text"> 
 						<ul> 
 							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
+								<label class="checkbox"><input type="checkbox" id="agree" name="checkbox"><i></i> 
 									<span> I agree to the terms of service</span> 
 								</label> 
 							</li> 
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<input type="submit" value="Sign Up">
-				</form>
+					<input type="submit" class="sub" id="signup" value="SIGN UP">
+				
 				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 
 		</div>

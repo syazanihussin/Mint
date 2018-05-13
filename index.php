@@ -26,6 +26,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8"></script>
+		
 </head>
 <body> 
 	<!-- banner -->
@@ -42,12 +44,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
-							<li class="head-dpdn">
-								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 
+							<?php
+								session_start();
+								if(!isset($_SESSION['customer'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									';
+								}
+							?>
+							
 							<li class="head-dpdn">
 								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
@@ -113,13 +123,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</li>
 								<li><a href="about.php">About</a></li> 
-								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.php">Web Icons</a></li>
-										<li><a href="codes.php">Short Codes</a></li>     
-									</ul>
-								</li>  
+								 
 								<li><a href="contact.php">Contact Us</a></li>
+								<?php
+								if(isset($_SESSION['customer'])){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -141,7 +156,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
 				<div class="agileits_search">
 					<form action="#" method="post">
-						<input name="Search" type="text" placeholder="Enter Your Area Name" required="">
+						<input name="Search" type="text" id="places" placeholder="Enter Your Area Name" required="">
+						<script>
+							function initialize() {
+								var input = document.getElementById('places');
+								new google.maps.places.Autocomplete(input);
+							}
+
+							google.maps.event.addDomListener(window, 'load', initialize);
+						</script>
 						<select id="agileinfo_search" name="agileinfo_search" required="">
 							<option value="">Popular Cities</option>
 							<option value="navs">New York</option>

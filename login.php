@@ -27,19 +27,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
     $(document).ready(function(){
- 		$(function(){
+		$("#login").click(function(){
+
+			var userName = $("#username").val();
+            var password = $("#password").val();
+
             $.ajax({
-                url:"ajax/authenticate.php",
+				url:"ajax/select.php",
                 dataType:"json",
                 type: "POST",
-                data: {table : 'user', column : 'userName, password', where : 'userName = "" AND password = ""'},
+                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
                 success:function(data){
-                    $.each(data, function(index){
-                        $("#names").append("<li>Username: "+data[index].userName+"</li>")
-                        $("#names").append("<li>Password: "+data[index].password+"</li>")
-                        $("#names").append("<li>Email: "+data[index].email+"</li>")
-                        $("#names").append("<li>Address: "+data[index].address+"</li>")
-                    });
+                    window.location.replace("index.php");
                 }
             });
         });
@@ -177,9 +176,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
 			<div class="login-agileinfo"> 
-				<form action="#" method="post"> 
-					<input class="agile-ltext" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Password" required="">
+				
+					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
+					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
 					<div class="wthreelogin-text"> 
 						<ul> 
 							<li>
@@ -191,8 +190,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<input type="submit" value="LOGIN">
-				</form>
+					<input type="submit" id="login" value="LOGIN">
+				
 				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
 			</div>	 
 		</div>

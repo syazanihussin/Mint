@@ -15,13 +15,13 @@
                         url:"ajax/select.php",
                         dataType:"json",
                         type: "POST",
-                        data: { table : 'user', column : 'userName, password, email, address'},
+                        data: { table : 'customer', column : 'username, password, phoneNo, email'},
                         success:function(data){
                             $.each(data, function(index){
-                                $("#names").append("<li>Username: "+data[index].userName+"</li>")
+                                $("#names").append("<li>Username: "+data[index].username+"</li>")
                                 $("#names").append("<li>Password: "+data[index].password+"</li>")
-                                $("#names").append("<li>Email: "+data[index].email+"</li>")
-                                $("#names").append("<li>Address: "+data[index].address+"</li>")
+                                $("#names").append("<li>Email: "+data[index].phoneNo+"</li>")
+                                $("#names").append("<li>Address: "+data[index].email+"</li>")
                             });
                         }
                     });
