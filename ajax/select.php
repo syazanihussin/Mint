@@ -18,4 +18,34 @@ else if($_POST['message'] == "login") {
     echo json_encode($res);
 }
 
+else if($_POST['message'] == "searchRestaurant") {
+    $db->select($_POST['table'], $_POST['column']); // Table name, Column Names
+    $suppliers = $db->getResult();
+    $restaurant = array();
+    foreach($suppliers as $supplier) {
+        similar_text($_POST['location'], $supplier['address'], $percent);
+
+        if($percent > 50) {
+            array_push($restaurant, $supplier['supplierName']);
+        } 
+    }
+    
+    if(count($restaurant) < 1) {
+        array_push($restaurant, 'nothing');
+    }
+    session_start();
+    $_SESSION['restaurant'] = $restaurant;
+    $res = $_SESSION['restaurant'];  
+    echo json_encode($res);
+}
+
+else if($_POST['message'] == "searchMenu") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    
+    session_start();
+    $_SESSION['menus'] = $db->getResult();
+    $res = $_SESSION['menus'];  
+    echo json_encode($res);
+}
+
 

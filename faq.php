@@ -84,27 +84,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.php">Breakfast</a></li> 
-													<li><a href="menu.php">Lunch</a></li> 
-													<li><a href="menu.php">Dinner</a></li> 
+													<li><a href="restaurant.php">Breakfast</a></li> 
+													<li><a href="restaurant.php">Lunch</a></li> 
+													<li><a href="restaurant.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.php">Indian Recipes</a></li> 
-													<li><a href="menu.php">American Recipes</a></li> 
-													<li><a href="menu.php">French Recipes</a></li> 
-													<li><a href="menu.php">Italian Recipes</a></li> 
+													<li><a href="restaurant.php">Indian Recipes</a></li> 
+													<li><a href="restaurant.php">American Recipes</a></li> 
+													<li><a href="restaurant.php">French Recipes</a></li> 
+													<li><a href="restaurant.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.php">Diet</a></li> 
-													<li><a href="menu.php">Mini</a></li> 
-													<li><a href="menu.php">Regular</a></li> 
-													<li><a href="menu.php">Special</a></li> 
+													<li><a href="restaurant.php">Diet</a></li> 
+													<li><a href="restaurant.php">Mini</a></li> 
+													<li><a href="restaurant.php">Regular</a></li> 
+													<li><a href="restaurant.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
@@ -298,10 +298,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.php">All Day Menu</a></li> 
-						<li><a href="menu.php">Lunch</a></li>
-						<li><a href="menu.php">Dinner</a></li>
-						<li><a href="menu.php">Flavours</a></li> 
+						<li><a href="restaurant.php">All Day Menu</a></li> 
+						<li><a href="restaurant.php">Lunch</a></li>
+						<li><a href="restaurant.php">Dinner</a></li>
+						<li><a href="restaurant.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>

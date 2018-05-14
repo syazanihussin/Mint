@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,27 +85,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="menu.php">Breakfast</a></li> 
-													<li><a href="menu.php">Lunch</a></li> 
-													<li><a href="menu.php">Dinner</a></li> 
+													<li><a href="restaurant.php">Breakfast</a></li> 
+													<li><a href="restaurant.php">Lunch</a></li> 
+													<li><a href="restaurant.php">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="menu.php">Indian Recipes</a></li> 
-													<li><a href="menu.php">American Recipes</a></li> 
-													<li><a href="menu.php">French Recipes</a></li> 
-													<li><a href="menu.php">Italian Recipes</a></li> 
+													<li><a href="restaurant.php">Indian Recipes</a></li> 
+													<li><a href="restaurant.php">American Recipes</a></li> 
+													<li><a href="restaurant.php">French Recipes</a></li> 
+													<li><a href="restaurant.php">Italian Recipes</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Box type</h6> 
-													<li><a href="menu.php">Diet</a></li> 
-													<li><a href="menu.php">Mini</a></li> 
-													<li><a href="menu.php">Regular</a></li> 
-													<li><a href="menu.php">Special</a></li> 
+													<li><a href="restaurant.php">Diet</a></li> 
+													<li><a href="restaurant.php">Mini</a></li> 
+													<li><a href="restaurant.php">Regular</a></li> 
+													<li><a href="restaurant.php">Special</a></li> 
 												</ul>
 											</div> 
 											<div class="clearfix"></div>
@@ -145,109 +146,36 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- breadcrumb -->  
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Menu</li>
+			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Restaurant</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- menu list -->   	
-	<div class="wthree-menu">  
-		<img src="images/i2.jpg" class="w3order-img" alt=""/>
-		<div class="container">
-			<h3 class="w3ls-title">Menu</h3>
-			<p class="w3lsorder-text">Here your Staple Food Varieties</p>
-			<div class="menu-agileinfo">  
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Breakfast</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Salads</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Hot Food</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Breads</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Deli Pots & Little Pots</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Snacks & Treats</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Drinks</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> South Indian</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Catering</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Soups</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Lunchbox</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"> Dinner</a>
-				</div> 
-				<div class="clearfix"> </div> 
-			</div> 
-			<div class="w3spl-menu">
-				<h3 class="w3ls-title">Seasonal  Menu</h3>
-				<p class="w3lsorder-text">Here your Staple Food Varieties</p>
-				<div class="menu-agileinfo">  
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Fondue Savoyarde</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Garbure</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Poulet</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Cherry Clafouti</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php"> Spinach Soufflé</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Baeckeoffe</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Ratatouille</a>
-					</div> 
-					<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-						<a href="products.php">Piperade</a>
-					</div>  
-					<div class="clearfix"> </div> 
-				</div> 
-			</div>
-		</div> 
-	</div>
-	<!-- //menu list -->    
+			  
 	<!-- add-products -->
-	<div class="add-products">  
+	<div style="padding: 4em 0;">  
 		<div class="container">
-			<h3 class="w3ls-title w3ls-title1">Today's Offers</h3>
+			<h3 class="w3ls-title">Choose Restaurant</h3>
+			<p class="w3lsorder-text">Here are available restaurants based on your location search</p>
 			<div class="add-products-row">
-				<div class="w3ls-add-grids">
-					<a href="products.php"> 
-						<h4>Get <span>10%<br>Cashback</span></h4>
-						<h5>Special Offer Today Only</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="products.php"> 
-						<h4>GET Upto<span><br>5% Offer</span></h4>
-						<h5>On Order Lunch Today</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
+				<?php
+					if(isset($_SESSION['restaurant'])){
+						foreach($_SESSION['restaurant'] as $restaurant) {
+							if($restaurant != "nothing") {
+								echo '
+									<div class="w3ls-add-grids">
+										<a href="products.php?selectedRestaurant=' . $restaurant . '"> 
+											<h4 style="padding: 1em 0;"><span>' . $restaurant . '</span></h4>
+											<h5>Special Offer Today Only</h5>
+											<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+										</a>
+									</div>
+								';
+							} else {
+								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
+							}
+						}
+					}
+				?>
 				<div class="clearfix"> </div> 
 			</div>  	 
 		</div>
@@ -318,10 +246,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="menu.php">All Day Menu</a></li> 
-						<li><a href="menu.php">Lunch</a></li>
-						<li><a href="menu.php">Dinner</a></li>
-						<li><a href="menu.php">Flavours</a></li> 
+						<li><a href="restaurant.php">All Day Menu</a></li> 
+						<li><a href="restaurant.php">Lunch</a></li>
+						<li><a href="restaurant.php">Dinner</a></li>
+						<li><a href="restaurant.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
