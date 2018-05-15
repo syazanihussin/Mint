@@ -197,69 +197,71 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="products-row">
 					<?php
 						if(isset($_SESSION['menus'])){
+							$number = 0;
 							foreach($_SESSION['menus'] as $menu) {
-								if($menu != "nothing") {
-									echo '
-										<div class="col-xs-6 col-sm-6 product-grids">
-											<div class="flip-container flip-container1">
-												<div class="flipper agile-products">
-													<div class="front"> 
-														<div class="agile-product-text agile-product-text2">              
-															<h5>Sandwich & soup</h5>  
-														</div> 
-														<img src="images/g7.jpg" class="img-responsive" alt="img"> 
+									if ($number % 2 == 0) {
+										echo '
+											<div class="col-xs-6 col-sm-6 product-grids">
+												<div class="flip-container flip-container1">
+													<div class="flipper agile-products">
+														<div class="front"> 
+															<div class="agile-product-text agile-product-text2">              
+																<h5>' . $menu['menuName'] . '</h5>  
+															</div> 
+															<img src="images/g7.jpg" class="img-responsive" alt="img"> 
+														</div>
+														<div class="back">
+															<h4>' . $menu['menuName'] . '</h4>
+															<p>' . $menu['menuDesc'] . '</p>
+															<h6>RM' . $menu['menuPrice'] . '</h6>
+															<form action="#" method="post">
+																<input type="hidden" name="cmd" value="_cart">
+																<input type="hidden" name="add" value="1"> 
+																<input type="hidden" name="w3ls_item" value="' . $menu['menuName'] . '"> 
+																<input type="hidden" name="amount" value="' . $menu['menuPrice'] . '"> 
+																<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+																<span class="w3-agile-line"> </span>
+																<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+															</form>
+														</div>
 													</div>
-													<div class="back">
-														<h4>' . $menu['menuName'] . '</h4>
-														<p>Maecenas condimentum interdum lacus, ac varius nisl  condimentum interdum lacus, ac varius nisl.</p>
-														<h6>5<sup>$</sup></h6>
-														<form action="#" method="post">
-															<input type="hidden" name="cmd" value="_cart">
-															<input type="hidden" name="add" value="1"> 
-															<input type="hidden" name="w3ls_item" value="Sandwich & soup"> 
-															<input type="hidden" name="amount" value="5.00"> 
-															<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-															<span class="w3-agile-line"> </span>
-															<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
-														</form>
+												</div> 
+											</div>
+										';
+									} else {
+										echo '
+											<div class="col-xs-6 col-sm-6 product-grids">
+												<div class="flip-container flip-container1">
+													<div class="flipper agile-products">
+														<div class="front"> 
+															<img src="images/g8.jpg" class="img-responsive" alt="img">
+															<div class="agile-product-text">              
+																<h5>' . $menu['menuName'] . '</h5>  
+															</div> 
+														</div>
+														<div class="back">
+															<h4>' . $menu['menuName'] . '</h4>
+															<p>' . $menu['menuDesc'] . '</p>
+															<h6>RM' . $menu['menuPrice'] . '</h6>
+															<form action="#" method="post">
+																<input type="hidden" name="cmd" value="_cart">
+																<input type="hidden" name="add" value="1"> 
+																<input type="hidden" name="w3ls_item" value="' . $menu['menuName'] . '"> 
+																<input type="hidden" name="amount" value="' . $menu['menuPrice'] . '"> 
+																<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+																<span class="w3-agile-line"> </span>
+																<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+															</form>
+														</div>
 													</div>
-												</div>
+												</div> 
 											</div> 
-										</div>
-									';
-								} else {
-									echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
-								}
+										';
+									} 
+									$number++;
 							}
 						}
 					?>
-					
-					<div class="col-xs-6 col-sm-6 product-grids">
-						<div class="flip-container flip-container1">
-							<div class="flipper agile-products">
-								<div class="front"> 
-									<img src="images/g8.jpg" class="img-responsive" alt="img">
-									<div class="agile-product-text">              
-										<h5>Asia Meals</h5>  
-									</div> 
-								</div>
-								<div class="back">
-									<h4>Asia Meals</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl  condimentum interdum lacus, ac varius nisl.</p>
-									<h6>8<sup>$</sup></h6>
-									<form action="#" method="post">
-										<input type="hidden" name="cmd" value="_cart">
-										<input type="hidden" name="add" value="1"> 
-										<input type="hidden" name="w3ls_item" value="Asia Meals"> 
-										<input type="hidden" name="amount" value="8.00"> 
-										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
-										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
-									</form>
-								</div>
-							</div>
-						</div> 
-					</div> 
 					<div class="clearfix"> </div>
 				</div>
 			</div>
