@@ -88,7 +88,7 @@
         <button id="btn1">Update</button>
 
         <h3 id="inserted">Insert user</h3>
-        <p>Username: </p><input type="text" id="userName">
+        <p>Username la: </p><input type="text" id="userName">
         <p>Password: </p><input type="text" id="password">
         <p>Email: </p><input type="text" id="email">
         <p>Address: </p><input type="text" id="address">
