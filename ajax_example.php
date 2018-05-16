@@ -83,7 +83,7 @@
         <h3>Read data from database</h3>
         <ul id="names"></ul>
 
-        <h3 id="updated">Update password</h3>
+        <h3 id="updated">Update passwords</h3>
         <input type="text" id="newPassword">
         <button id="btn1">Update</button>
 
