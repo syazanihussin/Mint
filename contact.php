@@ -82,9 +82,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
+								<li><a href="index.php">Home</a></li>	
+								<li><a href="about.php" >About</a></li> 
+								<li><a href="contact.php" class="active">Contact Us</a></li>
 								<?php
 								if(isset($_SESSION['customer'])){
 									echo '

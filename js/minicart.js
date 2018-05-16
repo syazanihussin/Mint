@@ -1903,7 +1903,7 @@ var defaults = module.exports = {
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
-    action: 'products.html',
+    action: 'payment.php',
 
     target: '',
 
@@ -1914,7 +1914,7 @@ var defaults = module.exports = {
     styles: '',
 
     strings: {
-        button: 'Shop More',
+        button: 'CHECKOUT',
         subtotal: 'Subtotal:',
         discount: 'Discount:',
         empty: 'Your shopping cart is empty'
@@ -2418,7 +2418,7 @@ var currencies = {
 
 
 module.exports = function currency(amount, config) {
-    var code = config && config.currency || 'USD',
+    var code = config && config.currency || 'MYR',
         value = currencies[code],
         before = value.before || '',
         after = value.after || '',

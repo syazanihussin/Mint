@@ -169,6 +169,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="add-products-row">
 				<div class="w3ls-add-grids">
 					<a href="restaurant.php"> 
+						
+					<h3 id="inserted">Insert user</h3>
 						<h4>Get <span>20%<br>Cashback</span></h4>
 						<h5>Ordered in mobile app only </h5>
 						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
@@ -256,7 +258,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-users" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h3 id="inserted">Insert user</h3>
 						<h4>Team up Scheme</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
 					</div>
@@ -445,6 +446,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         		items = this.items();
 
         		for (i = 0, len = items.length; i < len; i++) { 
+					$("#inserted").text(items[i].get());
         		}
         	}
         });
