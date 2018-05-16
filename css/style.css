@@ -197,7 +197,7 @@ ul.nav.navbar-nav.navbar-right {
 	top: 190%;  
 }
 .dropdown-menu.columns-3 {
-    min-width:500px; 
+    min-width:420px; 
 	padding: 25px;
 }
 li.dropdown.open .dropdown-menu,li.w3pages.open .dropdown-menu{ 
@@ -2704,7 +2704,7 @@ img.w3order-img {
     padding: 11em 0;
 }
 .dropdown-menu.columns-3 {
-    min-width: 460px; 
+    min-width: 380px; 
 }
 .contact-w3lsright h6 {
     font-size: 1.8em; 
@@ -2891,7 +2891,7 @@ p.w3lsorder-text {
     font-size: 2.2em;
 }
 .dropdown-menu.columns-3 { 
-	min-width: 430px;
+	min-width: 350px;
     padding: 20px;
 }
 .w3spl-menu {

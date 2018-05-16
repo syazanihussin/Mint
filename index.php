@@ -30,6 +30,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <script>
     $(document).ready(function(){
+
+		$.ajax({
+			url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'menu', column : 'cuisineCategory', message : 'cuisine'},
+            success:function(data){
+			}
+		});
+		
 		$("#search").click(function(){
 
 			var location = $("#locationTextField").val();
@@ -114,29 +124,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Food type</h6>  
-													<li><a href="restaurant.php">Breakfast</a></li> 
-													<li><a href="restaurant.php">Lunch</a></li> 
-													<li><a href="restaurant.php">Dinner</a></li> 
+													<li><a href="location.php?menuCategory=Breakfast">Breakfast</a></li> 
+													<li><a href="location.php?menuCategory=Lunch">Lunch</a></li> 
+													<li><a href="location.php?menuCategory=Dinner">Dinner</a></li> 
 												</ul>
 											</div>
 											<div class="col-sm-4">
 												<ul class="multi-column-dropdown">
 													<h6>Cuisine</h6> 
-													<li><a href="restaurant.php">Indian Recipes</a></li> 
-													<li><a href="restaurant.php">American Recipes</a></li> 
-													<li><a href="restaurant.php">French Recipes</a></li> 
-													<li><a href="restaurant.php">Italian Recipes</a></li> 
+													<?php
+														if(isset($_SESSION['cuisines'])){
+															foreach($_SESSION['cuisines'] as $cuisine) {
+																echo '<li><a href="products.php?cuisineCategory=' . $cuisine['cuisineCategory'] . '">' . $cuisine['cuisineCategory'] . '</a></li>';
+															}
+														}
+													?>
+													
 												</ul>
 											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="restaurant.php">Diet</a></li> 
-													<li><a href="restaurant.php">Mini</a></li> 
-													<li><a href="restaurant.php">Regular</a></li> 
-													<li><a href="restaurant.php">Special</a></li> 
-												</ul>
-											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>
@@ -282,6 +287,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-users" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
+						<h3 id="inserted">Insert user</h3>
 						<h4>Team up Scheme</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
 					</div>

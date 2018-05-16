@@ -74,9 +74,16 @@ class Database{
 	}
 	
 	// Function to SELECT from the database
-	public function select($table, $rows = '*', $join = null, $where = null, $order = null, $limit = null){
+	public function select($table, $rows = '*', $join = null, $where = null, $order = null, $duplicate = null, $limit = null){
 		// Create query from the variables passed to the function
-		$q = 'SELECT '.$rows.' FROM '.$table;
+		$q = 'SELECT ';
+		
+		if($duplicate != null){
+			$q .= ' DISTINCT ';
+		}
+
+		$q .= $rows.' FROM '.$table;
+		
 		if($join != null){
 			$q .= ' JOIN '.$join;
 		}

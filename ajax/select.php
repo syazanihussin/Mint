@@ -48,4 +48,13 @@ else if($_POST['message'] == "searchMenu") {
     echo json_encode($res);
 }
 
+else if($_POST['message'] == "cuisine") {
+    $db->select($_POST['table'], $_POST['column'], NULL, NULL, NULL, ' '); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    
+    session_start();
+    $_SESSION['cuisines'] = $db->getResult();
+    $res = $_SESSION['cuisines'];  
+    echo json_encode($res);
+}
+
 
