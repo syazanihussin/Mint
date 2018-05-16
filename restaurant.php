@@ -42,14 +42,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
+							<?php
+								if(!isset($_SESSION['customer'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									';
+								}
+							?>
+							
 							<li class="head-dpdn">
-								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -61,7 +68,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!-- //header-one -->    
 			<!-- navigation -->
-			<div style="background: rgba(253, 70, 62, 0.92);" class="navigation agiletop-nav">
+			<div class="navigation agiletop-nav">
 				<div class="container">
 					<nav class="navbar navbar-default">
 						<!-- Brand and toggle get grouped for better mobile display -->
@@ -72,54 +79,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Staple<span>Best Food Collection</span></a></h1>
+							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php">Home</a></li>	
-								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle active" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="restaurant.php">Breakfast</a></li> 
-													<li><a href="restaurant.php">Lunch</a></li> 
-													<li><a href="restaurant.php">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="restaurant.php">Indian Recipes</a></li> 
-													<li><a href="restaurant.php">American Recipes</a></li> 
-													<li><a href="restaurant.php">French Recipes</a></li> 
-													<li><a href="restaurant.php">Italian Recipes</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="restaurant.php">Diet</a></li> 
-													<li><a href="restaurant.php">Mini</a></li> 
-													<li><a href="restaurant.php">Regular</a></li> 
-													<li><a href="restaurant.php">Special</a></li> 
-												</ul>
-											</div> 
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
+								<li><a href="index.php" class="active">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
-								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.php">Web Icons</a></li>
-										<li><a href="codes.php">Short Codes</a></li>     
-									</ul>
-								</li>  
 								<li><a href="contact.php">Contact Us</a></li>
+								<?php
+								if(isset($_SESSION['customer'])){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
 						</div>
 						<div class="cart cart box_1"> 
@@ -128,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<input type="hidden" name="display" value="1" />
 								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 							</form>   
-						</div>
+						</div> 
 					</nav>
 				</div>
 			</div>

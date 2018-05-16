@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +67,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
-						<p>Free home delivery at your doorstep For Above $30</p>
+						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
@@ -74,7 +75,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								session_start();
 								if(!isset($_SESSION['customer'])){
 									echo '
 									<li class="head-dpdn">
