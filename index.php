@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Staple Food a Restaurants Category Bootstrap Responsive website Template | Home :: w3layouts</title>
+<title>Mint | Food Delivery Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -50,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 type: "POST",
                 data: {table : 'supplier', column : 'supplierName, address', location : location, message : 'searchRestaurant'},
                 success:function(data){
-                    window.location.replace("restaurant.php");
+                    window.location.replace("restaurant.php?selectedLocation=" + location);
                 }
             });
         });
@@ -88,7 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
+								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -116,38 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php" class="active">Home</a></li>	
-								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="location.php?menuCategory=Breakfast">Breakfast</a></li> 
-													<li><a href="location.php?menuCategory=Lunch">Lunch</a></li> 
-													<li><a href="location.php?menuCategory=Dinner">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<?php
-														if(isset($_SESSION['cuisines'])){
-															foreach($_SESSION['cuisines'] as $cuisine) {
-																echo '<li><a href="products.php?cuisineCategory=' . $cuisine['cuisineCategory'] . '">' . $cuisine['cuisineCategory'] . '</a></li>';
-															}
-														}
-													?>
-													
-												</ul>
-											</div>
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
 								<li><a href="about.php">About</a></li> 
-								 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
 								if(isset($_SESSION['customer'])){

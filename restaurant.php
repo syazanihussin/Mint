@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Delivery Platform</title>
+<title>Mint | Food Delivery Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -29,10 +29,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!-- //header-one -->    
 			<!-- navigation -->
-			<div class="navigation agiletop-nav">
+			<div style="background: rgba(253, 70, 62, 0.92);" class="navigation agiletop-nav">
 				<div class="container">
 					<nav class="navbar navbar-default">
 						<!-- Brand and toggle get grouped for better mobile display -->
@@ -134,26 +134,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
-		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
 			<li class="active">Restaurant</li>
+			<li class="active"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $_GET['selectedLocation']; ?></li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
-	<div style="padding: 4em 0;">  
-		<div class="container">
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
 			<h3 class="w3ls-title">Choose Restaurant</h3>
 			<p class="w3lsorder-text">Here are available restaurants based on your location search</p>
 			<div class="add-products-row">
