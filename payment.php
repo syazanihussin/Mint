@@ -17,8 +17,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all"/> <!-- Owl-Carousel-CSS -->
+<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -27,37 +26,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places"></script>
 
 <script>
-    $(document).ready(function(){
+	$(document).ready(function(){
 
-		
-		
-		$("#search").click(function(){
+		for(var i = 1; i<= <?php echo $_GET['no_items']; ?>; i++) {
+			
+			var menuName = '<?php echo $_GET['item_name_1']; ?>';
 
-			var location = $("#locationTextField").val();
-
-            $.ajax({
+			$.ajax({
 				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'supplier', column : 'supplierName, address', location : location, message : 'searchRestaurant'},
-                success:function(data){
-                    window.location.replace("restaurant.php?selectedLocation=" + location);
-                }
-            });
-        });
+				dataType:"json",
+				type: "POST",
+				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
+				success:function(data){
+					$("#display").text(" displaying: "+data[0]['menuPrice']);
+				}
+			});
+		}
 	});
 </script>
 </head>
- 
 <body> 
 	<!-- banner -->
-	<div class="banner">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
@@ -135,217 +130,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
-				<div class="agileits_search">
-					<input id="locationTextField" type="text" size="50">
-					<script>
-						function init() {
-							var input = document.getElementById('locationTextField');
-							var autocomplete = new google.maps.places.Autocomplete(input);
-						}
-
-						google.maps.event.addDomListener(window, 'load', init);
-					</script>
-					<input type="submit" id="search" value="Search">
-				</div> 
-			</div>
-		</div>
 	</div>
-	<!-- //banner -->   
+	<!-- //banner -->    
+	<!-- breadcrumb -->  
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Payment</li>
+		</ol>
+	</div>
+			  
 	<!-- add-products -->
-	<div class="add-products">  
-		<div class="container">
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 class="w3ls-title">Payment</h3>
+			<p id="display" class="w3lsorder-text">WTF??</p>
 			<div class="add-products-row">
-				<div class="w3ls-add-grids">
-					<a href="restaurant.php"> 
-						
-					<h3 id="inserted">Insert user</h3>
-						<h4>Get <span>20%<br>Cashback</span></h4>
-						<h5>Ordered in mobile app only </h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div>
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="restaurant.php"> 
-						<h4>GET Upto<span><br>40% Offer</span></h4>
-						<h5>Sunday special discount</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
+				<?php
+					if(isset($_SESSION['restaurant'])){
+						foreach($_SESSION['restaurant'] as $restaurant) {
+							if($restaurant != "nothing") {
+								echo '
+									<div class="w3ls-add-grids">
+										<a href="products.php?selectedRestaurant=' . $restaurant . '"> 
+											<h4 style="padding: 1em 0;"><span>' . $restaurant . '</span></h4>
+											<h5>Special Offer Today Only</h5>
+											<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+										</a>
+									</div>
+								';
+							} else {
+								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
+							}
+						}
+					}
+				?>
 				<div class="clearfix"> </div> 
 			</div>  	 
 		</div>
 	</div>
 	<!-- //add-products --> 
-	<!-- order -->   	
-	<div class="wthree-order">  
-		<img src="images/i2.jpg" class="w3order-img" alt=""/>
-		<div class="container">
-			<h3 class="w3ls-title">How To Order Online Food</h3>
-			<p class="w3lsorder-text">Get your favourite food in 4 simple steps.</p>
-			<div class="order-agileinfo">  
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-map" aria-hidden="true"></i> 
-						<h5>Search Area</h5>
-						<span>1</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-cutlery" aria-hidden="true"></i> 
-						<h5>Choose Food</h5>
-						<span>2</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-credit-card" aria-hidden="true"></i>
-						<h5>Pay Money</h5>
-						<span>3</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
-					<div class="order-w3text"> 
-						<i class="fa fa-truck" aria-hidden="true"></i>
-						<h5>Enjoy Food</h5>
-						<span>4</span>
-					</div>
-				</div>
-				<div class="clearfix"> </div> 
-			</div>
-		</div>
-	</div>
-	<!-- //order -->    
-	<!-- deals -->
-	<div class="w3agile-deals">
-		<div class="container">
-			<h3 class="w3ls-title">Special Services</h3>
-			<div class="dealsrow">
-				<div class="col-md-6 col-sm-6 deals-grids">
-					<div class="deals-left">
-						<i class="fa fa-truck" aria-hidden="true"></i>
-					</div> 
-					<div class="deals-right">
-						<h4>FREE DELIVERY</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-					</div> 
-					<div class="clearfix"> </div>
-				</div> 
-				<div class="col-md-6 col-sm-6 deals-grids">
-					<div class="deals-left">
-						<i class="fa fa-birthday-cake" aria-hidden="true"></i>
-					</div> 
-					<div class="deals-right">
-						<h4>Party Orders</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-					</div> 
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 col-sm-6 deals-grids">
-					<div class="deals-left">
-						<i class="fa fa-users" aria-hidden="true"></i>
-					</div> 
-					<div class="deals-right">
-						<h4>Team up Scheme</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div> 
-				<div class="col-md-6 col-sm-6 deals-grids">
-					<div class="deals-left">
-						<i class="fa fa-building" aria-hidden="true"></i>
-					</div> 
-					<div class="deals-right">
-						<h4>corporate orders</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div> 
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //deals --> 
-	<!-- dishes -->
-	<div class="w3agile-spldishes">
-		<div class="container">
-			<h3 class="w3ls-title">Special Foods</h3>
-			<div class="spldishes-agileinfo">
-				<div class="col-md-3 spldishes-w3left">
-					<h5 class="w3ltitle">Staple Specials</h5>
-					<p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo enim .</p>
-				</div> 
-				<div class="col-md-9 spldishes-grids">
-					<!-- Owl-Carousel -->
-					<div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a> 
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-						<a href="products.php" class="item g1">
-							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
-							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
-							</div>
-						</a>
-					</div> 
-				</div>  
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //dishes --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -371,7 +195,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
@@ -406,7 +230,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>   
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
@@ -426,38 +250,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 		</div>
 	</div>
-	<!-- //footer --> 
+	<!-- //footer -->
 	<!-- cart-js -->
 	<script src="js/minicart.js"></script>
 	<script>
         w3ls.render();
-		
-        w3ls.cart.on('', function (evt) {
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
         	var items, len, i;
-			$("#inserted").text("item: "+this.subtotal());
+
         	if (this.subtotal() > 0) {
         		items = this.items();
 
         		for (i = 0, len = items.length; i < len; i++) { 
-					$("#inserted").text("item: "+items[i]);
         		}
         	}
         });
     </script>  
 	<!-- //cart-js -->	
-	<!-- Owl-Carousel-JavaScript -->
-	<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function() {
-			$("#owl-demo").owlCarousel ({
-				items : 3,
-				lazyLoad : true,
-				autoPlay : true,
-				pagination : true,
-			});
-		});
-	</script>
-	<!-- //Owl-Carousel-JavaScript -->  
 	<!-- start-smooth-scrolling -->
 	<script src="js/SmoothScroll.min.js"></script>  
 	<script type="text/javascript" src="js/move-top.js"></script>

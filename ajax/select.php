@@ -58,3 +58,13 @@ else if($_POST['message'] == "cuisine") {
 }
 
 
+else if($_POST['message'] == "checkout") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    
+    session_start();
+    $_SESSION['order'] = $db->getResult();
+    $res = $_SESSION['order'];  
+    echo json_encode($res);
+}
+
+
