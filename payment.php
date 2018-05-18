@@ -1,307 +1,121 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<?php session_start(); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
+
 <head>
-<title>Mint | Food Delivery Platform</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- Custom Theme files -->
-<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-<link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
-<!-- //Custom Theme files --> 
-<!-- js -->
-<script src="js/jquery-2.2.3.min.js"></script>  
-<!-- //js -->
-<!-- web-fonts -->   
-<link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
-<link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
-<!-- //web-fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mint | Food Delivery Platform</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="css/cart style.css">
+	<link rel="stylesheet" href="css/payment style.css">
+  <script src="js/jquery-2.2.3.min.js"></script>
 
-<script>
-	$(document).ready(function(){
+  <script>
+    $(document).ready(function(){
 
-		for(var i = 1; i<= <?php echo $_GET['no_items']; ?>; i++) {
-			
-			var menuName = '<?php echo $_GET['item_name_1']; ?>';
+      <?php $index = 1; ?>
 
-			$.ajax({
-				url:"ajax/select.php",
-				dataType:"json",
-				type: "POST",
-				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
-				success:function(data){
-					$("#display").text(" displaying: "+data[0]['menuPrice']);
-				}
-			});
-		}
-	});
-</script>
-</head>
-<body> 
-	<!-- banner -->
-	<div style="background: none;" class="banner about-w3bnr">
-		<!-- header -->
-		<div class="header">
-			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
-				<div class="container">
-					<div class="w3ls-header-left">
-						<p>Food delivery platform | UPM</p>
-					</div>
-					<div class="w3ls-header-right">
-						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
-							<?php
-								if(!isset($_SESSION['customer'])){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> 
-									';
-								}
-							?>
-							
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
-							</li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div> 
-				</div>
-			</div>
-			<!-- //header-one -->    
-			<!-- navigation -->
-			<div class="navigation agiletop-nav">
-				<div class="container">
-					<nav class="navbar navbar-default">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header w3l_logo">
-							<button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
-						</div> 
-						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])){
-									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="logout.php">Logout</a></li>    
-										</ul>
-									</li>';
-								}
-							?>
-							</ul>
-						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div> 
-					</nav>
-				</div>
-			</div>
-			<!-- //navigation --> 
-		</div>
-	</div>
-	<!-- //banner -->    
-	<!-- breadcrumb -->  
-	<div style="padding: 2em 0;" class="container">	
-		<ol style="background: none;" class="breadcrumb w3l-crumbs">
-			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Payment</li>
-		</ol>
-	</div>
-			  
-	<!-- add-products -->
-	<div>  
-		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Payment</h3>
-			<p id="display" class="w3lsorder-text">WTF??</p>
-			<div class="add-products-row">
-				<?php
-					if(isset($_SESSION['restaurant'])){
-						foreach($_SESSION['restaurant'] as $restaurant) {
-							if($restaurant != "nothing") {
-								echo '
-									<div class="w3ls-add-grids">
-										<a href="products.php?selectedRestaurant=' . $restaurant . '"> 
-											<h4 style="padding: 1em 0;"><span>' . $restaurant . '</span></h4>
-											<h5>Special Offer Today Only</h5>
-											<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-										</a>
-									</div>
-								';
-							} else {
-								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
-							}
-						}
-					}
-				?>
-				<div class="clearfix"> </div> 
-			</div>  	 
-		</div>
-	</div>
-	<!-- //add-products --> 
-	<!-- subscribe -->
-	<div class="subscribe agileits-w3layouts"> 
-		<div class="container">
-			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
-				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
-					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
-			</div> 
-			<div class="col-md-6 subscribe-right">
-				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
-				<form action="#" method="post"> 
-					<input type="email" name="email" placeholder="Enter your Email..." required="">
-					<input type="submit" value="Subscribe">
-					<div class="clearfix"> </div> 
-				</form> 
-				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
-			</div>
-			<div class="clearfix"> </div> 
-		</div>
-	</div>
-	<!-- //subscribe --> 
-	<!-- footer -->
-	<div class="footer agileits-w3layouts">
-		<div class="container">
-			<div class="w3_footer_grids">
-				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
-					<h3>company</h3>
-					<ul>
-						<li><a href="about.php">About Us</a></li>
-						<li><a href="contact.php">Contact Us</a></li>  
-						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
-					</ul>
-				</div> 
-				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
-					<h3>help</h3>
-					<ul>
-						<li><a href="faq.php">FAQ</a></li> 
-						<li><a href="login.php">Returns</a></li>   
-						<li><a href="login.php">Order Status</a></li> 
-						<li><a href="offers.php">Offers</a></li> 
-					</ul>  
-				</div>
-				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
-					<h3>policy info</h3>
-					<ul>  
-						<li><a href="terms.php">Terms & Conditions</a></li>  
-						<li><a href="privacy.php">Privacy Policy</a></li>
-						<li><a href="login.php">Return Policy</a></li> 
-					</ul>      
-				</div>
-				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
-					<h3>Menu</h3> 
-					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
-						<li><a href="restaurant.php">Lunch</a></li>
-						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
-					</ul>  
-				</div> 
-				<div class="clearfix"> </div>
-			</div>
-		</div> 
-	</div>
-	<div class="copyw3-agile"> 
-		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-		</div>
-	</div>
-	<!-- //footer -->
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-        w3ls.render();
+      for(var i = 1; i<= <?php echo $_GET['no_items']; ?>; i++) {
+        
+        <?php 
+          $name = 'item_name_' . $index;
+          $quan = 'quantity_' . $index;
+          $index++;
+        ?> 
 
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-        	var items, len, i;
+        var menuName = '<?php echo $_GET[$name]; ?>';
+        var quanti = '<?php echo $_GET[$quan]; ?>';
 
-        	if (this.subtotal() > 0) {
-        		items = this.items();
-
-        		for (i = 0, len = items.length; i < len; i++) { 
-        		}
-        	}
+        $.ajax({
+          url:"ajax/select.php",
+          dataType:"json",
+          type: "POST",
+          data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
+          success:function(data){
+            $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ quanti +'</span></li>')
+          }
         });
-    </script>  
-	<!-- //cart-js -->	
-	<!-- start-smooth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>  
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>	
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-			
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-	</script>
-	<!-- //end-smooth-scrolling -->	  
-	<!-- smooth-scrolling-of-move-up -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			
-			$().UItoTop({ easingType: 'easeOutQuart' });
-			
-		});
-	</script>
-	<!-- //smooth-scrolling-of-move-up --> 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="modal" style="padding: 3em 0 0 0em;">
+    <div class="modal__container" style="margin-top: 2em;">
+      <div class="modal__featured">
+        <button type="button" class="button--transparent button--close">
+          <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
+            <g><path fill="#ffffff" d="M1.293,15.293L11,5.586L12.414,7l-8,8H31v2H4.414l8,8L11,26.414l-9.707-9.707 C0.902,16.316,0.902,15.684,1.293,15.293z"></path> </g></svg>
+          <span class="visuallyhidden">Return to Product Page</span>
+        </button>
+        <div class="modal__circle"></div>
+        <img src="https://cloud.githubusercontent.com/assets/3484527/19622568/9c972d44-987a-11e6-9dcc-93d496ef408f.png" class="modal__product" />
+      </div>
+      <div class="modal__content">
+        <h2 style="font-size: 1.5em; padding: 0 0 1em 0;">Your payment details</h2>
+
+        <form>
+          <ul class="form-list">
+            <li class="form-list__row">
+              <label>Name</label>
+              <input type="text" name="" required="" />
+            </li>
+            <li class="form-list__row">
+              <label>Card Number</label>
+              <div id="input--cc" class="creditcard-icon">
+                <input type="text" name="cc_number" required="" />
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label>Expiration Date</label>
+                <div class="form-list__input-inline">
+                  <input type="text" name="cc_month" placeholder="MM"  pattern="\\d*" minlength="2" maxlength="2" required="" />
+                  <input type="text" name="cc_year" placeholder="YY"  pattern="\\d*" minlength="2" maxlength="2" required="" />
+                </div>
+              </div>
+              <div>
+                <label>
+                  CVC
+
+                  <a href="#cvv-modal" class="button--transparent modal-open button--info">
+                    <svg class="nc-icon glyph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16"><g> <path fill="#35a4fb" d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,13c-0.6,0-1-0.4-1-1c0-0.6,0.4-1,1-1s1,0.4,1,1 C9,12.6,8.6,13,8,13z M9.5,8.4C9,8.7,9,8.8,9,9v1H7V9c0-1.3,0.8-1.9,1.4-2.3C8.9,6.4,9,6.3,9,6c0-0.6-0.4-1-1-1 C7.6,5,7.3,5.2,7.1,5.5L6.6,6.4l-1.7-1l0.5-0.9C5.9,3.6,6.9,3,8,3c1.7,0,3,1.3,3,3C11,7.4,10.1,8,9.5,8.4z"></path> </g></svg>
+                    <span class="visuallyhidden">What is CVV?</span>
+                  </a>
+                </label>
+                <input type="text" name="cc_cvc" placeholder="123" pattern="\\d*" minlength="3" maxlength="4" required="" />
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--agree">
+              <label>
+                <input type="checkbox" name="save_cc" checked="checked">
+                Save my card for future purchases
+              </label>
+            </li>
+            <li>
+              <button type="submit" class="button">Pay Now</button>
+            </li>
+          </ul>
+        </form>
+      </div> <!-- END: .modal__content -->
+    </div> <!-- END: .modal__container -->
+	<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-left: 5em; margin-top: -7em;">
+    <div class="shopping-cart-header">
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+      <div class="shopping-cart-total">
+        <span class="lighter-text">Total:</span>
+        <span class="main-color-text">$2,229.97</span>
+      </div>
+    </div> <!--end shopping-cart-header -->
+
+    <ul id="purchases" class="shopping-cart-items"></ul>
+
+    <a href="#" class="button">Checkout</a>
+  </div> <!--end shopping-cart -->
+  </div> <!-- END: .modal -->
 </body>
+
 </html>
