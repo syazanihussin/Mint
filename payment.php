@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -15,29 +16,39 @@
   <script>
     $(document).ready(function(){
 
-      <?php $index = 1; ?>
+      <?php 
+        $allquantity = 0;
 
-      for(var i = 1; i<= <?php echo $_GET['no_items']; ?>; i++) {
-        
-        <?php 
-          $name = 'item_name_' . $index;
-          $quan = 'quantity_' . $index;
-          $index++;
-        ?> 
+        for($i = 1; $i <= $_GET['no_items']; $i++) {
+  
+          $name = 'item_name_' . $i;
+          $quan = 'quantity_' . $i;
+          $allquantity += $_GET[$quan];
+      ?> 
 
-        var menuName = '<?php echo $_GET[$name]; ?>';
-        var quanti = '<?php echo $_GET[$quan]; ?>';
+          var menuName = '<?php echo $_GET[$name]; ?>';
+          var subtotal = 0; 
+          var total = 0;
 
-        $.ajax({
-          url:"ajax/select.php",
-          dataType:"json",
-          type: "POST",
-          data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
-          success:function(data){
-            $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ quanti +'</span></li>')
-          }
-        });
-      }
+          $.ajax({
+            url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
+            success:function(data){
+              $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ <?php echo $_GET[$quan];?> + '</span></li>');
+              
+              subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
+              $("#sub").text("RM"+subtotal);
+
+              total = subtotal + 5; 
+              $("#tot").text("Total: RM"+total);
+            }
+          });
+
+      <?php 
+        }
+      ?>
     });
   </script>
 </head>
@@ -90,10 +101,7 @@
               </div>
             </li>
             <li class="form-list__row form-list__row--agree">
-              <label>
-                <input type="checkbox" name="save_cc" checked="checked">
-                Save my card for future purchases
-              </label>
+              <a href="delivery.php">Pay Later</a>
             </li>
             <li>
               <button type="submit" class="button">Pay Now</button>
@@ -104,16 +112,29 @@
     </div> <!-- END: .modal__container -->
 	<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-left: 5em; margin-top: -7em;">
     <div class="shopping-cart-header">
-      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+      <i class="fa fa-shopping-cart cart-icon"></i><span class="badge"><?php echo $allquantity; ?></span>
       <div class="shopping-cart-total">
-        <span class="lighter-text">Total:</span>
-        <span class="main-color-text">$2,229.97</span>
+        <span id="tot" class="lighter-text"></span>
+        <span class="main-color-text"></span>
       </div>
     </div> <!--end shopping-cart-header -->
 
     <ul id="purchases" class="shopping-cart-items"></ul>
-
-    <a href="#" class="button">Checkout</a>
+    <ul class="shopping-cart-items">
+      <li class="clearfix">
+        <span class="item-name">Delivery to</span>
+        <span class="item-price">IOI City Mall, Ioi Resort, Putrajaya</span>
+      </li>
+    </ul>
+    <ul class="shopping-cart-items">
+      <li class="clearfix">
+      <span class="item-name">Amount to pay</span>
+        <span class="item-price">Subtotal: </span>
+        <span id="sub" class="item-quantity"></span></br>
+        <span class="item-price">Delivery Charge: </span>
+        <span class="item-quantity">RM5.00</span>
+      </li>
+    </ul>
   </div> <!--end shopping-cart -->
   </div> <!-- END: .modal -->
 </body>
