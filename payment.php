@@ -39,10 +39,10 @@
               $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ <?php echo $_GET[$quan];?> + '</span></li>');
               
               subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
-              $("#sub").text("RM"+subtotal);
+              $("#sub").text("RM"+parseFloat(Math.round(subtotal * 100) / 100).toFixed(2));
 
               total = subtotal + 5; 
-              $("#tot").text("Total: RM"+total);
+              $("#tot").text("Total: RM"+ parseFloat(Math.round(total * 100) / 100).toFixed(2));
             }
           });
 
@@ -68,7 +68,6 @@
       <div class="modal__content">
         <h2 style="font-size: 1.5em; padding: 0 0 1em 0;">Your payment details</h2>
 
-        <form>
           <ul class="form-list">
             <li class="form-list__row">
               <label>Name</label>
@@ -100,14 +99,10 @@
                 <input type="text" name="cc_cvc" placeholder="123" pattern="\\d*" minlength="3" maxlength="4" required="" />
               </div>
             </li>
-            <li class="form-list__row form-list__row--agree">
-              <a href="delivery.php">Pay Later</a>
-            </li>
             <li>
-              <button type="submit" class="button">Pay Now</button>
+              <button class="button">Pay Now</button><button style="margin-left: 4em;" class="button">Pay Later</button>
             </li>
           </ul>
-        </form>
       </div> <!-- END: .modal__content -->
     </div> <!-- END: .modal__container -->
 	<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-left: 5em; margin-top: -7em;">
@@ -123,7 +118,7 @@
     <ul class="shopping-cart-items">
       <li class="clearfix">
         <span class="item-name">Delivery to</span>
-        <span class="item-price">IOI City Mall, Ioi Resort, Putrajaya</span>
+        <span class="item-price"><?php echo $_GET['deliveryTo']; ?></span>
       </li>
     </ul>
     <ul class="shopping-cart-items">

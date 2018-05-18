@@ -1903,7 +1903,7 @@ var defaults = module.exports = {
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
-    action: './payment.php',
+    action: './destination.php',
 
     target: '',
 
