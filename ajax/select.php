@@ -67,4 +67,13 @@ else if($_POST['message'] == "checkout") {
     echo json_encode($res);
 }
 
+else if($_POST['message'] == "delivery") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    
+    session_start();
+    $_SESSION['order'] = $db->getResult();
+    $res = $_SESSION['order'];  
+    echo json_encode($res);
+}
+
 

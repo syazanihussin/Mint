@@ -49,6 +49,14 @@
       <?php 
         }
       ?>
+
+      
+      $("#paylater").click(function(){
+        var url = "" + window.location.href;
+		    var res = url.split("?");
+        var dest = "delivery.php?" + res[1];
+        window.location.replace(dest);
+      });
     });
   </script>
 </head>
@@ -100,7 +108,7 @@
               </div>
             </li>
             <li>
-              <button class="button">Pay Now</button><button style="margin-left: 4em;" class="button">Pay Later</button>
+              <button id="paynow" class="button">Pay Now</button><button id="paylater" style="margin-left: 4em;" class="button">Pay Later</button>
             </li>
           </ul>
       </div> <!-- END: .modal__content -->
