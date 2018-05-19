@@ -38,20 +38,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 type: "POST",
                 data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
                 success:function(data){
-					if(data[0]['username']) {
-						window.location.replace("index.php");
-					}
-
-					else {
+					if(data[0] === undefined) {
 						$.ajax({
 							url:"ajax/select.php",
 							dataType:"json",
 							type: "POST",
-							data: {table : 'delivery_person', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
+							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
 							success:function(data){
-								window.location.replace("driverHome.php");
+								if(data[0] === undefined) {
+									alert("Wrong username or password");
+								} else {
+									window.location.replace("driverHome.php");
+								}
 							}
-            			});
+						});
+					} else {
+						window.location.replace("index.php");
 					}
                 }
             });

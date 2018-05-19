@@ -49,14 +49,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> 
+									</li> <li class="head-dpdn">
+								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+							</li> 
 									';
 								}
 							?>
 							
-							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
+							
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
