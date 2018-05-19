@@ -17,7 +17,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/cart style 2.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -26,6 +27,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+
 </head>
 <body> 
 	<!-- banner -->
@@ -56,9 +58,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									';
 								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+									
 							?>
-							
-							
 							<li class="head-dpdn">
 								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -88,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="aboutDriver.php">About</a></li> 
 								<li><a href="contactDriver.php">Contact Us</a></li>
 								<?php 
-								if(isset($_SESSION['driver'])){
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
@@ -117,22 +130,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Request List</h3>
+			<h3 style="margin-top: -1em;" class="w3ls-title">Request List</h3>
 			<p class="w3lsorder-text"></p>
 			<div class="add-products-row">
+				<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-top: -2em;">
+					<div class="shopping-cart-header">
+						<i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+						<div class="shopping-cart-total">
+							<span id="tot" class="lighter-text">Total: RM80.20</span>
+							<span class="main-color-text"></span>
+						</div>
+					</div> <!--end shopping-cart-header -->
+
+					<ul id="purchases" class="shopping-cart-items">
+						<li class="clearfix"><img src="images/g5.jpg" alt="item1" width="50" height="50" /><span class="item-name">Fish & Chip</span><span class="item-price">RM15.20</span><span class="item-quantity">Quantity: 3</span></li>
+					</ul>
+					<ul class="shopping-cart-items">
+						<li class="clearfix">
+							<span class="item-name">Delivery to</span>
+							<span class="item-price">Banting, Selangor</span>
+						</li>
+					</ul>
+					<ul class="shopping-cart-items">
+						<li style="margin-bottom: 4em;" class="clearfix">
+							<span class="item-name">Amount to pay</span>
+							<span class="item-price">Subtotal: </span>
+							<span id="sub" class="item-quantity"></span></br>
+							<span class="item-price">Delivery Charge: </span>
+							<span class="item-quantity">RM5.00</span>
+						</li>
+					</ul>
+					<a href="#" style="width: 100%" class="button">Accept Request</a>
+				</div> 
 				<?php
 					if(isset($_SESSION['restaurant'])){
 						foreach($_SESSION['restaurant'] as $restaurant) {
 							if($restaurant != "nothing") {
-								echo '
-									<div class="w3ls-add-grids">
-										<a href="products.php?selectedRestaurant=' . $restaurant . '"> 
-											<h4 style="padding: 1em 0;"><span>' . $restaurant . '</span></h4>
-											<h5>Special Offer Today Only</h5>
-											<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-										</a>
-									</div>
-								';
+								
 							} else {
 								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
 							}

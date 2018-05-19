@@ -56,6 +56,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									';
 								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
 									
 							?>
 							
@@ -89,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="aboutDriver.php">About</a></li> 
 								<li><a href="contactDriver.php" class="active">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['driver'])){
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">

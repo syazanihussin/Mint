@@ -67,8 +67,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 									</li> <li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 							?>
@@ -103,7 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])){
+								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
@@ -115,7 +128,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</ul>
 						</div>
 						<?php
-							if(isset($_SESSION['customer'])){
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 								echo '
 								<div class="cart cart box_1"> 
 									<form action="#" method="post" class="last"> 
@@ -201,7 +214,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 															<input type="hidden" name="add" value="1"> 
 															<input type="hidden" name="w3ls_item" value="' . $menu['menuName'] . '"> 
 															<input type="hidden" name="amount" value="' . $menu['menuPrice'] . '"> ';
-															if(isset($_SESSION['customer'])){
+															if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 																echo '
 																	<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 																';
@@ -234,7 +247,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 																<input type="hidden" name="add" value="1"> 
 																<input type="hidden" name="w3ls_item" value="' . $menu['menuName'] . '"> 
 																<input type="hidden" name="amount" value="' . $menu['menuPrice'] . '"> ';
-																if(isset($_SESSION['customer'])){
+																if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 																	echo '
 																		<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 																	';

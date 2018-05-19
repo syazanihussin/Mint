@@ -70,7 +70,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									
 									';
 								}
 							?>
