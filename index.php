@@ -81,7 +81,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -169,7 +169,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="w3ls-add-grids">
 					<a href="restaurant.php"> 
 						
-					<h3 id="inserted">Insert user</h3>
 						<h4>Get <span>20%<br>Cashback</span></h4>
 						<h5>Ordered in mobile app only </h5>
 						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>

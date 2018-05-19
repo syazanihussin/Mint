@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,36 +26,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-		<script>
-			$(document).ready(function(){
- 				$("#signup").click(function(){
-
-                    var userName = $("#username").val();
-                    var password = $("#password").val();
-                    var email = $("#email").val();
-					var phoneNo = $("#phone").val();
-                    
-					$.ajax({
-                        url:"ajax/insert.php",
-                        dataType:"json",
-                        type: "POST",
-                        data: {table : 'customer', column : 'username, password, phoneNo, email', inserting : '"'+userName+'","'+password+'","'+phoneNo+'","'+email+'"', session : userName, message : 'signup'},
-        			    success:function(data){
-                            window.location.replace("index.php");
-                        }
-                    });
-                });
-			});
-        </script>
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
@@ -63,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -71,15 +51,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
 									';
 								}
 							?>
 							
+							
 							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -99,17 +80,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])){
+								<li><a href="driverHome.php" class="active">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
+								<?php 
+								if(isset($_SESSION['driver'])){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -118,58 +99,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
-		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Sign Up</li>
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Request</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- sign up-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
-			<div class="login-agileinfo"> 
-				
-					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Username" required="">
-					<input class="agile-ltext" id="email" type="email" name="Your Email" placeholder="Your Email" required="">
-					<input class="agile-ltext" id="phone" type="text" name="Your Phone No" placeholder="Your Phone No" required="">
-					<input class="agile-ltext" id="password" type="password" name="password" placeholder="Password" required="">
-					<input class="agile-ltext"  id="confirmpassword" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" id="agree" name="checkbox"><i></i> 
-									<span> I agree to the terms of service</span> 
-								</label> 
-							</li> 
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" class="sub" id="signup" value="SIGN UP">
-				
-				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
-			</div>	 
+			  
+	<!-- add-products -->
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 class="w3ls-title">Request List</h3>
+			<p class="w3lsorder-text"></p>
+			<div class="add-products-row">
+				<?php
+					if(isset($_SESSION['restaurant'])){
+						foreach($_SESSION['restaurant'] as $restaurant) {
+							if($restaurant != "nothing") {
+								echo '
+									<div class="w3ls-add-grids">
+										<a href="products.php?selectedRestaurant=' . $restaurant . '"> 
+											<h4 style="padding: 1em 0;"><span>' . $restaurant . '</span></h4>
+											<h5>Special Offer Today Only</h5>
+											<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
+										</a>
+									</div>
+								';
+							} else {
+								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
+							}
+						}
+					}
+				?>
+				<div class="clearfix"> </div> 
+			</div>  	 
 		</div>
 	</div>
-	<!-- //sign up-page -->  
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -230,7 +204,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>    
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 

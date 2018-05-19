@@ -38,7 +38,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 type: "POST",
                 data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
                 success:function(data){
-                    window.location.replace("index.php");
+					if(data[0]['username']) {
+						window.location.replace("index.php");
+					}
+
+					else {
+						$.ajax({
+							url:"ajax/select.php",
+							dataType:"json",
+							type: "POST",
+							data: {table : 'delivery_person', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
+							success:function(data){
+								window.location.replace("driverHome.php");
+							}
+            			});
+					}
                 }
             });
         });
@@ -75,7 +89,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>

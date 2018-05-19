@@ -30,10 +30,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	.d {
 	width: 200px;
 	height: 200px;
-	top: 50%;
-	left: 50%;
 	transform: translate(-50%, -50%);
-	margin: auto;
+	justify-content: center;
+	margin: 15em;
 	filter: url('#goo');
 	animation: rotate-move 2s ease-in-out infinite;
 	}
@@ -243,12 +242,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  
 	<!-- add-products -->
 	<div>  
-		<div style="padding: 0 0 4em 0;" class="container">
+		<div class="container">
 			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
-			<div class="add-products-row">
 			<?php
 				if(!isset($_SESSION['delivery'])){
-					echo 
+					 
 					'<div style="padding: 4em;" class="d">
 						<div class="dot dot-1"></div>
 						<div class="dot dot-2"></div>
@@ -264,8 +262,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</defs>
 					</svg>';	
 				}
+
+				else {
+					
+				}
 			?>
-			</div>
 			<div class="clearfix"> </div> 	 
 		</div>
 	</div>

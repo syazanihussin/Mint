@@ -33,15 +33,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     var password = $("#password").val();
                     var email = $("#email").val();
 					var phoneNo = $("#phone").val();
+					var transportType = $("#transportType").val();
+					var platNo = $("#platNo").val();
                     
 					$.ajax({
                         url:"ajax/insert.php",
                         dataType:"json",
                         type: "POST",
-                        data: {table : 'customer', column : 'username, password, phoneNo, email', inserting : '"'+userName+'","'+password+'","'+phoneNo+'","'+email+'"', session : userName, message : 'signup'},
+                        data: {table : 'delivery_person', column : 'username, password, email, phoneNo, transportType, platNo', inserting : '"'+userName+'","'+password+'","'+email+'","'+phoneNo+'","'+transportType+'","'+platNo+'"', session : userName, message : 'register'},
         			    success:function(data){
-                            window.location.replace("index.php");
-                        }
+                            window.location.replace("driverHome.php");
+						}
                     });
                 });
 			});
@@ -137,7 +139,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Sign Up</li>
+			<li class="active">Register</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
@@ -145,14 +147,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="login-page about">
 		<img class="login-w3img" src="images/img3.jpg" alt="">
 		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
+			<h3 class="w3ls-title w3ls-title1">Register as One of Our Delivery Team</h3> 
 			<div class="login-agileinfo"> 
 				
-					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Username" required="">
+					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Your Username" required="">
 					<input class="agile-ltext" id="email" type="email" name="Your Email" placeholder="Your Email" required="">
 					<input class="agile-ltext" id="phone" type="text" name="Your Phone No" placeholder="Your Phone No" required="">
-					<input class="agile-ltext" id="password" type="password" name="password" placeholder="Password" required="">
-					<input class="agile-ltext"  id="confirmpassword" type="password" name="Confirm Password" placeholder="Confirm Password" required="">
+					<input class="agile-ltext" id="password" type="password" name="password" placeholder="Your Password" required="">
+					<input class="agile-ltext"  id="transportType" type="text" name="Confirm Password" placeholder="Your Transport Type" required="">
+					<span>Eg: Honda City</span> 
+					<input class="agile-ltext"  id="platNo" type="text" name="Confirm Password" placeholder="Your Plat No" required="">
 					<div class="wthreelogin-text"> 
 						<ul> 
 							<li>
@@ -163,7 +167,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<input type="submit" class="sub" id="signup" value="SIGN UP">
+					<input type="submit" class="sub" id="signup" value="REGISTER NOW">
 				
 				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 

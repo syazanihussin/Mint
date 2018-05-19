@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<script>
 						function initAutocomplete() {
 							var map = new google.maps.Map(document.getElementById('map'), {
-							center: {lat: -33.8688, lng: 151.2195},
+							center: {lat: 2.999695, lng: 101.710688},
 							zoom: 13,
 							});
 
