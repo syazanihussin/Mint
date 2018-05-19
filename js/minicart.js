@@ -1701,7 +1701,7 @@ Cart.prototype.add = function add(data) {
             delete data[key];
         }
     }
-
+ 
     // Look to see if the same product has already been added
     for (i = 0, len = items.length; i < len; i++) {
         if (items[i].isEqual(data)) {

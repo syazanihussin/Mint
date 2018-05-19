@@ -115,7 +115,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           $allquantity += $_GET[$quan];
       ?> 
 
-          var menuName = '<?php echo $_GET[$name]; ?>';
+		  var menuName = '<?php echo $_GET[$name]; ?>';
+		  var menuName = '<?php echo $_GET[$name]; ?>';
           var subtotal = 0; 
           var total = 0;
 
@@ -123,7 +124,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             url:"ajax/select.php",
             dataType:"json",
             type: "POST",
-            data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
+            data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', where2 : 'menuName="'+menuName+'"', message : 'delivery'},
             success:function(data){
               $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ <?php echo $_GET[$quan];?> + '</span></li>');
               

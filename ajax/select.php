@@ -76,10 +76,12 @@ else if($_POST['message'] == "checkout") {
 }
 
 else if($_POST['message'] == "delivery") {
-    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    $result = $db->getResult();
     
+    $db->insert('order', '',$_POST['inserting']);
     session_start();
-    $_SESSION['order'] = $db->getResult();
+    $_SESSION['order'] = 
     $res = $_SESSION['order'];  
     echo json_encode($res);
 }
