@@ -26,128 +26,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<style> 
-	.d {
-	width: 200px;
-	height: 200px;
-	transform: translate(-50%, -50%);
-	justify-content: center;
-	margin: 15em;
-	filter: url('#goo');
-	animation: rotate-move 2s ease-in-out infinite;
-	}
-
-	.dot { 
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	background-color: #000;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	}
-
-	.dot-3 {
-	background-color: #f74d75;
-	animation: dot-3-move 2s ease infinite, index 6s ease infinite;
-	}
-
-	.dot-2 {
-	background-color: #10beae;
-	animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
-	}
-
-	.dot-1 {
-	background-color: #ffe386;
-	animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
-	}
-
-	@keyframes dot-3-move {
-	20% {transform: scale(1)}
-	45% {transform: translateY(-18px) scale(.45)}
-	60% {transform: translateY(-90px) scale(.45)}
-	80% {transform: translateY(-90px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
-
-	@keyframes dot-2-move {
-	20% {transform: scale(1)}
-	45% {transform: translate(-16px, 12px) scale(.45)}
-	60% {transform: translate(-80px, 60px) scale(.45)}
-	80% {transform: translate(-80px, 60px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
- 
-	@keyframes dot-1-move {
-	20% {transform: scale(1)}
-	45% {transform: translate(16px, 12px) scale(.45)}
-	60% {transform: translate(80px, 60px) scale(.45)}
-	80% {transform: translate(80px, 60px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
-
-	@keyframes rotate-move {
-	55% {transform: translate(-50%, -50%) rotate(0deg)}
-	80% {transform: translate(-50%, -50%) rotate(360deg)}
-	100% {transform: translate(-50%, -50%) rotate(360deg)}
-	}
-
-	@keyframes index {
-	0%, 100% {z-index: 3}
-	33.3% {z-index: 2}
-	66.6% {z-index: 1}
-	}
-</style>
-
-  <script>
-    $(document).ready(function(){
-
-		<?php 
+<script>
+	$(document).ready(function(){
 		
-		include('class/mysql_crud.php');
-		$db = new Database();
-		$db->connect();
-		$db->insert('orders','customerName, deliveryTo','"'.$_SESSION['customer'][0]['username'].'","'.$_GET['deliveryTo'].'"');
-		$res = $db->getResult();  
+		var url = "" + window.location.href;
+		var res = url.split("?");
+		
+		$("#locating").click(function(){
+			var delivery_destination = $("#pac-input").val();
+			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
+			window.location.replace(dest);
+		});
+	});
+</script>
 
-		$allquantity = 0;
-
-		for($i = 1; $i <= $_GET['no_items']; $i++) {
-	
-			$name = 'item_name_' . $i;
-			$quan = 'quantity_' . $i;
-			$allquantity += $_GET[$quan];
-      	?> 
-
-		  	var menuName = '<?php echo $_GET[$name]; ?>';
-          	var subtotal = 0; 
-          	var total = 0;
-			
-			$.ajax({
-				url:"ajax/select.php",
-				dataType:"json",
-				type: "POST",
-				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'delivery'},
-				success:function(data){
-					$.ajax({
-						url:"ajax/insert.php",
-						dataType:"json",
-						type: "POST",
-						data: {table : 'order_menu', column : 'orderID, menuID, quantity', inserting : ''+<?php echo $res[0]; ?>+' , '+data[0]['menuID']+','+<?php echo $_GET[$quan]; ?>+'', message : 'ordering'},
-						success:function(data){
-						}
-					});
-				}
-			});
-
-		<?php 
-		}
-		?>
-    });
-  </script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      
+    </style>
 </head>
 <body> 
 	<!-- banner -->
@@ -233,19 +133,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<?php
-							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
-								echo '
-								<div class="cart cart box_1"> 
-									<form action="#" method="post" class="last"> 
-										<input type="hidden" name="cmd" value="_cart" />
-										<input type="hidden" name="display" value="1" />
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-									</form>   
-								</div> 
-								';
-							}
-						?> 
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div> 
 					</nav>
 				</div>
 			</div>
@@ -257,40 +151,90 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Delivery</li>
+			<li class="active">Destination</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
-		<div class="container">
-			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
-			<p id="sub">Huhu</p>
-			<p id="tot">haha</p>
-			<?php
-				if(!isset($_SESSION['delivery'])){
-					 
-					'<div style="padding: 4em;" class="d">
-						<div class="dot dot-1"></div>
-						<div class="dot dot-2"></div>
-						<div class="dot dot-3"></div>
-					</div>
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 class="w3ls-title">Choose Your Delivery Destination</h3>
+			<div id="map" style="margin-top: 3em; width: 100%; height: 30em;"></div>
+				<div class="agileits_search">
+					<input id="pac-input" type="text" size="50" placeholder="Enter Your Delivery Destination">
+					<input type="submit" id="locating" value="Confirm Destination">
+					<script>
+						function initAutocomplete() {
+							var map = new google.maps.Map(document.getElementById('map'), {
+							center: {lat: 2.999695, lng: 101.710688},
+							zoom: 13,
+							});
 
-					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-						<defs>
-							<filter id="goo">
-							<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-							<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-							</filter>
-						</defs>
-					</svg>';	
-				}
+							// Create the search box and link it to the UI element.
+							var input = document.getElementById('pac-input');
+							var input2 = document.getElementById('locating');
+							var searchBox = new google.maps.places.SearchBox(input);
+							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
 
-				else {
+							// Bias the SearchBox results towards current map's viewport.
+							map.addListener('bounds_changed', function() {
+							searchBox.setBounds(map.getBounds());
+							});
 
-				}
-			?>
-			<div class="clearfix"> </div> 	 
+							var markers = [];
+							// Listen for the event fired when the user selects a prediction and retrieve
+							// more details for that place.
+							searchBox.addListener('places_changed', function() {
+							var places = searchBox.getPlaces();
+
+							if (places.length == 0) {
+								return;
+							}
+
+							// Clear out the old markers.
+							markers.forEach(function(marker) {
+								marker.setMap(null);
+							});
+							markers = [];
+
+							// For each place, get the icon, name and location.
+							var bounds = new google.maps.LatLngBounds();
+							places.forEach(function(place) {
+								if (!place.geometry) {
+								console.log("Returned place contains no geometry");
+								return;
+								}
+								var icon = {
+								url: place.icon,
+								size: new google.maps.Size(71, 71),
+								origin: new google.maps.Point(0, 0),
+								anchor: new google.maps.Point(17, 34),
+								scaledSize: new google.maps.Size(25, 25)
+								};
+
+								// Create a marker for each place.
+								markers.push(new google.maps.Marker({
+								map: map,
+								icon: icon,
+								title: place.name,
+								position: place.geometry.location
+								}));
+
+								if (place.geometry.viewport) {
+								// Only geocodes have viewport.
+								bounds.union(place.geometry.viewport);
+								} else {
+								bounds.extend(place.geometry.location);
+								}
+							});
+							map.fitBounds(bounds);
+							});
+						}
+					</script>
+				</div> 
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initAutocomplete" async defer></script>
+				<div class="clearfix"> </div>  	 
 		</div>
 	</div>
 	<!-- //add-products --> 

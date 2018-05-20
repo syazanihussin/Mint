@@ -23,3 +23,8 @@ else if($_POST['message'] == "register") {
     $res = $_SESSION['driver']; 
     echo json_encode($res);
 }
+
+else if($_POST['message'] == "ordering") {
+    $res = $db->getResult();  
+    echo json_encode($res);
+}
