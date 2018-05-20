@@ -68,7 +68,6 @@ else if($_POST['message'] == "cuisine") {
 
 else if($_POST['message'] == "checkout") {
     $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
-    
     session_start();
     $_SESSION['order'] = $db->getResult();
     $res = $_SESSION['order'];  
@@ -77,12 +76,16 @@ else if($_POST['message'] == "checkout") {
 
 else if($_POST['message'] == "delivery") {
     $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
-    $result = $db->getResult();
-    
-    $db->insert('order', '',$_POST['inserting']);
+    $res = $db->getResult();
+    echo json_encode($res); //echo array of data, return data in array
+}
+
+
+else if($_POST['message'] == "available") {
+    $db->select($_POST['table'], $_POST['column']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();
-    $_SESSION['order'] = 
-    $res = $_SESSION['order'];  
+    $_SESSION['available'] = $db->getResult();
+    $res = $_SESSION['available'];  
     echo json_encode($res);
 }
 

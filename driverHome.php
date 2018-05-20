@@ -27,7 +27,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+<script>
+	$(document).ready(function(){
+		$.ajax({
+            url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+        	success:function(data){
+            }
+        });
 
+ 		$("#refresh").click(function(){
+			$.ajax({
+                url:"ajax/select.php",
+                dataType:"json",
+                type: "POST",
+                data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+        		success:function(data){
+					window.location.replace('driverHome.php');
+                }
+            });
+    	});
+	});
+</script>
 </head>
 <body> 
 	<!-- banner -->
@@ -131,50 +154,84 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
 			<h3 style="margin-top: -1em;" class="w3ls-title">Request List</h3>
-			<p class="w3lsorder-text"></p>
-			<div class="add-products-row">
-				<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-top: -2em;">
-					<div class="shopping-cart-header">
-						<i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
-						<div class="shopping-cart-total">
-							<span id="tot" class="lighter-text">Total: RM80.20</span>
-							<span class="main-color-text"></span>
-						</div>
-					</div> <!--end shopping-cart-header -->
-
-					<ul id="purchases" class="shopping-cart-items">
-						<li class="clearfix"><img src="images/g5.jpg" alt="item1" width="50" height="50" /><span class="item-name">Fish & Chip</span><span class="item-price">RM15.20</span><span class="item-quantity">Quantity: 3</span></li>
-					</ul>
-					<ul class="shopping-cart-items">
-						<li class="clearfix">
-							<span class="item-name">Delivery to</span>
-							<span class="item-price">Banting, Selangor</span>
-						</li>
-					</ul>
-					<ul class="shopping-cart-items">
-						<li style="margin-bottom: 4em;" class="clearfix">
-							<span class="item-name">Amount to pay</span>
-							<span class="item-price">Subtotal: </span>
-							<span id="sub" class="item-quantity"></span></br>
-							<span class="item-price">Delivery Charge: </span>
-							<span class="item-quantity">RM5.00</span>
-						</li>
-					</ul>
-					<a href="#" style="width: 100%" class="button">Accept Request</a>
-				</div> 
+			<p class="w3lsorder-text">
 				<?php
-					if(isset($_SESSION['restaurant'])){
-						foreach($_SESSION['restaurant'] as $restaurant) {
-							if($restaurant != "nothing") {
+					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+						echo '
+						<a href="#" id="refresh" style="float: right; margin: -2em;" class="button">Refresh</a>
+						';
+					}
+									
+				?>
+			</p>
+			<div id="names" class="add-products-row">
+				<?php
+					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+						if(isset($_SESSION['available'])){
+							include('class/mysql_crud.php');
+							$db = new Database();
+							$db->connect();
+
+							foreach($_SESSION['available'] as $available) {
 								
-							} else {
-								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
+								$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$available['orderID']);
+								$results = $db->getResult();
+								if($available) {
+									echo '
+									<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2em 2em;">
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+											<div class="shopping-cart-total">
+												<span id="tot" class="lighter-text">Total: RM80.20</span>
+												<span class="main-color-text"></span>
+											</div>
+										</div>
+										<ul id="purchases" class="shopping-cart-items">';
+
+										foreach($results as $result) {
+											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
+											$foods = $db->getResult();
+											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
+											$supplier = $db->getResult();
+											echo
+											'<li class="clearfix">
+												<div style="margin: 1em 0 1em 0;">
+													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
+												</div>
+												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
+												<span class="item-name">'.$foods[0]['menuName'].'</span>
+												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
+												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
+											</li>';
+										}
+									echo
+										'</ul>
+										<ul class="shopping-cart-items">
+											<li class="clearfix">
+												<span class="item-name">Delivery to</span>
+												<span class="item-price">'.$available['deliveryTo'].'</span>
+											</li>
+										</ul>
+										<ul class="shopping-cart-items">
+											<li style="margin-bottom: 4em;" class="clearfix">
+												<span class="item-name">Amount to pay</span>
+												<span class="item-price">Subtotal: </span>
+												<span id="sub" class="item-quantity"></span></br>
+												<span class="item-price">Delivery Charge: </span>
+												<span class="item-quantity">RM5.00</span>
+											</li>
+										</ul>
+										<a href="#" id="accept" style="width: 100%" class="button">Accept Request</a>
+									</div>
+									';
+								} else {
+									echo '<p style="font-size: 1.5em; color: black;">Sorry, No Available Request</p>';
+								}
 							}
 						}
-					}
+					}					
 				?>
-				<div class="clearfix"> </div> 
-			</div>  	 
+				</div>  
 		</div>
 	</div>
 	<!-- //add-products --> 
