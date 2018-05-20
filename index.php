@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint :: Home w3layouts</title>
+<title>Mint :: Home </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -65,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
+								<i class="fa fa-phone" aria-hidden="true"></i> Call us: 012 2266789 
 							</li> 
 							<?php
 								if(!isset($_SESSION['customer'])){
@@ -159,7 +159,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
+				<h2>Delicious food ordered and <br> <span>will delivered to you.</span></h2>
 				<div class="agileits_search">
 					<input id="locationTextField" type="text" size="50">
 					<script>
