@@ -250,7 +250,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- deals -->
 	<div class="w3agile-deals">
 		<div class="container">
-			<h3 class="w3ls-title">Special Services</h3>
+			<h3 class="w3ls-title">Speciality of Mint</h3>
 			<div class="dealsrow">
 				<div class="col-md-6 col-sm-6 deals-grids">
 					<div class="deals-left">
@@ -287,8 +287,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-building" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h4></h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						<h4>Recruiting UPM students</h4>
+						<p>Mint give chances for UPM students to be as a delivery persons, which mean the food cost can be reduced
+						since the for the delivery is not far.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div> 
@@ -303,8 +304,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="w3ls-title">Special Foods</h3>
 			<div class="spldishes-agileinfo">
 				<div class="col-md-3 spldishes-w3left">
-					<h5 class="w3ltitle">Staple Specials</h5>
-					<p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo enim .</p>
+					<h5 class="w3ltitle">Available Foods</h5>
+					<p>Some of the delecious food you can have for your lunch or maybe dinner. Just click!</p>
 				</div> 
 				<div class="col-md-9 spldishes-grids">
 					<!-- Owl-Carousel -->
@@ -312,57 +313,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Toast Box</h4>
+								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Sushi King</h4>
+								<span>The most famous Japanese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Roti Boy</h4>
+								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Secret Recipe</h4>
+								<span>Lunch time with Grilled Mushroom Chicken.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Burger Lab</h4>
+								<span>Provide many kind of burger in many sizes. These menu comes with sets. This is set A.</span>
 							</div>
 						</a> 
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Toast Box</h4>
+								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Sushi King</h4>
+								<span>The most famous Japanese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+							<h4>Roti Boy</h4>
+								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
 					</div> 
