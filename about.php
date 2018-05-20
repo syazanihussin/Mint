@@ -137,8 +137,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">About Us</h3>
 			<div class="about-text">	
-				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+				<p>Mint is an online food ordering & delivery company founded in 2018 by Mint.Co who wants to bring conveniences to hungry diners 
+				by providing the marvelous delivery service. Our mission is to provide reliable food delivery to diners and at the same time, assisting 
+				restaurants to manage their delivery manpower efficiently.In the spirit of diversifying the food culture and the depth of culinary 
+				types of the world around, we’re also keen on ensuring that diners are given the exposure of diversification which allows everyone to have 
+				a catch and the enjoyment of the experience of trying something new or that’s out of the norm. As so we provide an array of culinary fields 
+				such as Chinese, Western, Fusion, Italian, Korean, Thai, Portuguese, Middle Eastern, Mediterranean, Indian, Desserts, Pastries of all kinds,
+				 your local favorites like Mamak and a whole lot more. You name it! 
+				 </p> 
 				<div class="ftr-toprow">
 					<div class="col-md-4 ftr-top-grids">
 						<div class="ftr-top-left">
@@ -176,11 +182,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="history">
 				<h3 class="w3ls-title">How does it work ?</h3>
-				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+				<p> Meals are delivered to diner’s doorstep with just a few simple clicks. Mint allows diners to enjoy variety of food from more 
+				than 200 restaurants at the comfort of their own premise hassle free!
+
+				Paying your food is also as flexible as you can want it to be, at Mint we hold no barriers against customers who insist on paying by cash. 
+				Not a fan of handling notes in your wallet, no problem, process your transactions with your credit or debit card.
+
+				In the norm of also enhancing user capabilities on the go, diners can also by using our website Mint. </p> 
 				<h3 class="w3ls-title">Our history</h3>
-				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+				<p>Throughout Delivereat’s years of serving patrons, we have established partnerships and business acquaintances with large 
+				chain outlets that you’re probably familiar with as a foodie, aren’t we all? Venture your heart out into the broad world of culinary wonders with your well known
+				 giants in the industries like Sushi King, Chili’s, Sakae Sushi, Morganfield’s, Nandos, Kenny Rogers and Roasters, Subway, Tealive, Yoshinoya and Hanamaru, and many
+				  more! We’re also no strangers to outlets of smaller scales as so don’t feel left out if you’re a foodie of a varied preference.</p> 
 			</div>
 		</div>
 	</div>
