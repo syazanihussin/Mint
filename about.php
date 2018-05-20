@@ -133,7 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2>
 			</div>
 		</div>
 	</div>
@@ -165,8 +165,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-truck" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Fusce tempus</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Food Delivery</h4>
+							<p>Once you ordered the food will be delivered to you as soon as possible.</p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div> 
@@ -175,8 +175,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Consectetur</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Low Delivery Charge</h4>
+							<p>We consider the consumer as a student so special cost for delivery charge. </p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div>
@@ -185,8 +185,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Dolor siet</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>No GST</h4>
+							<p>No GST need to be pay. Just spent of your food. </p>
 						</div>
 						<div class="clearfix"> </div>
 					</div> 
