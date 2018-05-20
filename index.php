@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +31,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <script>
     $(document).ready(function(){
+
+		
+		
 		$("#search").click(function(){
 
 			var location = $("#locationTextField").val();
@@ -40,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 type: "POST",
                 data: {table : 'supplier', column : 'supplierName, address', location : location, message : 'searchRestaurant'},
                 success:function(data){
-                    window.location.replace("restaurant.php");
+                    window.location.replace("restaurant.php?selectedLocation=" + location);
                 }
             });
         });
@@ -64,7 +68,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								session_start();
 								if(!isset($_SESSION['customer'])){
 									echo '
 									<li class="head-dpdn">
@@ -72,14 +75,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 							?>
 							
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
-							</li> 
+							 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -106,46 +122,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php" class="active">Home</a></li>	
-								<!-- Mega Menu -->
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
-									<ul class="dropdown-menu multi-column columns-3">
-										<div class="row">
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Food type</h6>  
-													<li><a href="restaurant.php">Breakfast</a></li> 
-													<li><a href="restaurant.php">Lunch</a></li> 
-													<li><a href="restaurant.php">Dinner</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="restaurant.php">Indian Recipes</a></li> 
-													<li><a href="restaurant.php">American Recipes</a></li> 
-													<li><a href="restaurant.php">French Recipes</a></li> 
-													<li><a href="restaurant.php">Italian Recipes</a></li> 
-												</ul>
-											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="restaurant.php">Diet</a></li> 
-													<li><a href="restaurant.php">Mini</a></li> 
-													<li><a href="restaurant.php">Regular</a></li> 
-													<li><a href="restaurant.php">Special</a></li> 
-												</ul>
-											</div> 
-											<div class="clearfix"></div>
-										</div>
-									</ul>
-								</li>
 								<li><a href="about.php">About</a></li> 
-								 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])){
+								if(isset($_SESSION['customer']) && count($_SESSION['customer']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
@@ -156,13 +136,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div> 
+						<?php
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+
+								echo '
+								<div class="cart cart box_1"> 
+									<form action="#" method="post" class="last"> 
+										<input type="hidden" name="cmd" value="_cart" />
+										<input type="hidden" name="display" value="1" />
+										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+									</form>   
+								</div> 
+								';
+							}
+						?>
 					</nav>
 				</div>
 			</div>
@@ -195,6 +182,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="add-products-row">
 				<div class="w3ls-add-grids">
 					<a href="restaurant.php"> 
+						
 						<h4>Get <span>20%<br>Cashback</span></h4>
 						<h5>Ordered in mobile app only </h5>
 						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
@@ -462,14 +450,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<script src="js/minicart.js"></script>
 	<script>
         w3ls.render();
-
-        w3ls.cart.on('w3sb_checkout', function (evt) {
+		
+        w3ls.cart.on('', function (evt) {
         	var items, len, i;
-
+			$("#inserted").text("item: "+this.subtotal());
         	if (this.subtotal() > 0) {
         		items = this.items();
 
         		for (i = 0, len = items.length; i < len; i++) { 
+					$("#inserted").text("item: "+items[i]);
         		}
         	}
         });

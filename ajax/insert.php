@@ -16,3 +16,10 @@ else if($_POST['message'] == "signup") {
     $res = $_SESSION['customer'];  
     echo json_encode($res);
 }
+
+else if($_POST['message'] == "register") {
+    session_start();
+    $_SESSION['driver'][0]['username'] = $_POST['session'];
+    $res = $_SESSION['driver']; 
+    echo json_encode($res);
+}

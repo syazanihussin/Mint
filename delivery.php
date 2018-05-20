@@ -26,51 +26,130 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script>
+<style> 
+	.d {
+	width: 200px;
+	height: 200px;
+	transform: translate(-50%, -50%);
+	justify-content: center;
+	margin: 15em;
+	filter: url('#goo');
+	animation: rotate-move 2s ease-in-out infinite;
+	}
+
+	.dot { 
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	}
+
+	.dot-3 {
+	background-color: #f74d75;
+	animation: dot-3-move 2s ease infinite, index 6s ease infinite;
+	}
+
+	.dot-2 {
+	background-color: #10beae;
+	animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
+	}
+
+	.dot-1 {
+	background-color: #ffe386;
+	animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
+	}
+
+	@keyframes dot-3-move {
+	20% {transform: scale(1)}
+	45% {transform: translateY(-18px) scale(.45)}
+	60% {transform: translateY(-90px) scale(.45)}
+	80% {transform: translateY(-90px) scale(.45)}
+	100% {transform: translateY(0px) scale(1)}
+	}
+
+	@keyframes dot-2-move {
+	20% {transform: scale(1)}
+	45% {transform: translate(-16px, 12px) scale(.45)}
+	60% {transform: translate(-80px, 60px) scale(.45)}
+	80% {transform: translate(-80px, 60px) scale(.45)}
+	100% {transform: translateY(0px) scale(1)}
+	}
+ 
+	@keyframes dot-1-move {
+	20% {transform: scale(1)}
+	45% {transform: translate(16px, 12px) scale(.45)}
+	60% {transform: translate(80px, 60px) scale(.45)}
+	80% {transform: translate(80px, 60px) scale(.45)}
+	100% {transform: translateY(0px) scale(1)}
+	}
+
+	@keyframes rotate-move {
+	55% {transform: translate(-50%, -50%) rotate(0deg)}
+	80% {transform: translate(-50%, -50%) rotate(360deg)}
+	100% {transform: translate(-50%, -50%) rotate(360deg)}
+	}
+
+	@keyframes index {
+	0%, 100% {z-index: 3}
+	33.3% {z-index: 2}
+	66.6% {z-index: 1}
+	}
+</style>
+
+  <script>
     $(document).ready(function(){
-		$("#login").click(function(){
 
-			var userName = $("#username").val();
-            var password = $("#password").val();
+      <?php 
+        $allquantity = 0;
 
-            $.ajax({
-				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
-                success:function(data){
-					if(data[0] === undefined) {
-						$.ajax({
-							url:"ajax/select.php",
-							dataType:"json",
-							type: "POST",
-							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
-							success:function(data){
-								if(data[0] === undefined) {
-									alert("Wrong username or password");
-								} else {
-									window.location.replace("driverHome.php");
-								}
-							}
-						});
-					} else {
-						window.location.replace("index.php");
-					}
-                }
-            });
-        });
-	});
-</script>
+        for($i = 1; $i <= $_GET['no_items']; $i++) {
+  
+          $name = 'item_name_' . $i;
+          $quan = 'quantity_' . $i;
+          $allquantity += $_GET[$quan];
+      ?> 
 
+		  var menuName = '<?php echo $_GET[$name]; ?>';
+		  var menuName = '<?php echo $_GET[$name]; ?>';
+          var subtotal = 0; 
+          var total = 0;
+
+          $.ajax({
+            url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', where2 : 'menuName="'+menuName+'"', message : 'delivery'},
+            success:function(data){
+              $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ <?php echo $_GET[$quan];?> + '</span></li>');
+              
+			  subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
+              $("#sub").text("RM"+parseFloat(Math.round(subtotal * 100) / 100).toFixed(2));
+
+              total = subtotal + 5; 
+              $("#tot").text("Total: RM"+ parseFloat(Math.round(total * 100) / 100).toFixed(2));
+            }
+          });
+
+      <?php 
+        }
+      ?>
+    });
+  </script>
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
@@ -86,7 +165,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 
@@ -97,14 +178,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 							?>
 							
-							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
+							
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -133,58 +214,77 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="index.php" class="active">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
-								
+								<?php
+								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
-						</div> 
+						</div>
+						<?php
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								echo '
+								<div class="cart cart box_1"> 
+									<form action="#" method="post" class="last"> 
+										<input type="hidden" name="cmd" value="_cart" />
+										<input type="hidden" name="display" value="1" />
+										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+									</form>   
+								</div> 
+								';
+							}
+						?> 
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
-		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Delivery</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				
-					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
-								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" id="login" value="LOGIN">
-				
-				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
-			</div>	 
+			  
+	<!-- add-products -->
+	<div>  
+		<div class="container">
+			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
+			<?php
+				if(!isset($_SESSION['delivery'])){
+					 
+					'<div style="padding: 4em;" class="d">
+						<div class="dot dot-1"></div>
+						<div class="dot dot-2"></div>
+						<div class="dot dot-3"></div>
+					</div>
+
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+						<defs>
+							<filter id="goo">
+							<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+							<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+							</filter>
+						</defs>
+					</svg>';	
+				}
+
+				else {
+
+				}
+			?>
+			<div class="clearfix"> </div> 	 
 		</div>
 	</div>
-	<!-- //login-page -->  
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -210,7 +310,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 

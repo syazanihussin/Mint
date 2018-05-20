@@ -26,42 +26,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script>
-    $(document).ready(function(){
-		$("#login").click(function(){
-
-			var userName = $("#username").val();
-            var password = $("#password").val();
-
-            $.ajax({
-				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
-                success:function(data){
-					if(data[0] === undefined) {
-						$.ajax({
-							url:"ajax/select.php",
-							dataType:"json",
-							type: "POST",
-							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
-							success:function(data){
-								if(data[0] === undefined) {
-									alert("Wrong username or password");
-								} else {
-									window.location.replace("driverHome.php");
-								}
-							}
-						});
-					} else {
-						window.location.replace("index.php");
-					}
-                }
-            });
-        });
-	});
-</script>
-
 </head>
 <body> 
 	<!-- banner -->
@@ -70,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
@@ -79,34 +43,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
+									
 							?>
 							
+							
 							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -126,16 +93,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								
+								<li><a href="driverHome.php">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php" class="active">Contact Us</a></li>
+								<?php
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
-						</div> 
+						</div>
 					</nav>
 				</div>
 			</div>
@@ -153,38 +129,72 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- breadcrumb -->  
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Contact Us</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				
-					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
-								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
-						</ul>
+	<!-- contact -->
+	<div id="contact" class="contact cd-section">
+		<div class="container">
+			<h3 class="w3ls-title">Contact us</h3>
+			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
+			<div class="contact-row agileits-w3layouts">  
+				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
+					<div class="contact-grid agileits">
+						<h4>DROP US A LINE </h4>
+						<form action="#" method="post"> 
+							<input type="text" name="Name" placeholder="Name" required="">
+							<input type="email" name="Email" placeholder="Email" required=""> 
+							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
+							<textarea name="Message" placeholder="Message..." required=""></textarea>
+							<input type="submit" value="Submit" >
+						</form> 
+					</div>
+				</div>
+				<div class="col-xs-6 col-sm-6 contact-w3lsright">
+					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
+					<div class="address-row">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Visit Us</h5>
+							<p>Broome St, Canada, NY 10002, New York </p>
+						</div>
 						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" id="login" value="LOGIN">
-				
-				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
-			</div>	 
+					</div>
+					<div class="address-row w3-agileits">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Mail Us</h5>
+							<p><a href="mailto:info@example.com"> mail@example.com</a></p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="address-row">
+						<div class="col-xs-2 address-left">
+							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+						</div>
+						<div class="col-xs-10 address-right">
+							<h5>Call Us</h5>
+							<p>+01 222 333 4444</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>  
+				</div>
+				<div class="clearfix"> </div>
+			</div>	
+		</div>	
+		<!-- map -->
+		<div class="map agileits">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
 		</div>
+		<!-- //map --> 
 	</div>
-	<!-- //login-page -->  
+	<!-- //contact -->   
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -210,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
@@ -245,7 +255,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>      
+					</ul>     
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 

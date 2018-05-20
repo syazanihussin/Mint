@@ -34,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
@@ -43,7 +43,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
+									';
+								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -55,24 +68,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
-										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
-									';
-								}
+									
 							?>
 							
 							
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -92,17 +93,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
+								<li><a href="driverHome.php">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -111,19 +112,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<?php
-							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
-								echo '
-								<div class="cart cart box_1"> 
-									<form action="#" method="post" class="last"> 
-										<input type="hidden" name="cmd" value="_cart" />
-										<input type="hidden" name="display" value="1" />
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-									</form>   
-								</div> 
-								';
-							}
-						?>
 					</nav>
 				</div>
 			</div>
@@ -141,7 +129,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- breadcrumb -->  
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
 			<li class="active">Help</li>
 		</ol>
 	</div>

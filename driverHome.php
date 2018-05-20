@@ -17,7 +17,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/cart style 2.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -26,51 +27,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script>
-    $(document).ready(function(){
-		$("#login").click(function(){
-
-			var userName = $("#username").val();
-            var password = $("#password").val();
-
-            $.ajax({
-				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
-                success:function(data){
-					if(data[0] === undefined) {
-						$.ajax({
-							url:"ajax/select.php",
-							dataType:"json",
-							type: "POST",
-							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
-							success:function(data){
-								if(data[0] === undefined) {
-									alert("Wrong username or password");
-								} else {
-									window.location.replace("driverHome.php");
-								}
-							}
-						});
-					} else {
-						window.location.replace("index.php");
-					}
-                }
-            });
-        });
-	});
-</script>
 
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
@@ -79,34 +45,35 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
+									
 							?>
-							
 							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -126,65 +93,91 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								
+								<li><a href="driverHome.php" class="active">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
+								<?php 
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
-						</div> 
+						</div>
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
-		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Request</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				
-					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
-								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" id="login" value="LOGIN">
-				
-				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
-			</div>	 
+			  
+	<!-- add-products -->
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 style="margin-top: -1em;" class="w3ls-title">Request List</h3>
+			<p class="w3lsorder-text"></p>
+			<div class="add-products-row">
+				<div class="shopping-cart" style="box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin-top: -2em;">
+					<div class="shopping-cart-header">
+						<i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+						<div class="shopping-cart-total">
+							<span id="tot" class="lighter-text">Total: RM80.20</span>
+							<span class="main-color-text"></span>
+						</div>
+					</div> <!--end shopping-cart-header -->
+
+					<ul id="purchases" class="shopping-cart-items">
+						<li class="clearfix"><img src="images/g5.jpg" alt="item1" width="50" height="50" /><span class="item-name">Fish & Chip</span><span class="item-price">RM15.20</span><span class="item-quantity">Quantity: 3</span></li>
+					</ul>
+					<ul class="shopping-cart-items">
+						<li class="clearfix">
+							<span class="item-name">Delivery to</span>
+							<span class="item-price">Banting, Selangor</span>
+						</li>
+					</ul>
+					<ul class="shopping-cart-items">
+						<li style="margin-bottom: 4em;" class="clearfix">
+							<span class="item-name">Amount to pay</span>
+							<span class="item-price">Subtotal: </span>
+							<span id="sub" class="item-quantity"></span></br>
+							<span class="item-price">Delivery Charge: </span>
+							<span class="item-quantity">RM5.00</span>
+						</li>
+					</ul>
+					<a href="#" style="width: 100%" class="button">Accept Request</a>
+				</div> 
+				<?php
+					if(isset($_SESSION['restaurant'])){
+						foreach($_SESSION['restaurant'] as $restaurant) {
+							if($restaurant != "nothing") {
+								
+							} else {
+								echo '<p style="font-size: 1.5em; color: black;">Sorry, No available restaurant are found</p>';
+							}
+						}
+					}
+				?>
+				<div class="clearfix"> </div> 
+			</div>  	 
 		</div>
 	</div>
-	<!-- //login-page -->  
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -210,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 

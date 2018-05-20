@@ -4,7 +4,6 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,42 +25,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script>
-    $(document).ready(function(){
-		$("#login").click(function(){
+		<script>
+			$(document).ready(function(){
+ 				$("#signup").click(function(){
 
-			var userName = $("#username").val();
-            var password = $("#password").val();
-
-            $.ajax({
-				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
-                success:function(data){
-					if(data[0] === undefined) {
-						$.ajax({
-							url:"ajax/select.php",
-							dataType:"json",
-							type: "POST",
-							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
-							success:function(data){
-								if(data[0] === undefined) {
-									alert("Wrong username or password");
-								} else {
-									window.location.replace("driverHome.php");
-								}
-							}
-						});
-					} else {
-						window.location.replace("index.php");
-					}
-                }
-            });
-        });
-	});
-</script>
-
+                    var userName = $("#username").val();
+                    var password = $("#password").val();
+                    var email = $("#email").val();
+					var phoneNo = $("#phone").val();
+					var transportType = $("#transportType").val();
+					var platNo = $("#platNo").val();
+                    
+					$.ajax({
+                        url:"ajax/insert.php",
+                        dataType:"json",
+                        type: "POST",
+                        data: {table : 'delivery_person', column : 'username, password, email, phoneNo, transportType, platNo', inserting : '"'+userName+'","'+password+'","'+email+'","'+phoneNo+'","'+transportType+'","'+platNo+'"', session : userName, message : 'register'},
+        			    success:function(data){
+                            window.location.replace("driverHome.php");
+						}
+                    });
+                });
+			});
+        </script>
 </head>
 <body> 
 	<!-- banner -->
@@ -79,18 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
-									';
-								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+								if(!isset($_SESSION['driver'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -133,9 +108,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="index.php" class="active">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
-								
+								<?php
+								if(isset($_SESSION['customer'])){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
-						</div> 
+						</div>
+						
 					</nav>
 				</div>
 			</div>
@@ -154,37 +139,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+			<li class="active">Register</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
-	<!-- login-page -->
+	<!-- sign up-page -->
 	<div class="login-page about">
 		<img class="login-w3img" src="images/img3.jpg" alt="">
 		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
+			<h3 class="w3ls-title w3ls-title1">Register as One of Our Delivery Team</h3> 
 			<div class="login-agileinfo"> 
 				
-					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
+					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Your Username" required="">
+					<input class="agile-ltext" id="email" type="email" name="Your Email" placeholder="Your Email" required="">
+					<input class="agile-ltext" id="phone" type="text" name="Your Phone No" placeholder="Your Phone No" required="">
+					<input class="agile-ltext" id="password" type="password" name="password" placeholder="Your Password" required="">
+					<input class="agile-ltext"  id="transportType" type="text" name="Confirm Password" placeholder="Your Transport Type" required="">
+					<span>Eg: Honda City</span> 
+					<input class="agile-ltext"  id="platNo" type="text" name="Confirm Password" placeholder="Your Plat No" required="">
 					<div class="wthreelogin-text"> 
 						<ul> 
 							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
+								<label class="checkbox"><input type="checkbox" id="agree" name="checkbox"><i></i> 
+									<span> I agree to the terms of service</span> 
 								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
+							</li> 
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<input type="submit" id="login" value="LOGIN">
+					<input type="submit" class="sub" id="signup" value="REGISTER NOW">
 				
-				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
+				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 
 		</div>
 	</div>
-	<!-- //login-page -->  
+	<!-- //sign up-page -->  
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -210,7 +199,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
@@ -245,7 +234,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>      
+					</ul>    
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
