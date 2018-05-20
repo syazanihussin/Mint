@@ -133,7 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2> 
 			</div>
 		</div>
 	</div>
@@ -150,11 +150,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div id="contact" class="contact cd-section">
 		<div class="container">
 			<h3 class="w3ls-title">Contact us</h3>
-			<p class="w3lsorder-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sheets containing sed </p> 
+			<p class="w3lsorder-text">Feel free to keep in touch with us. </p> 
 			<div class="contact-row agileits-w3layouts">  
 				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
 					<div class="contact-grid agileits">
-						<h4>DROP US A LINE </h4>
+						<h4>Drop us a line! </h4>
 						<form action="#" method="post"> 
 							<input type="text" name="Name" placeholder="Name" required="">
 							<input type="email" name="Email" placeholder="Email" required=""> 
@@ -165,14 +165,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 				<div class="col-xs-6 col-sm-6 contact-w3lsright">
-					<h6><span>Sed interdum </span>interdum accumsan nec purus ac orci finibus facilisis. In sit amet placerat nisl in auctor sapien. </h6>
+					<h6><span> </span></h6>
 					<div class="address-row">
 						<div class="col-xs-2 address-left">
 							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
 							<h5>Visit Us</h5>
-							<p>Broome St, Canada, NY 10002, New York </p>
+							<p>University Putra Malaysia, Selangor</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -182,7 +182,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						<div class="col-xs-10 address-right">
 							<h5>Mail Us</h5>
-							<p><a href="mailto:info@example.com"> mail@example.com</a></p>
+							<p><a href="mailto:info@example.com">mint@gmail.com</a></p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
