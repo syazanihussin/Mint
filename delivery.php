@@ -30,10 +30,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	.d {
 	width: 200px;
 	height: 200px;
-	top: 50%;
-	left: 50%;
 	transform: translate(-50%, -50%);
-	margin: auto;
+	justify-content: center;
+	margin: 15em;
 	filter: url('#goo');
 	animation: rotate-move 2s ease-in-out infinite;
 	}
@@ -106,39 +105,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script>
     $(document).ready(function(){
 
-      <?php 
-        $allquantity = 0;
+		<?php 
+		
+		include('class/mysql_crud.php');
+		$db = new Database();
+		$db->connect();
+		$db->insert('orders','customerName, deliveryTo','"'.$_SESSION['customer'][0]['username'].'","'.$_GET['deliveryTo'].'"');
+		$res = $db->getResult();  
 
-        for($i = 1; $i <= $_GET['no_items']; $i++) {
-  
-          $name = 'item_name_' . $i;
-          $quan = 'quantity_' . $i;
-          $allquantity += $_GET[$quan];
-      ?> 
+		$allquantity = 0;
 
-          var menuName = '<?php echo $_GET[$name]; ?>';
-          var subtotal = 0; 
-          var total = 0;
+		for($i = 1; $i <= $_GET['no_items']; $i++) {
+	
+			$name = 'item_name_' . $i;
+			$quan = 'quantity_' . $i;
+			$allquantity += $_GET[$quan];
+      	?> 
 
-          $.ajax({
-            url:"ajax/select.php",
-            dataType:"json",
-            type: "POST",
-            data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'checkout'},
-            success:function(data){
-              $("#purchases").append('<li class="clearfix"><img src="'+ data[0]['menuImage'] +'" alt="item1" width="50" height="50" /><span class="item-name">'+ data[0]['menuName'] +'</span><span class="item-price">RM'+ data[0]['menuPrice'] +'</span><span class="item-quantity">Quantity: '+ <?php echo $_GET[$quan];?> + '</span></li>');
-              
-			  subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
-              $("#sub").text("RM"+parseFloat(Math.round(subtotal * 100) / 100).toFixed(2));
+		  	var menuName = '<?php echo $_GET[$name]; ?>';
+          	var subtotal = 0; 
+          	var total = 0;
+			
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'delivery'},
+				success:function(data){
+					$.ajax({
+						url:"ajax/insert.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'order_menu', column : 'orderID, menuID, quantity', inserting : ''+<?php echo $res[0]; ?>+' , '+data[0]['menuID']+','+<?php echo $_GET[$quan]; ?>+'', message : 'ordering'},
+						success:function(data){
+						}
+					});
+				}
+			});
 
-              total = subtotal + 5; 
-              $("#tot").text("Total: RM"+ parseFloat(Math.round(total * 100) / 100).toFixed(2));
-            }
-          });
-
-      <?php 
-        }
-      ?>
+		<?php 
+		}
+		?>
     });
   </script>
 </head>
@@ -165,14 +172,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 							?>
 							
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
+							
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -202,7 +222,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])){
+								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
@@ -214,7 +234,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</ul>
 						</div>
 						<?php
-							if(isset($_SESSION['customer'])){
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 								echo '
 								<div class="cart cart box_1"> 
 									<form action="#" method="post" class="last"> 
@@ -243,12 +263,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  
 	<!-- add-products -->
 	<div>  
-		<div style="padding: 0 0 4em 0;" class="container">
+		<div class="container">
 			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
-			<div class="add-products-row">
+			<p id="sub">Huhu</p>
+			<p id="tot">haha</p>
 			<?php
 				if(!isset($_SESSION['delivery'])){
-					echo 
+					 
 					'<div style="padding: 4em;" class="d">
 						<div class="dot dot-1"></div>
 						<div class="dot dot-2"></div>
@@ -264,8 +285,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</defs>
 					</svg>';	
 				}
+
+				else {
+
+				}
 			?>
-			</div>
 			<div class="clearfix"> </div> 	 
 		</div>
 	</div>

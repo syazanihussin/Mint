@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint | Delivery Platform</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -29,10 +29,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body> 
 	<!-- banner -->
-	<div style="background: none;" class="banner about-w3bnr">
+	<div class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
+			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
@@ -42,21 +42,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
-							<?php
-								if(!isset($_SESSION['customer'])){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> 
-									';
-								}
-							?>
-							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+							</li> 
+							<li class="head-dpdn">
+								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -79,57 +72,88 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="index.php"><Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
+								<li><a href="index.php">Home</a></li>	
+								<!-- Mega Menu -->
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle active" data-toggle="dropdown">Menu <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<div class="row">
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>Food type</h6>  
+													<li><a href="restaurant.php">Breakfast</a></li> 
+													<li><a href="restaurant.php">Lunch</a></li> 
+													<li><a href="restaurant.php">Dinner</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>Cuisine</h6> 
+													<li><a href="restaurant.php">Indian Recipes</a></li> 
+													<li><a href="restaurant.php">American Recipes</a></li> 
+													<li><a href="restaurant.php">French Recipes</a></li> 
+													<li><a href="restaurant.php">Italian Recipes</a></li> 
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<h6>Box type</h6> 
+													<li><a href="restaurant.php">Diet</a></li> 
+													<li><a href="restaurant.php">Mini</a></li> 
+													<li><a href="restaurant.php">Regular</a></li> 
+													<li><a href="restaurant.php">Special</a></li> 
+												</ul>
+											</div> 
+											<div class="clearfix"></div>
+										</div>
+									</ul>
+								</li>
 								<li><a href="about.php">About</a></li> 
+								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="icons.php">Web Icons</a></li>
+										<li><a href="codes.php">Short Codes</a></li>     
+									</ul>
+								</li>  
 								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])){
-									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="logout.php">Logout</a></li>    
-										</ul>
-									</li>';
-								}
-							?>
 							</ul>
 						</div>
-						<?php
-							if(isset($_SESSION['customer'])){
-								echo '
-								<div class="cart cart box_1"> 
-									<form action="#" method="post" class="last"> 
-										<input type="hidden" name="cmd" value="_cart" />
-										<input type="hidden" name="display" value="1" />
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-									</form>   
-								</div> 
-								';
-							}
-						?> 
+						<div class="cart cart box_1"> 
+							<form action="#" method="post" class="last"> 
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="display" value="1" />
+								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+							</form>   
+						</div>
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
+		<!-- //header-end --> 
+		<!-- banner-text -->
+		<div class="banner-text">	
+			<div class="container">
+				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			</div>
+		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div style="padding: 2em 0;" class="container">	
-		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
 			<li class="active">Restaurant</li>
-			<li class="active"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $_GET['selectedLocation']; ?></li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
-	<div>  
-		<div style="padding: 0 0 4em 0;" class="container">
+	<div style="padding: 4em 0;">  
+		<div class="container">
 			<h3 class="w3ls-title">Choose Restaurant</h3>
 			<p class="w3lsorder-text">Here are available restaurants based on your location search</p>
 			<div class="add-products-row">

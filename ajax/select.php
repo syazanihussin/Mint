@@ -18,6 +18,14 @@ else if($_POST['message'] == "login") {
     echo json_encode($res);
 }
 
+else if($_POST['message'] == "loginDriver") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    session_start();
+    $_SESSION['driver'] = $db->getResult();
+    $res = $_SESSION['driver'];  
+    echo json_encode($res);
+}
+
 else if($_POST['message'] == "searchRestaurant") {
     $db->select($_POST['table'], $_POST['column']); // Table name, Column Names
     $suppliers = $db->getResult();
@@ -56,11 +64,10 @@ else if($_POST['message'] == "cuisine") {
     $res = $_SESSION['cuisines'];  
     echo json_encode($res);
 }
-
+ 
 
 else if($_POST['message'] == "checkout") {
     $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
-    
     session_start();
     $_SESSION['order'] = $db->getResult();
     $res = $_SESSION['order'];  
@@ -68,11 +75,17 @@ else if($_POST['message'] == "checkout") {
 }
 
 else if($_POST['message'] == "delivery") {
-    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'menuID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
-    
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    $res = $db->getResult();
+    echo json_encode($res); //echo array of data, return data in array
+}
+
+
+else if($_POST['message'] == "available") {
+    $db->select($_POST['table'], $_POST['column']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();
-    $_SESSION['order'] = $db->getResult();
-    $res = $_SESSION['order'];  
+    $_SESSION['available'] = $db->getResult();
+    $res = $_SESSION['available'];  
     echo json_encode($res);
 }
 

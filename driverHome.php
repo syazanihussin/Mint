@@ -17,7 +17,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/cart style 2.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -28,26 +29,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
 	$(document).ready(function(){
-		
-		var url = "" + window.location.href;
-		var res = url.split("?");
-		
-		$("#locating").click(function(){
-			var delivery_destination = $("#pac-input").val();
-			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
-			window.location.replace(dest);
-		});
+		$.ajax({
+            url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+        	success:function(data){
+            }
+        });
+
+ 		$("#refresh").click(function(){
+			$.ajax({
+                url:"ajax/select.php",
+                dataType:"json",
+                type: "POST",
+                data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+        		success:function(data){
+					window.location.replace('driverHome.php');
+                }
+            });
+    	});
 	});
 </script>
-
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      
-    </style>
 </head>
 <body> 
 	<!-- banner -->
@@ -65,7 +68,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
+									';
+								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -77,24 +93,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
-										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
-									';
-								}
+									
 							?>
-							
-							
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -114,17 +116,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								<li><a href="driverHome.php" class="active">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
+								<?php 
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -133,13 +135,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div> 
 					</nav>
 				</div>
 			</div>
@@ -150,91 +145,93 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- breadcrumb -->  
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
-			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Destination</li>
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Request</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Choose Your Delivery Destination</h3>
-			<div id="map" style="margin-top: 3em; width: 100%; height: 30em;"></div>
-				<div class="agileits_search">
-					<input id="pac-input" type="text" size="50" placeholder="Enter Your Delivery Destination">
-					<input type="submit" id="locating" value="Confirm Destination">
-					<script>
-						function initAutocomplete() {
-							var map = new google.maps.Map(document.getElementById('map'), {
-							center: {lat: 2.999695, lng: 101.710688},
-							zoom: 13,
-							});
+			<h3 style="margin-top: -1em;" class="w3ls-title">Request List</h3>
+			<p class="w3lsorder-text">
+				<?php
+					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+						echo '
+						<a href="#" id="refresh" style="float: right; margin: -2em;" class="button">Refresh</a>
+						';
+					}
+									
+				?>
+			</p>
+			<div id="names" class="add-products-row">
+				<?php
+					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+						if(isset($_SESSION['available'])){
+							include('class/mysql_crud.php');
+							$db = new Database();
+							$db->connect();
 
-							// Create the search box and link it to the UI element.
-							var input = document.getElementById('pac-input');
-							var input2 = document.getElementById('locating');
-							var searchBox = new google.maps.places.SearchBox(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
+							foreach($_SESSION['available'] as $available) {
+								
+								$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$available['orderID']);
+								$results = $db->getResult();
+								if($available) {
+									echo '
+									<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2em 2em;">
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+											<div class="shopping-cart-total">
+												<span id="tot" class="lighter-text">Total: RM80.20</span>
+												<span class="main-color-text"></span>
+											</div>
+										</div>
+										<ul id="purchases" class="shopping-cart-items">';
 
-							// Bias the SearchBox results towards current map's viewport.
-							map.addListener('bounds_changed', function() {
-							searchBox.setBounds(map.getBounds());
-							});
-
-							var markers = [];
-							// Listen for the event fired when the user selects a prediction and retrieve
-							// more details for that place.
-							searchBox.addListener('places_changed', function() {
-							var places = searchBox.getPlaces();
-
-							if (places.length == 0) {
-								return;
-							}
-
-							// Clear out the old markers.
-							markers.forEach(function(marker) {
-								marker.setMap(null);
-							});
-							markers = [];
-
-							// For each place, get the icon, name and location.
-							var bounds = new google.maps.LatLngBounds();
-							places.forEach(function(place) {
-								if (!place.geometry) {
-								console.log("Returned place contains no geometry");
-								return;
-								}
-								var icon = {
-								url: place.icon,
-								size: new google.maps.Size(71, 71),
-								origin: new google.maps.Point(0, 0),
-								anchor: new google.maps.Point(17, 34),
-								scaledSize: new google.maps.Size(25, 25)
-								};
-
-								// Create a marker for each place.
-								markers.push(new google.maps.Marker({
-								map: map,
-								icon: icon,
-								title: place.name,
-								position: place.geometry.location
-								}));
-
-								if (place.geometry.viewport) {
-								// Only geocodes have viewport.
-								bounds.union(place.geometry.viewport);
+										foreach($results as $result) {
+											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
+											$foods = $db->getResult();
+											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
+											$supplier = $db->getResult();
+											echo
+											'<li class="clearfix">
+												<div style="margin: 1em 0 1em 0;">
+													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
+												</div>
+												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
+												<span class="item-name">'.$foods[0]['menuName'].'</span>
+												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
+												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
+											</li>';
+										}
+									echo
+										'</ul>
+										<ul class="shopping-cart-items">
+											<li class="clearfix">
+												<span class="item-name">Delivery to</span>
+												<span class="item-price">'.$available['deliveryTo'].'</span>
+											</li>
+										</ul>
+										<ul class="shopping-cart-items">
+											<li style="margin-bottom: 4em;" class="clearfix">
+												<span class="item-name">Amount to pay</span>
+												<span class="item-price">Subtotal: </span>
+												<span id="sub" class="item-quantity"></span></br>
+												<span class="item-price">Delivery Charge: </span>
+												<span class="item-quantity">RM5.00</span>
+											</li>
+										</ul>
+										<a href="#" id="accept" style="width: 100%" class="button">Accept Request</a>
+									</div>
+									';
 								} else {
-								bounds.extend(place.geometry.location);
+									echo '<p style="font-size: 1.5em; color: black;">Sorry, No Available Request</p>';
 								}
-							});
-							map.fitBounds(bounds);
-							});
+							}
 						}
-					</script>
-				</div> 
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initAutocomplete" async defer></script>
-				<div class="clearfix"> </div>  	 
+					}					
+				?>
+				</div>  
 		</div>
 	</div>
 	<!-- //add-products --> 

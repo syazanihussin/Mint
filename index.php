@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Home </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -60,12 +60,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
-						<p>Food delivery platform | UPM</p>
+						<p>Food Delivery Platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
+								<i class="fa fa-phone" aria-hidden="true"></i> Call us: 012 2266789 
 							</li> 
 							<?php
 								if(!isset($_SESSION['customer'])){
@@ -75,14 +75,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
 							?>
 							
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
+							 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -112,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])){
+								if(isset($_SESSION['customer']) && count($_SESSION['customer']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
@@ -124,7 +137,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</ul>
 						</div>
 						<?php
-							if(isset($_SESSION['customer'])){
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+
 								echo '
 								<div class="cart cart box_1"> 
 									<form action="#" method="post" class="last"> 
@@ -145,7 +159,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
+				<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2>
 				<div class="agileits_search">
 					<input id="locationTextField" type="text" size="50">
 					<script>
@@ -169,16 +183,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="w3ls-add-grids">
 					<a href="restaurant.php"> 
 						
-					<h3 id="inserted">Insert user</h3>
-						<h4>Get <span>20%<br>Cashback</span></h4>
-						<h5>Ordered in mobile app only </h5>
+						<h4>Get your food<span><br>now!</span></h4>
+						<h5>Ordered in website app only. </h5>
 						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
 					</a>
 				</div>
 				<div class="w3ls-add-grids w3ls-add-grids-right">
 					<a href="restaurant.php"> 
-						<h4>GET Upto<span><br>40% Offer</span></h4>
-						<h5>Sunday special discount</h5>
+						<h4>Search your <span><br>FAVOURITE</span></h4>
+						<h5>Ordered in website app only.</h5>
 						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
 					</a>
 				</div> 
@@ -191,35 +204,42 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="wthree-order">  
 		<img src="images/i2.jpg" class="w3order-img" alt=""/>
 		<div class="container">
-			<h3 class="w3ls-title">How To Order Online Food</h3>
-			<p class="w3lsorder-text">Get your favourite food in 4 simple steps.</p>
+			<h3 class="w3ls-title">How to order online food?</h3>
+			<p class="w3lsorder-text">Get your favourite food in some simple steps.</p>
 			<div class="order-agileinfo">  
 				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-map" aria-hidden="true"></i> 
-						<h5>Search Area</h5>
+						<h4>Enter location<br>& select <br>restaurant.</h4>
 						<span>1</span>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
+				<div class="col-md-2 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-cutlery" aria-hidden="true"></i> 
-						<h5>Choose Food</h5>
+						<h4>Select food.</h4>
 						<span>2</span>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
+				<div class="col-md-2 col-sm-3 col-xs-6 order-w3lsgrids"> 
+					<div class="order-w3text"> 
+						<i class="fa fa-map" aria-hidden="true"></i> 
+						<h4>Enter delivery<br>place.<br></h4>
+						<span>3</span>
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-credit-card" aria-hidden="true"></i>
-						<h5>Pay Money</h5>
-						<span>3</span>
+						<h4>Pay money.</h4>
+						<span>4</span>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-truck" aria-hidden="true"></i>
-						<h5>Enjoy Food</h5>
-						<span>4</span>
+						<h4>Enjoy the food.</h4>
+						<span>5</span>
 					</div>
 				</div>
 				<div class="clearfix"> </div> 
@@ -237,8 +257,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-truck" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h4>FREE DELIVERY</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						<h4>Food delivery platform</h4>
+						<p>The selected food will be delivered by the delivery person after ordered have been made.</p>
 					</div> 
 					<div class="clearfix"> </div>
 				</div> 
@@ -247,8 +267,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-birthday-cake" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h4>Party Orders</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						<h4>Cash-On-Delivery (COD)</h4>
+						<p>Cash-On-Delivery as payment method in order to improve trust between customer and the delivery person.</p>
 					</div> 
 					<div class="clearfix"> </div>
 				</div>
@@ -257,8 +277,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-users" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h4>Team up Scheme</h4>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						<h4>Low delivery charge</h4>
+						<p>Mint have provide special cost which is low delivery charge for students.</p>
 					</div>
 					<div class="clearfix"> </div>
 				</div> 
@@ -267,7 +287,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<i class="fa fa-building" aria-hidden="true"></i>
 					</div> 
 					<div class="deals-right">
-						<h4>corporate orders</h4>
+						<h4></h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
 					</div>
 					<div class="clearfix"> </div>

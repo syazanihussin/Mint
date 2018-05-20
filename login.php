@@ -4,6 +4,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +39,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 type: "POST",
                 data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
                 success:function(data){
-                    window.location.replace("index.php");
+					if(data[0] === undefined) {
+						$.ajax({
+							url:"ajax/select.php",
+							dataType:"json",
+							type: "POST",
+							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
+							success:function(data){
+								if(data[0] === undefined) {
+									alert("Wrong username or password");
+								} else {
+									window.location.replace("driverHome.php");
+								}
+							}
+						});
+					} else {
+						window.location.replace("index.php");
+					}
                 }
             });
         });
@@ -69,13 +86,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									
 									';
 								}
 							?>
 							
 							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 							</li> 
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
@@ -105,16 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="index.php" class="active">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])){
-									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
-										<ul class="dropdown-menu">
-											<li><a href="logout.php">Logout</a></li>    
-										</ul>
-									</li>';
-								}
-							?>
+								
 							</ul>
 						</div> 
 					</nav>

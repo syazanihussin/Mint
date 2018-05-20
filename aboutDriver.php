@@ -26,35 +26,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<script>
-	$(document).ready(function(){
-		
-		var url = "" + window.location.href;
-		var res = url.split("?");
-		
-		$("#locating").click(function(){
-			var delivery_destination = $("#pac-input").val();
-			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
-			window.location.replace(dest);
-		});
-	});
-</script>
-
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      
-    </style>
 </head>
 <body> 
 	<!-- banner -->
-	<div style="background: none;" class="banner about-w3bnr">
+	<div class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
+			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
 					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
@@ -65,7 +43,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
+									';
+								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -77,24 +68,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
-										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
-									';
-								}
+									
 							?>
 							
 							
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -114,17 +93,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
+								<li><a href="driverHome.php">Home</a></li>	
+								<li><a href="aboutDriver.php" class="active">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
 								<?php
-								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -133,111 +112,81 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div> 
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
+		<!-- //header-end --> 
+		<!-- banner-text -->
+		<div class="banner-text">	
+			<div class="container">
+				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			</div>
+		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div style="padding: 2em 0;" class="container">	
-		<ol style="background: none;" class="breadcrumb w3l-crumbs">
-			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Destination</li>
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">About</li>
 		</ol>
 	</div>
-			  
-	<!-- add-products -->
-	<div>  
-		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Choose Your Delivery Destination</h3>
-			<div id="map" style="margin-top: 3em; width: 100%; height: 30em;"></div>
-				<div class="agileits_search">
-					<input id="pac-input" type="text" size="50" placeholder="Enter Your Delivery Destination">
-					<input type="submit" id="locating" value="Confirm Destination">
-					<script>
-						function initAutocomplete() {
-							var map = new google.maps.Map(document.getElementById('map'), {
-							center: {lat: 2.999695, lng: 101.710688},
-							zoom: 13,
-							});
-
-							// Create the search box and link it to the UI element.
-							var input = document.getElementById('pac-input');
-							var input2 = document.getElementById('locating');
-							var searchBox = new google.maps.places.SearchBox(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
-
-							// Bias the SearchBox results towards current map's viewport.
-							map.addListener('bounds_changed', function() {
-							searchBox.setBounds(map.getBounds());
-							});
-
-							var markers = [];
-							// Listen for the event fired when the user selects a prediction and retrieve
-							// more details for that place.
-							searchBox.addListener('places_changed', function() {
-							var places = searchBox.getPlaces();
-
-							if (places.length == 0) {
-								return;
-							}
-
-							// Clear out the old markers.
-							markers.forEach(function(marker) {
-								marker.setMap(null);
-							});
-							markers = [];
-
-							// For each place, get the icon, name and location.
-							var bounds = new google.maps.LatLngBounds();
-							places.forEach(function(place) {
-								if (!place.geometry) {
-								console.log("Returned place contains no geometry");
-								return;
-								}
-								var icon = {
-								url: place.icon,
-								size: new google.maps.Size(71, 71),
-								origin: new google.maps.Point(0, 0),
-								anchor: new google.maps.Point(17, 34),
-								scaledSize: new google.maps.Size(25, 25)
-								};
-
-								// Create a marker for each place.
-								markers.push(new google.maps.Marker({
-								map: map,
-								icon: icon,
-								title: place.name,
-								position: place.geometry.location
-								}));
-
-								if (place.geometry.viewport) {
-								// Only geocodes have viewport.
-								bounds.union(place.geometry.viewport);
-								} else {
-								bounds.extend(place.geometry.location);
-								}
-							});
-							map.fitBounds(bounds);
-							});
-						}
-					</script>
+	<!-- //breadcrumb -->
+	<!--  about-page -->
+	<div class="about">
+		<div class="container"> 
+			<h3 class="w3ls-title w3ls-title1">About Us</h3>
+			<div class="about-text">	
+				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+				<div class="ftr-toprow">
+					<div class="col-md-4 ftr-top-grids">
+						<div class="ftr-top-left">
+							<i class="fa fa-truck" aria-hidden="true"></i>
+						</div> 
+						<div class="ftr-top-right">
+							<h4>Fusce tempus</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="col-md-4 ftr-top-grids">
+						<div class="ftr-top-left">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</div> 
+						<div class="ftr-top-right">
+							<h4>Consectetur</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-4 ftr-top-grids">
+						<div class="ftr-top-left">
+							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+						</div> 
+						<div class="ftr-top-right">
+							<h4>Dolor siet</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+						</div>
+						<div class="clearfix"> </div>
+					</div> 
+					<div class="clearfix"> </div>
 				</div> 
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initAutocomplete" async defer></script>
-				<div class="clearfix"> </div>  	 
+				<div class="clearfix"> </div>
+			</div>
+			<div class="history">
+				<h3 class="w3ls-title">How does it work ?</h3>
+				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+				<h3 class="w3ls-title">Our history</h3>
+				<p>Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies. Nulla sodales efficitur consequat. Maecenas mi diam, imperdiet consectetur ultricies nec, convallis sit amet turpis.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ultrices. Pellentesque sed feugiat sapien.  ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p> 
+			</div>
 		</div>
 	</div>
-	<!-- //add-products --> 
+	<!-- //about-page --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -298,7 +247,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>      
+					</ul>     
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
