@@ -1,4 +1,4 @@
-<!--
+body<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -171,7 +171,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
-							<h5>Visit Us</h5>
+							<h5>Location</h5>
 							<p>University Putra Malaysia, Selangor</p>
 						</div>
 						<div class="clearfix"> </div>
@@ -181,7 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
-							<h5>Mail Us</h5>
+							<h5>Email</h5>
 							<p><a href="mailto:info@example.com">mint@gmail.com</a></p>
 						</div>
 						<div class="clearfix"> </div>
@@ -191,8 +191,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
-							<h5>Call Us</h5>
-							<p>+01 222 333 4444</p>
+							<h5>Customer Service</h5>
+							<p>+603 8912 2566</p>
+							<p>+6012 2266 789</p>
+							<p>10am-10pm daily</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>  
