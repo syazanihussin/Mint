@@ -171,6 +171,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							include('class/mysql_crud.php');
 							$db = new Database();
 							$db->connect();
+							$db->select('delivery_person', 'staffID', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
+							$staffs = $db->getResult();
 
 							foreach($_SESSION['available'] as $available) {
 								
@@ -221,7 +223,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												<span class="item-quantity">RM5.00</span>
 											</li>
 										</ul>
-										<a href="#" id="accept" style="width: 100%" class="button">Accept Request</a>
+										<form action="ajax/update.php" method="post">
+											<input type="hidden" name="message" value="request_accepted">
+											<input hidden type="number" name="staffID" value="'.$staffs[0]['staffID'].'">
+											<input hidden type="number" name="orderID" value="'.$available['orderID'].'">
+											<input type="submit" id="accept" style="width: 100%" class="button"value="Accept Request">
+										</form>
 									</div>
 									';
 								} else {

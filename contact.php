@@ -1,4 +1,4 @@
-body<!--
+<!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -39,6 +39,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="w3ls-header-right">
 						<ul>
+							<li class="head-dpdn">
+								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
+							</li> 
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '

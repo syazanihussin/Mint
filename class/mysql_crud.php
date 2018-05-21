@@ -176,7 +176,7 @@ class Database{
     public function update($table,$updating,$where){
     	// Check to see if table exists
     	if($this->tableExists($table)){
-    		// Create the query
+			// Create the query
 			$sql='UPDATE '.$table.' SET '.$updating.' WHERE '.$where;
 			// Make query to database
             $this->myQuery = $sql; // Pass back the SQL
