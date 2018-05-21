@@ -38,10 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
-						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
+						<ul>
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '
@@ -172,7 +169,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 						<div class="col-xs-10 address-right">
 							<h5>Location</h5>
-							<p>University Putra Malaysia, Selangor</p>
+							<p>MintDelivery Sdn. Bhd (1042588 U)
+							<p> University Putra Malaysia</p>
+							 <p>  43400 Serdang, Selangor.</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -181,9 +180,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
-							<h5>Email</h5>
-							<p><a href="mailto:info@example.com">mint@gmail.com</a></p>
+							<h5>Customer Service</h5>
+							<p>+603 8912 2566</p>
+							<p>+6012 2266 789</p>
+							<p>10am-10pm daily</p>
 						</div>
+					
 						<div class="clearfix"> </div>
 					</div>
 					<div class="address-row">
@@ -191,10 +193,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
 						</div>
 						<div class="col-xs-10 address-right">
-							<h5>Customer Service</h5>
-							<p>+603 8912 2566</p>
-							<p>+6012 2266 789</p>
-							<p>10am-10pm daily</p>
+							<h5>Email</h5>
+							<p><a href="mailto:info@example.com">mint@gmail.com</a></p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>  
