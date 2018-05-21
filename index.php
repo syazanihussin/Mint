@@ -63,10 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p>Food Delivery Platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
-						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: 012 2266789 
-							</li> 
+						<ul>
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '

@@ -55,9 +55,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '
@@ -66,7 +63,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
+									</li> 
+									<li class="head-dpdn">
 										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
 									</li>
 									';
