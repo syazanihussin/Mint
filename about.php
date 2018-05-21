@@ -157,7 +157,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				types of the world around, we’re also keen on ensuring that diners are given the exposure of diversification which allows everyone to have 
 				a catch and the enjoyment of the experience of trying something new or that’s out of the norm. As so we provide an array of culinary fields 
 				such as Chinese, Western, Fusion, Italian, Korean, Thai, Portuguese, Middle Eastern, Mediterranean, Indian, Desserts, Pastries of all kinds,
-				 your local favorites like Mamak and a whole lot more. You name it! 
+				 your local favorites like Mamak and a whole lot more. 
 				 </p> 
 				<div class="ftr-toprow">
 					<div class="col-md-4 ftr-top-grids">
@@ -165,8 +165,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-truck" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Fusce tempus</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Delivery</h4>
+							<p>We will deliver your food right to your doorstep within one hour of ordering. </p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div> 
@@ -175,8 +175,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Consectetur</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Customer</h4>
+							<p>target customer to all society that want the best delivery food and spend time and delicious food at time.</p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div>
@@ -185,8 +185,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Dolor siet</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tempus justo ac </p>
+							<h4>Feedback</h4>
+							<p>Customer satisfaction with Mint delivery is the feedback to us to improve our service and products. </p>
 						</div>
 						<div class="clearfix"> </div>
 					</div> 
