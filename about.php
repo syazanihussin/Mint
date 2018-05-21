@@ -133,7 +133,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
+			<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2>
 			</div>
 		</div>
 	</div>
@@ -165,8 +165,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-truck" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Delivery</h4>
-							<p>We will deliver your food right to your doorstep within one hour of ordering. </p>
+							<h4>Food Delivery</h4>
+							<p>Once you ordered the food will be delivered to you as soon as possible.</p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div> 
@@ -175,8 +175,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Customer</h4>
-							<p>target customer to all society that want the best delivery food and spend time and delicious food at time.</p>
+							<h4>Low Delivery Charge</h4>
+							<p>We consider the consumer as a student so special cost for delivery charge. </p>
 						</div> 
 						<div class="clearfix"> </div>
 					</div>
@@ -185,8 +185,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
 						</div> 
 						<div class="ftr-top-right">
-							<h4>Feedback</h4>
-							<p>Customer satisfaction with Mint delivery is the feedback to us to improve our service and products. </p>
+							<h4>No GST</h4>
+							<p>No GST need to be pay. Just spent of your food. </p>
 						</div>
 						<div class="clearfix"> </div>
 					</div> 
