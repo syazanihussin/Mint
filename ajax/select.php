@@ -82,7 +82,7 @@ else if($_POST['message'] == "delivery") {
 
 
 else if($_POST['message'] == "available") {
-    $db->select($_POST['table'], $_POST['column']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();
     $_SESSION['available'] = $db->getResult();
     $res = $_SESSION['available'];  

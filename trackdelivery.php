@@ -18,6 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
 <link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/cart style 2.css" rel="stylesheet">
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -26,148 +27,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
-<style> 
-	.d {
-	width: 200px;
-	height: 200px;
-	transform: translate(-50%, -50%);
-	justify-content: center;
-	margin: 15em;
-	filter: url('#goo');
-	animation: rotate-move 2s ease-in-out infinite;
-	}
-
-	.dot { 
-	width: 70px;
-	height: 70px;
-	border-radius: 50%;
-	background-color: #000;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	}
-
-	.dot-3 {
-	background-color: #f74d75;
-	animation: dot-3-move 2s ease infinite, index 6s ease infinite;
-	}
-
-	.dot-2 {
-	background-color: #10beae;
-	animation: dot-2-move 2s ease infinite, index 6s -4s ease infinite;
-	}
-
-	.dot-1 {
-	background-color: #ffe386;
-	animation: dot-1-move 2s ease infinite, index 6s -2s ease infinite;
-	}
-
-	@keyframes dot-3-move {
-	20% {transform: scale(1)}
-	45% {transform: translateY(-18px) scale(.45)}
-	60% {transform: translateY(-90px) scale(.45)}
-	80% {transform: translateY(-90px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
-
-	@keyframes dot-2-move {
-	20% {transform: scale(1)}
-	45% {transform: translate(-16px, 12px) scale(.45)}
-	60% {transform: translate(-80px, 60px) scale(.45)}
-	80% {transform: translate(-80px, 60px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
- 
-	@keyframes dot-1-move {
-	20% {transform: scale(1)}
-	45% {transform: translate(16px, 12px) scale(.45)}
-	60% {transform: translate(80px, 60px) scale(.45)}
-	80% {transform: translate(80px, 60px) scale(.45)}
-	100% {transform: translateY(0px) scale(1)}
-	}
-
-	@keyframes rotate-move {
-	55% {transform: translate(-50%, -50%) rotate(0deg)}
-	80% {transform: translate(-50%, -50%) rotate(360deg)}
-	100% {transform: translate(-50%, -50%) rotate(360deg)}
-	}
-
-	@keyframes index {
-	0%, 100% {z-index: 3}
-	33.3% {z-index: 2}
-	66.6% {z-index: 1}
-	}
-</style>
-
-  <script>
-    $(document).ready(function(){
-
-		<?php 
+<script>
+	$(document).ready(function(){
+		alert("Your delivery guy is on the way. Please wait...");
+		var url = "" + window.location.href;
+		var res = url.split("?");
 		
-		include('class/mysql_crud.php');
-		$db = new Database();
-		$db->connect();
-		$db->insert('orders','customerName, deliveryTo','"'.$_SESSION['customer'][0]['username'].'","'.$_GET['deliveryTo'].'"');
-		$res = $db->getResult();  
-
-		$allquantity = 0;
-
-		for($i = 1; $i <= $_GET['no_items']; $i++) {
-	
-			$name = 'item_name_' . $i;
-			$quan = 'quantity_' . $i;
-			$allquantity += $_GET[$quan];
-      	?> 
-
-		  	var menuName = '<?php echo $_GET[$name]; ?>';
-          	var subtotal = 0; 
-          	var total = 0;
-			
-			$.ajax({
-				url:"ajax/select.php",
-				dataType:"json",
-				type: "POST",
-				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'delivery'},
-				success:function(data){
-					$.ajax({
-						url:"ajax/insert.php",
-						dataType:"json",
-						type: "POST",
-						data: {table : 'order_menu', column : 'orderID, menuID, quantity', inserting : ''+<?php echo $res[0]; ?>+' , '+data[0]['menuID']+','+<?php echo $_GET[$quan]; ?>+'', message : 'ordering'},
-						success:function(data){
-						}
-					});
-				}
-			});
-
-		<?php 
-		}
-		?>
-		$("#loadingg").html('<div style="padding: 4em;" class="d"><div class="dot dot-1"></div><div class="dot dot-2"></div><div class="dot dot-3"></div></div><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/></filter></defs></svg>');
-		searchingDeliveryPerson();
-		
-		function searchingDeliveryPerson() {
-						
-			$.ajax({
-				url:"ajax/select.php",
-				dataType:"json",
-				type: "POST",
-				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $res[0]; ?>+'', message : ''},
-				success:function(data){
-					if(data[0]['staffID'] === null) {
-						searchingDeliveryPerson();
-					} else {
-						window.location.replace('trackdelivery.php?orderID='+<?php echo $res[0]; ?>);
-					}
-				}
-			});
-		}
+		$("#locating").click(function(){
+			var delivery_destination = $("#pac-input").val();
+			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
+			window.location.replace(dest);
+		});
 	});
-	
-  </script>
+</script>
 </head>
 <body> 
 	<!-- banner -->
@@ -185,7 +57,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
+									';
+								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -197,24 +82,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
-										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
-									';
-								}
+									
 							?>
-							
-							
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -234,17 +105,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								<li><a href="driverHome.php" class="active">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
+								<?php 
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -253,23 +124,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<?php
-							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
-								echo '
-								<div class="cart cart box_1"> 
-									<form action="#" method="post" class="last"> 
-										<input type="hidden" name="cmd" value="_cart" />
-										<input type="hidden" name="display" value="1" />
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-									</form>   
-								</div> 
-								';
-							}
-						?> 
 					</nav>
 				</div>
 			</div>
-			<!-- //navigation --> 
+			<!-- //navigation -->
 		</div>
 	</div>
 	<!-- //banner -->    
@@ -277,17 +135,116 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Delivery</li>
+			<li class="active">Destination</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
-		<div class="container">
-			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
-			<div id="loadingg"></div>
-			<div class="clearfix"> </div> 	 
-		</div>
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 class="w3ls-title">We've found Your Delivery Guys</h3>
+			<div id="names" class="add-products-row">
+			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
+					<?php
+						include('class/mysql_crud.php');
+						$db = new Database();
+						$db->connect();
+						
+						$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$_GET['orderID'].'');
+						$results = $db->getResult();
+						$db->select('orders', '*', NULL, 'orderID = '.$_GET['orderID'].'');
+						$orderss = $db->getResult();
+						$db->select('delivery_person', '*', NULL, 'staffID = '.$orderss[0]['staffID'].'');
+						$clientss = $db->getResult();
+
+						echo
+							'<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2.7em 2em 0;">
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+											<div class="shopping-cart-total">
+												<span id="tot" class="lighter-text">Total: RM80.20</span>
+												<span class="main-color-text"></span>
+											</div>
+										</div>
+										<ul class="shopping-cart-items">
+											<li class="clearfix">
+												<span class="item-name">Delivery Guys Infomation</span>
+												<span class="item-price">'.$clientss[0]['transportType'].'</span>
+												<span class="item-quantity">'.$clientss[0]['platNo'].'</span>
+											</li>
+										</ul>
+										<ul id="purchases" class="shopping-cart-items">';
+
+										foreach($results as $result) {
+											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
+											$foods = $db->getResult();
+											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
+											$supplier = $db->getResult();
+											echo
+											'<li class="clearfix">
+												<div style="margin: 1em 0 1em 0;">
+													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
+												</div>
+												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
+												<span class="item-name">'.$foods[0]['menuName'].'</span>
+												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
+												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
+											</li>';
+										}
+									echo
+										'</ul>
+										<ul class="shopping-cart-items">
+											<li style="margin-bottom: 4em;" class="clearfix">
+												<span class="item-name">Amount to pay</span>
+												<span class="item-price">Subtotal: </span>
+												<span id="sub" class="item-quantity"></span></br>
+												<span class="item-price">Delivery Charge: </span>
+												<span class="item-quantity">RM5.00</span>
+											</li>
+										</ul>
+										<a hidden href="#" id="delivered" class="button">Order Delivered</a>
+									</div>
+									';
+					?>
+					<script>
+						var map;
+						function initMap() {
+							var directionsService = new google.maps.DirectionsService;
+							var directionsDisplay = new google.maps.DirectionsRenderer;
+							var map = new google.maps.Map(document.getElementById('map'), {
+								zoom: 6,
+								center: {lat: 41.85, lng: -87.65}
+							});
+							directionsDisplay.setMap(map);
+							calculateAndDisplayRoute(directionsService, directionsDisplay);
+						}
+
+						function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+							var waypts = []
+							waypts.push({
+								location: '<?php echo $supplier[0]['address']; ?>',
+								stopover: true
+							});
+
+							directionsService.route({
+								origin: 'UPM Kolej 6, Serdang, Selangor, Malaysia',
+								destination: '<?php echo $orderss[0]['deliveryTo']; ?>',
+								waypoints: waypts,
+								optimizeWaypoints: true,
+								travelMode: 'DRIVING'
+
+							}, function(response, status) {
+								if (status === 'OK') {
+									directionsDisplay.setDirections(response);
+								} else {
+									window.alert('Directions request failed due to ' + status);
+								}
+							});
+						}
+					</script>
+				</div> 
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initMap" async defer></script>
+			
 	</div>
 	<!-- //add-products --> 
 	<!-- subscribe -->
