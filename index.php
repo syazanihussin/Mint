@@ -159,7 +159,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-				<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2>
+				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
 				<div class="agileits_search">
 					<input id="locationTextField" type="text" size="50">
 					<script>
