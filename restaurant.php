@@ -194,7 +194,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<a href="products.php"><img src="images/absthai.jpg" class="img-responsive" alt="img">Absolute Thai</a>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/ttp.jpg" class="img-responsive" alt="img">Teh Tarik Place</a>
+					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
 				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
 					<a href="products.php"><img src="images/dp.jpg" class="img-responsive" alt="img">Dapur Penyet</a>
@@ -215,13 +215,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<a href="products.php"><img src="images/littlepenangcafe.jpg" class="img-responsive" alt="img">Little Penang Cafe</a>
 				</div> 
 				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.html"> Soups</a>
+					<a href="products.php"><img src="images/fnc.jpg" class="img-responsive" alt="img">Fish n Co</a>
 				</div> 
 				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.html"> Lunchbox</a>
-				</div> 
+					<a href="products.php"><img src="images/tp.png" class="img-responsive" alt="img">The Plated</a>
+				</div>
 				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.html"> Dinner</a>
+					<a href="products.php"><img src="images/mfm.jpg" class="img-responsive" alt="img">Manhattan Fish Market</a>
 				</div>
 
 
