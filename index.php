@@ -305,7 +305,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="spldishes-agileinfo">
 				<div class="col-md-3 spldishes-w3left">
 					<h5 class="w3ltitle">Available Foods</h5>
-					<p>Some of the delecious food you can have for your lunch or maybe dinner. Just click!</p>
+					<p>Some of the delecious food you can have for your breakfast, lunch or maybe dinner. Just click!</p>
 				</div> 
 				<div class="col-md-9 spldishes-grids">
 					<!-- Owl-Carousel -->
@@ -313,28 +313,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Toast Box</h4>
+								<h4>Sandwich</h4>
 								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Sushi King</h4>
-								<span>The most famous Japanese food in Malaysia.</span>
+								<h4>Chinese Dish</h4>
+								<span>The most famous Chinese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Roti Boy</h4>
+								<h4>Indian Food</h4>
 								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Secret Recipe</h4>
+								<h4>Absolute Thai</h4>
 								<span>Lunch time with Grilled Mushroom Chicken.</span>
 							</div>
 						</a>
@@ -348,21 +348,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Toast Box</h4>
+								<h4>Sandwich</h4>
 								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Sushi King</h4>
-								<span>The most famous Japanese food in Malaysia.</span>
+								<h4>Chinese Dish</h4>
+								<span>The most famous Chinese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-							<h4>Roti Boy</h4>
+							<h4>Indian Food</h4>
 								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
