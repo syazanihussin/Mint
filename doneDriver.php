@@ -29,17 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
 	$(document).ready(function(){
-		$("#delivering").click(function(){
-			$.ajax({
-				url:"ajax/update.php",
-				dataType:"json",
-				type: "POST",
-				data: {table : 'orders', updating : 'paymentStatus = "paid"', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
-				success:function(data){
-					window.location.replace('doneDriver.php');
-				}
-			});
-		});
+		
 	});
 </script>
 </head>
@@ -137,114 +127,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Destination</li>
+			<li class="active">Done</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Delivery Destination</h3>
-			<div id="names" class="add-products-row">
-			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
-					<?php
-						include('class/mysql_crud.php');
-						$db = new Database();
-						$db->connect();
-						$db->select('delivery_person', '*', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
-						$clientss = $db->getResult();
-						$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$clientss[0]['clientID'].'');
-						$results = $db->getResult();
-						$db->select('orders', '*', NULL, 'orderID = '.$clientss[0]['clientID'].'');
-						$orderss = $db->getResult();
-
-						echo
-							'<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2.7em 2em 0;">
-										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
-											<div class="shopping-cart-total">
-												<span id="tot" class="lighter-text">Total: RM80.20</span>
-												<span class="main-color-text"></span>
-											</div>
-										</div>
-										<ul id="purchases" class="shopping-cart-items">';
-
-										foreach($results as $result) {
-											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
-											$foods = $db->getResult();
-											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
-											$supplier = $db->getResult();
-											echo
-											'<li class="clearfix">
-												<div style="margin: 1em 0 1em 0;">
-													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
-													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
-												</div>
-												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
-												<span class="item-name">'.$foods[0]['menuName'].'</span>
-												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
-												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
-											</li>';
-										}
-									echo
-										'</ul>
-										<ul class="shopping-cart-items">
-											<li class="clearfix">
-												<span class="item-name">Delivery to</span>
-												<span class="item-price">'.$orderss[0]['deliveryTo'].'</span>
-											</li>
-										</ul>
-										<ul class="shopping-cart-items">
-											<li style="margin-bottom: 4em;" class="clearfix">
-												<span class="item-name">Amount to pay</span>
-												<span class="item-price">Subtotal: </span>
-												<span id="sub" class="item-quantity"></span></br>
-												<span class="item-price">Delivery Charge: </span>
-												<span class="item-quantity">RM5.00</span>
-											</li>
-										</ul>
-										<button id="delivering" class="button" >Order Delivered</button>
-									</div>
-									';
-					?>
-					<script>
-						var map;
-						function initMap() {
-							var directionsService = new google.maps.DirectionsService;
-							var directionsDisplay = new google.maps.DirectionsRenderer;
-							var map = new google.maps.Map(document.getElementById('map'), {
-								zoom: 6,
-								center: {lat: 41.85, lng: -87.65}
-							});
-							directionsDisplay.setMap(map);
-							calculateAndDisplayRoute(directionsService, directionsDisplay);
-						}
-
-						function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-							var waypts = []
-							waypts.push({
-								location: '<?php echo $supplier[0]['address']; ?>',
-								stopover: true
-							});
-
-							directionsService.route({
-								origin: 'UPM Kolej 6, Serdang, Selangor, Malaysia',
-								destination: '<?php echo $orderss[0]['deliveryTo']; ?>',
-								waypoints: waypts,
-								optimizeWaypoints: true,
-								travelMode: 'DRIVING'
-
-							}, function(response, status) {
-								if (status === 'OK') {
-									directionsDisplay.setDirections(response);
-								} else {
-									window.alert('Directions request failed due to ' + status);
-								}
-							});
-						}
-					</script>
-				</div> 
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initMap" async defer></script>
-			
+			<h3 class="w3ls-title">Thank you for delivering the order for us.</h3>
+			<p style="margin-top: 3em;" class="w3lsorder-text">
+				<a href="driverHome.php" style="padding: 1em 5em 1em 5em;" id="refresh" class="button">DONE</a>
+			</p>
 	</div>
 	<!-- //add-products --> 
 	<!-- subscribe -->

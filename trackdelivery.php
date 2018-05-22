@@ -29,15 +29,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
 	$(document).ready(function(){
-		alert("Your delivery guy is on the way. Please wait...");
-		var url = "" + window.location.href;
-		var res = url.split("?");
+		checkingPayment();
 		
-		$("#locating").click(function(){
-			var delivery_destination = $("#pac-input").val();
-			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
-			window.location.replace(dest);
-		});
+		function checkingPayment() {
+						
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $_GET['orderID']; ?>+'', message : ''},
+				success:function(data){
+					if(data[0]['paymentStatus'] === null) {
+						checkingPayment();
+					} else {
+						window.location.replace('doneUser.php');
+					}
+				}
+			});
+		}
 	});
 </script>
 </head>
@@ -85,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									
 							?>
 							<li class="head-dpdn">
-								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -105,13 +114,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="driverHome.php" class="active">Home</a></li>	
-								<li><a href="aboutDriver.php">About</a></li> 
-								<li><a href="contactDriver.php">Contact Us</a></li>
+								<li><a href="index.php" class="active">Home</a></li>	
+								<li><a href="about.php">About</a></li> 
+								<li><a href="contact.php">Contact Us</a></li>
 								<?php 
 								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
@@ -142,7 +151,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">We've found Your Delivery Guys</h3>
+			<h3 class="w3ls-title">We've found Your Delivery Guy</h3>
 			<div id="names" class="add-products-row">
 			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
 					<?php
