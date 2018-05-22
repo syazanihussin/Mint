@@ -147,11 +147,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 			  
 	<!-- add-products -->
-	<div style="padding: 4em 0;">  
+	<div style="padding: 4em 0;"> 
 		<div class="container">
-			<h3 class="w3ls-title">Choose Restaurant</h3>
-			<p class="w3lsorder-text">Here are available restaurants based on your location search</p>
+			
 			<div class="add-products-row">
+			
 				<?php
 					if(isset($_SESSION['restaurant'])){
 						foreach($_SESSION['restaurant'] as $restaurant) {
@@ -175,7 +175,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>  	 
 		</div>
 	</div>
+	
+	<div class="products">	 
+		<div class="container">
+			<div class="wthree-menu">  
+				
+				<div class="container">
+				<h3 class="w3ls-title">Choose Restaurant</h3>
+				<p class="w3lsorder-text">Here are some of available restaurants you can look for.</p>
+				
+				<div class="menu-agileinfo">  
+
+				
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/bc.jpg" class="img-responsive" alt="img">Black Canyon</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/absthai.jpg" class="img-responsive" alt="img">Absolute Thai</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/ttp.jpg" class="img-responsive" alt="img">Teh Tarik Place</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/dp.jpg" class="img-responsive" alt="img">Dapur Penyet</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/acl.jpg" class="img-responsive" alt="img">Ah Cheng Laksa</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/johhnny.jpg" class="img-responsive" alt="img">Johnny's Restaurant</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/toast.jpg" class="img-responsive" alt="img">Toast Box</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/littlepenangcafe.jpg" class="img-responsive" alt="img">Little Penang Cafe</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.html"> Soups</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.html"> Lunchbox</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.html"> Dinner</a>
+				</div>
+
+
+
+				</div>
+				<div class="clearfix"> </div> 
+			</div> 
+			<div class="clearfix"> </div>
+		</div>
+	</div>
 	<!-- //add-products --> 
+		
+	
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -251,6 +310,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div> 
 	</div>
+
+
 	<div class="copyw3-agile"> 
 		<div class="container">
 			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
