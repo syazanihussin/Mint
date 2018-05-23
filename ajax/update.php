@@ -15,3 +15,9 @@ else if($_POST['message'] == "paid") {
     $res = $db->getResult(); 
     echo json_encode($res);
 }
+
+else if($_POST['message'] == "topup") {
+    $db->update($_POST['table'], $_POST['updating'], $_POST['where']);
+    $res = $db->getResult(); 
+    echo json_encode($res);
+}

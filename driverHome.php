@@ -35,21 +35,45 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             url:"ajax/select.php",
             dataType:"json",
             type: "POST",
-            data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+            data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
         	success:function(data){
+				if(data[0]['topup'] > 0 ) {
+					$.ajax({
+						url:"ajax/select.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+						success:function(data){
+						}
+					});
+				} else {
+					$("#alert").text("You don't have enough balance to accept an order. Your current balance is RM" + parseFloat(Math.round(data[0]['topup'] * 100) / 100).toFixed(2) + ". Click here to topup.");
+				}
             }
         });
 
  		$("#refresh").click(function(){
 			$.ajax({
-                url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
-        		success:function(data){
-					window.location.replace('driverHome.php');
-                }
-            });
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				success:function(data){
+					if(data[0]['topup'] > 0 ) {
+						$.ajax({
+							url:"ajax/select.php",
+							dataType:"json",
+							type: "POST",
+							data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+							success:function(data){
+								window.location.replace('driverHome.php');
+							}
+						});
+					} else {
+						$("#alert").text("You don't have enough balance to accept an order. Your current balance is RM" + parseFloat(Math.round(data[0]['topup'] * 100) / 100).toFixed(2) + ". Click here to topup.");
+					}
+				}
+			});
     	});
 	});
 </script>
@@ -167,6 +191,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				?>
 			</p>
 			<div id="names" class="add-products-row">
+				<a id="alert" href="topup.php?username=<?php echo $_SESSION['driver'][0]['username']; ?>" style="font-size: 1.5em; color: black;"></a>
 				<?php
 					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 						if(isset($_SESSION['available'])){

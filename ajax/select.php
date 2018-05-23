@@ -16,6 +16,12 @@ else if($_POST['message'] == "gg") {
     echo json_encode($res); //echo array of data, return data in array
 }
 
+else if($_POST['message'] == "balance") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names
+    $res = $db->getResult();
+    echo json_encode($res); //echo array of data, return data in array
+}
+
 else if($_POST['message'] == "login") {
     $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'customerID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();

@@ -132,6 +132,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				type: "POST",
 				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'delivery'},
 				success:function(data){
+
+					subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
+
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', updating : 'subtotal = '+ subtotal +'', where : 'orderID = <?php echo $res[0]; ?>', message : 'topup'},
+						success:function(data){
+						}
+					});
+
 					$.ajax({
 						url:"ajax/insert.php",
 						dataType:"json",

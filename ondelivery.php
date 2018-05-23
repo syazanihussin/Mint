@@ -35,8 +35,87 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				dataType:"json",
 				type: "POST",
 				data: {table : 'orders', updating : 'paymentStatus = "paid"', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
+				success:function(data){	
+				}
+			});
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
 				success:function(data){
-					window.location.replace('doneDriver.php');
+
+					var balance = data[0]['topup'] - 0.25;
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'delivery_person', updating : 'topup = '+balance+'', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
+						success:function(data){
+						}
+					});
+				}
+			});
+
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+				success:function(data){
+
+					var balance = parseFloat(data[0]['deliveryCharge']);
+					balance += 0.25;
+
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'income', updating : 'deliveryCharge = '+balance+'', where : 'incomeID = 1', message : 'paid'},
+						success:function(data){
+						}
+					});
+				}
+			});
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				success:function(data){
+					$.ajax({
+						url:"ajax/select.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', column : '*', where : 'orderID = '+data[0]['clientID'], message : 'balance'},
+						success:function(data){
+
+							var charge = (data[0]['subtotal'] * 0.05);
+
+							$.ajax({
+								url:"ajax/select.php",
+								dataType:"json",
+								type: "POST",
+								data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+								success:function(data){
+									var balance = parseFloat(data[0]['restaurantCharge']);
+									balance += charge;
+									$.ajax({
+										url:"ajax/update.php",
+										dataType:"json",
+										type: "POST",
+										data: {table : 'income', updating : 'restaurantCharge = '+balance+'', where : 'incomeID = 1', message : 'paid'},
+										success:function(data){
+											window.location.replace('doneDriver.php');
+										}
+									});
+								}
+							});
+						}
+					});
 				}
 			});
 		});
