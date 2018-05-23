@@ -415,42 +415,42 @@ There are many special staples you can get from these MINT apps .</p>
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Set C</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<span>Big bread with green sos as sweet as date</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Set D</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<span>Meat and Green Nature</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
 							<div class="agile-dish-caption">
 								<h4>Set E</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<span>Funky, Style, Sweet </span>
 							</div>
 						</a> 
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set F</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Set A</h4>
+								<span>Mexican bread, Meat melted chesse and Rasberry dessert</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set G</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Set B</h4>
+								<span>Sushi Ajinamoto  </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set H</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Set C</h4>
+								<span>Big bread with green sos as sweet as date </span>
 							</div>
 						</a>
 					</div> 
@@ -599,7 +599,7 @@ There are many special staples you can get from these MINT apps .</p>
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->   
