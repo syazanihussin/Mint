@@ -381,7 +381,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //products --> 
 	<div class="container"> 
 		<div class="w3agile-deals prds-w3text"> 
-			<h5>Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra.</h5>
+			<h5>Just call us anytime then you will get want you want :)</h5>
 		</div>
 	</div>
 	<!-- dishes -->
@@ -391,7 +391,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="spldishes-agileinfo">
 				<div class="col-md-3 spldishes-w3left">
 					<h5 class="w3ltitle">Staple Specials</h5>
-					<p>Vero vulputate enim non justo posuere placerat Phasellus mauris vulputate enim non justo enim .</p>
+					<p>
+There are many special staples you can get from these MINT apps .</p>
 				</div> 
 				<div class="col-md-9 spldishes-grids">
 					<!-- Owl-Carousel -->
@@ -399,56 +400,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Set A</h4>
+								<span>Mexican bread, Meat melted chesse and Rasberry dessert</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Set B</h4>
+								<span>Sushi Ajinamoto </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set C</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set D</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set E</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a> 
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set F</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set G</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Duis congue</h4>
+								<h4>Set H</h4>
 								<span>Neque porro quisquam est qui dolorem </span>
 							</div>
 						</a>
