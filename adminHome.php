@@ -38,9 +38,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
         	success:function(data){
 				var total = parseFloat(data[0]['restaurantCharge']) + parseFloat(data[0]['deliveryCharge']); 
-				$("#alert").text("RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
-				$("#alert2").text("RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
-				$("#alert3").text("RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
+				$("#alert").text("     RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
+				$("#alert2").text("     RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
+				$("#alert3").text("     RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
 			}
         });
 
@@ -52,9 +52,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
 				success:function(data){
 					var total = parseFloat(data[0]['restaurantCharge']) + parseFloat(data[0]['deliveryCharge']); 
-					$("#alert").text("RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
-					$("#alert2").text("RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
-					$("#alert3").text("RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
+					$("#alert").text("     RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
+					$("#alert2").text("     RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
+					$("#alert3").text("     RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
 				}
 			});
     	});
@@ -165,14 +165,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									
 				?>
 			</p>
-			<div id="names" class="add-products-row">
+			<div id="names" style="justify-content: center;" class="add-products-row">
 				<?php
 					if(isset($_SESSION['admin'])  && count($_SESSION['admin']) != 0){
 						echo '
-						<table style="padding: 2em 2em 2em 2em;">
-							<tr><th style="font-size: 1.5em; color: black;">Service Charge From Restaurant</th><td><p id="alert" style="font-size: 1.5em; color: black;"></p></td></tr>
-							<tr><th style="font-size: 1.5em; color: black;">Service Charge From Restaurant</th><td><p id="alert2" style="font-size: 1.5em; color: black;"></p></td></tr>
-							<tr><th style="font-size: 1.5em; color: black;">Total</th><td><p id="alert3" style="font-size: 1.5em; color: black;"></p></td></tr>
+						<table>
+							<tr><th style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;">Service Charge From Restaurant</th><td><p id="alert" style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;"></p></td></tr>
+							<tr><th style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;">Service Charge From Delivery</th><td><p id="alert2" style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;"></p></td></tr>
+							<tr><th style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;">Total</th><td><p id="alert3" style="padding: 0 2em 1em 2em; font-size: 1.5em; color: black;"></p></td></tr>
 						</table>
 						';
 					}				

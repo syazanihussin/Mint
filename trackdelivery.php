@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					}
 				}
 			});
-		}
+		} 
 	});
 </script>
 </head>
@@ -66,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['driver'])){
+								if(!isset($_SESSION['customer'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -79,7 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									';
 								}
-								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -122,9 +122,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="about.php">About</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php 
-								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
+								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -165,12 +165,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						$orderss = $db->getResult();
 						$db->select('delivery_person', '*', NULL, 'staffID = '.$orderss[0]['staffID'].'');
 						$clientss = $db->getResult();
-
+						$tot = $orderss[0]['subtotal'] + 5;
+						$qua = 0;
+						foreach($results as $result) {
+							$qua += $result['quantity'];
+						}
 						echo
 							'<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2.7em 2em 0;">
-										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">'.$qua.'</span>
 											<div class="shopping-cart-total">
-												<span id="tot" class="lighter-text">Total: RM80.20</span>
+												<span id="tot" class="lighter-text">Total: RM'.sprintf('%0.2f', $tot).'</span>
 												<span class="main-color-text"></span>
 											</div>
 										</div>
@@ -191,8 +195,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											echo
 											'<li class="clearfix">
 												<div style="margin: 1em 0 1em 0;">
-													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
-													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
+													<span style="font-size: 16px;">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 16px;">Location: '.$supplier[0]['address'].'</span></br>
 												</div>
 												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
 												<span class="item-name">'.$foods[0]['menuName'].'</span>
@@ -206,12 +210,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<li style="margin-bottom: 4em;" class="clearfix">
 												<span class="item-name">Amount to pay</span>
 												<span class="item-price">Subtotal: </span>
-												<span id="sub" class="item-quantity"></span></br>
+												<span id="sub" class="item-quantity">RM'.$orderss[0]['subtotal'].'</span></br>
 												<span class="item-price">Delivery Charge: </span>
 												<span class="item-quantity">RM5.00</span>
 											</li>
 										</ul>
-										<a hidden href="#" id="delivered" class="button">Order Delivered</a>
+										<a hidden href="#" id="delivered" style="width: 100%" class="button">Order Delivered</a>
 									</div>
 									';
 					?>
