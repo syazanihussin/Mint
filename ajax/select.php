@@ -38,6 +38,14 @@ else if($_POST['message'] == "loginDriver") {
     echo json_encode($res);
 }
 
+else if($_POST['message'] == "loginAdmin") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    session_start();
+    $_SESSION['admin'] = $db->getResult();
+    $res = $_SESSION['admin'];  
+    echo json_encode($res);
+}
+
 else if($_POST['message'] == "searchRestaurant") {
     $db->select($_POST['table'], $_POST['column']); // Table name, Column Names
     $suppliers = $db->getResult();

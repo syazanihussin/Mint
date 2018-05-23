@@ -17,7 +17,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
-<link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/font-awesome.css" rel="stylesheet">
+<link href="css/cart style 2.css" rel="stylesheet"> <!-- font-awesome icons --> 
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -27,99 +28,79 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
 <script>
-    $(document).ready(function(){
-		$("#login").click(function(){
-
-			var userName = $("#username").val();
-            var password = $("#password").val();
-
-            $.ajax({
-				url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'customer', column : 'username, password', where : 'username="'+userName+'" AND password="'+password+'"', message : 'login'},
-                success:function(data){
-					if(data[0] === undefined) {
-						$.ajax({
-							url:"ajax/select.php",
-							dataType:"json",
-							type: "POST",
-							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
-							success:function(data){
-								if(data[0] === undefined) {
-									$.ajax({
-										url:"ajax/select.php",
-										dataType:"json",
-										type: "POST",
-										data: {table : 'admin', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginAdmin'},
-										success:function(data){
-											if(data[0] === undefined) {
-												alert("Wrong username or password");
-											} else {
-												window.location.replace("adminHome.php");
-											}
-										}
-									});
-								} else {
-									window.location.replace("driverHome.php");
-								}
-							}
-						});
-					} else {
-						window.location.replace("index.php");
-					}
-                }
-            });
+	
+		
+	$(document).ready(function(){
+		$.ajax({
+            url:"ajax/select.php",
+            dataType:"json",
+            type: "POST",
+            data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+        	success:function(data){
+				var total = parseFloat(data[0]['restaurantCharge']) + parseFloat(data[0]['deliveryCharge']); 
+				$("#alert").text("RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
+				$("#alert2").text("RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
+				$("#alert3").text("RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
+			}
         });
+
+ 		$("#refresh").click(function(){
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+				success:function(data){
+					var total = parseFloat(data[0]['restaurantCharge']) + parseFloat(data[0]['deliveryCharge']); 
+					$("#alert").text("RM" + parseFloat(Math.round(data[0]['restaurantCharge'] * 100) / 100).toFixed(2));
+					$("#alert2").text("RM" + parseFloat(Math.round(data[0]['deliveryCharge'] * 100) / 100).toFixed(2));
+					$("#alert3").text("RM" + parseFloat(Math.round(total * 100) / 100).toFixed(2));
+				}
+			});
+    	});
 	});
 </script>
-
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['admin'])){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+								else if(isset($_SESSION['admin'])  && count($_SESSION['admin']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
 									';
 								}
+									
 							?>
-							
-							<li class="head-dpdn">
-								<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
-							</li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div> 
@@ -138,65 +119,68 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								
+								<li><a href="driverHome.php" class="active">Home</a></li>
+								<?php 
+								if(isset($_SESSION['admin'])  && count($_SESSION['admin']) != 0){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['admin'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
-						</div> 
+						</div>
 					</nav>
 				</div>
 			</div>
 			<!-- //navigation --> 
 		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-				<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
-		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Login</li>
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Income</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- login-page -->
-	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
-		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">Login to your account</h3>  
-			<div class="login-agileinfo"> 
-				
-					<input class="agile-ltext" type="text" id="username" placeholder="Username" required="">
-					<input class="agile-ltext" type="password" id="password" placeholder="Password" required="">
-					<div class="wthreelogin-text"> 
-						<ul> 
-							<li>
-								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i> 
-									<span> Remember me ?</span> 
-								</label> 
-							</li>
-							<li><a href="#">Forgot password?</a> </li>
-						</ul>
-						<div class="clearfix"> </div>
-					</div>   
-					<input type="submit" id="login" value="LOGIN">
-				
-				<p>Don't have an Account? <a href="signup.php"> Sign Up Now!</a></p> 
-			</div>	 
+			  
+	<!-- add-products -->
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 style="margin-top: -1em;" class="w3ls-title">Income</h3>
+			<p class="w3lsorder-text">
+				<?php
+					if(isset($_SESSION['admin'])  && count($_SESSION['admin']) != 0){
+						echo '
+							<a href="#" id="refresh" style="float: right; margin: -2em;" class="button">Refresh</a>
+						';
+					}
+									
+				?>
+			</p>
+			<div id="names" class="add-products-row">
+				<?php
+					if(isset($_SESSION['admin'])  && count($_SESSION['admin']) != 0){
+						echo '
+						<table style="padding: 2em 2em 2em 2em;">
+							<tr><th style="font-size: 1.5em; color: black;">Service Charge From Restaurant</th><td><p id="alert" style="font-size: 1.5em; color: black;"></p></td></tr>
+							<tr><th style="font-size: 1.5em; color: black;">Service Charge From Restaurant</th><td><p id="alert2" style="font-size: 1.5em; color: black;"></p></td></tr>
+							<tr><th style="font-size: 1.5em; color: black;">Total</th><td><p id="alert3" style="font-size: 1.5em; color: black;"></p></td></tr>
+						</table>
+						';
+					}				
+				?>
+			</div>  
 		</div>
 	</div>
-	<!-- //login-page -->  
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -222,7 +206,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
