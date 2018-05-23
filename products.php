@@ -274,13 +274,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 								<div class="back">
 									<h4>Fish salad</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-									<h6>3<sup>$</sup></h6>
+									<p>A lovely, fresh fennel salad with the delicate, hot fish.</p>
+									<h6>10.95<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
 										<input type="hidden" name="w3ls_item" value="Fish salad"> 
-										<input type="hidden" name="amount" value="3.00"> 
+										<input type="hidden" name="amount" value="10.95"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
 										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
@@ -302,15 +302,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="back">
 									<h4>Sandwich</h4>
 									<p>Comes in a set which provides sandwiches and bread.</p>
-									<h6>6.90<sup>MYR</sup></h6>
+									<h6>7.11<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
 										<input type="hidden" name="w3ls_item" value="Sandwich"> 
-										<input type="hidden" name="amount" value="6.90"> 
+										<input type="hidden" name="amount" value="7.11"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+										<a href="#" data-toggle="modal" data-target="#myModal2">More</a>
 									</form>
 								</div>
 							</div>
@@ -680,8 +680,61 @@ There are many special staples you can get from these MINT apps .</p>
 		</div>
 	</div>
 	<!-- //dishes --> 
-	<!-- modal --> 
+	<!-- modal1 --> 
 	<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g6.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Fish Salad</h3>
+							<p><strong>Lunch food.</strong><br>Gives you a healthy food in your lunch meals. 
+							A lovely, fresh fennel salad is such a great summer combo with the delicate, hot fish </p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">15 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM10.95</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount!</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Fish Salad" /> 
+								<input type="hidden" name="amount" value="10.95" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal1 -->
+	<!-- modal2 --> 
+	<div class="modal video-modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -708,32 +761,22 @@ There are many special staples you can get from these MINT apps .</p>
 							</div>
 							<div class="single-price">
 								<ul>
-									<li>7.11MYR</li>  
-									<li><del>7.90MYR</del></li> 
+									<li>RM7.11</li>  
+									<li><del>RM7.90</del></li> 
 									<li><span class="w3off">10% OFF</span></li> 
 									<li>Ends on : June, 1th</li>
-									<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
+									
 								</ul>	
 							</div> 
-							<p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
 							<form action="#" method="post">
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="add" value="1" /> 
-								<input type="hidden" name="w3ls_item" value="France Special" /> 
-								<input type="hidden" name="amount" value="18.00" /> 
+								<input type="hidden" name="w3ls_item" value="Sandwich" /> 
+								<input type="hidden" name="amount" value="7.11" /> 
 								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 							</form>
 							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
-							<div class="single-page-icons social-icons"> 
-								<ul>
-									<li><h4>Share on</h4></li>
-									<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-									<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
-									<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-									<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-									<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-								</ul>
-							</div> 
+							
 						</div> 
 						<div class="clearfix"> </div>
 					</div>
@@ -741,7 +784,7 @@ There are many special staples you can get from these MINT apps .</p>
 			</div>
 		</div>
 	</div> 
-	<!-- //modal -->
+	<!-- //modal2 -->
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
