@@ -1109,7 +1109,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div> 
 	<!-- //modal7 -->
 		<!-- modal8 --> 
-		<div class="modal video-modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModal6">
+		<div class="modal video-modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModal8">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1118,12 +1118,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<section>
 					<div class="modal-body">
 						<div class="col-md-5 modal_body_left">
-							<img src="images/img1.jpg" alt=" " class="img-responsive">
+							<img src="images/img2.jpg" alt=" " class="img-responsive">
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
-							<h3 class="item_name">Break A Plate<</h3>
-							<p><strong>Breakfast food. </strong><br>Consist of varieties of healthy food for breakfast.
-							 Including sausages, vegetables, bread, eggs and others.</p>
+							<h3 class="item_name">Mee Kari</h3>
+							<p><strong>Dinner food. </strong>
+							<br>Consist of varieties of healthy food for dinner.
+							Fulled the bowl with the varities of toppings.</p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -1131,13 +1132,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li class="rating">23 reviews</li>
+									<li class="rating">33 reviews</li>
 									<li><a href="#">Add your review</a></li>
 								</ul> 
 							</div>
 							<div class="single-price">
 								<ul>
-									<li>RM10.90</li>  
+									<li>RM5.50</li>  
 									<li><del></del></li> 
 									<li><span class="w3off">No discount</span></li> 
 									<li></li>
@@ -1147,8 +1148,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<form action="#" method="post">
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="add" value="1" /> 
-								<input type="hidden" name="w3ls_item" value="Break A Plate" /> 
-								<input type="hidden" name="amount" value="10.90" /> 
+								<input type="hidden" name="w3ls_item" value="Mee Kari" /> 
+								<input type="hidden" name="amount" value="5.50" /> 
 								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 							</form>
 							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
@@ -1162,7 +1163,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div> 
 	<!-- //modal8 -->
 		<!-- modal9 --> 
-		<div class="modal video-modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModal6">
+		<div class="modal video-modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModal9">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1171,12 +1172,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<section>
 					<div class="modal-body">
 						<div class="col-md-5 modal_body_left">
-							<img src="images/img1.jpg" alt=" " class="img-responsive">
+							<img src="images/g7.jpg" alt=" " class="img-responsive">
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
-							<h3 class="item_name">Break A Plate<</h3>
-							<p><strong>Breakfast food. </strong><br>Consist of varieties of healthy food for breakfast.
-							 Including sausages, vegetables, bread, eggs and others.</p>
+							<h3 class="item_name">SandSoup</h3>
+							<p><strong>Breakfast food. </strong>
+							<br>Consist of varieties of healthy food.
+							 Including of sandwich and soup for early breakfast.</p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -1184,13 +1186,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li class="rating">23 reviews</li>
+									<li class="rating">10 reviews</li>
 									<li><a href="#">Add your review</a></li>
 								</ul> 
 							</div>
 							<div class="single-price">
 								<ul>
-									<li>RM10.90</li>  
+									<li>RM4.60</li>  
 									<li><del></del></li> 
 									<li><span class="w3off">No discount</span></li> 
 									<li></li>
@@ -1200,8 +1202,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<form action="#" method="post">
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="add" value="1" /> 
-								<input type="hidden" name="w3ls_item" value="Break A Plate" /> 
-								<input type="hidden" name="amount" value="10.90" /> 
+								<input type="hidden" name="w3ls_item" value="SandSoup" /> 
+								<input type="hidden" name="amount" value="4.60" /> 
 								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 							</form>
 							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
