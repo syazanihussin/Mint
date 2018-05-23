@@ -98,6 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<li><a href="about.php" class="active">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li>
 								<li><a href="products.php" >Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php

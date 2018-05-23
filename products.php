@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Food</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -116,6 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li>
 								<li><a href="products.php" class="active">Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
@@ -162,7 +163,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
 			<li><a href="restaurant.php">Restaurant</a></li> 
-			<li class="active">Dishes</li>
+			<li class="active">Food</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
@@ -173,14 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="product-top">
 					<h4>Food Collection at <?php echo $_GET['selectedRestaurant']; ?></h4>
 					<ul> 
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter By<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Low price</a></li> 
-								<li><a href="#">High price</a></li>
-								<li><a href="#">Latest</a></li>  
-							</ul> 
-						</li>
+						
 						<li class="dropdown head-dpdn">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Food Type<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -268,22 +262,266 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							}
 						}
 					?>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g6.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Fish salad</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Fish salad</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>3<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Fish salad"> 
+										<input type="hidden" name="amount" value="3.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div> 
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sandwich</h5>  
+									</div> 
+									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sandwich</h4>
+									<p>Comes in a set which provides sandwiches and bread.</p>
+									<h6>6.90<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sandwich"> 
+										<input type="hidden" name="amount" value="6.90"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g3.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Indian Food</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Indian Food</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Indian Food"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sandwich</h5>  
+									</div> 
+									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sandwich</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sandwich"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g3.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Indian Food</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Indian Food</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Indian Food"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sandwich</h5>  
+									</div> 
+									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sandwich</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sandwich"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g6.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Fish salad</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Fish salad</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>3<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Fish salad"> 
+										<input type="hidden" name="amount" value="3.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div> 
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sandwich</h5>  
+									</div> 
+									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sandwich</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sandwich"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g3.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Indian Food</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Indian Food</h4>
+									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
+									<h6>2<sup>$</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Indian Food"> 
+										<input type="hidden" name="amount" value="2.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 			<div class="col-md-3 rsidebar">
 				<div class="rsidebar-top">
 					<div class="slider-left">
-						<h4>CHOOSE BY AGE</h4>            
+						<h4>MEALS</h4>            
 						<div class="row row1 scroll-pane">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Youngers</label>  
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Adults</label> 
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Senior Citizen</label>  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Breakfast</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Lunch</label>  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Dinner</label>   
 						</div> 
 					</div>
 					<div class="sidebar-row">
-						<h4>By Cuisine</h4>
+						<h4>Cuisine</h4>
 						<ul class="faq">
 							<li class="item1"><a href="#">Indian Food<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
@@ -293,7 +531,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="subitem1"><a href="#">Trending Food</a></li>										
 								</ul>
 							</li>
-							<li class="item2"><a href="#">Italian Food<span class="glyphicon glyphicon-menu-down"></span></a>
+							<li class="item2"><a href="#">Chinese Food<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
 									<li class="subitem1"><a href="#">Panzanella</a></li>										
 									<li class="subitem1"><a href="#">Margherita Pizza </a></li>										
@@ -301,7 +539,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="subitem1"><a href="#">Corn Cannelloni</a></li>										
 								</ul>
 							</li>
-							<li class="item3"><a href="#">American Food<span class="glyphicon glyphicon-menu-down"></span></a>
+							<li class="item3"><a href="#">Malay Food<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
 									<li class="subitem1"><a href="#">Sandwiches</a></li>										
 									<li class="subitem1"><a href="#">Hot dog</a></li>										
@@ -354,26 +592,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>			 
 				</div>
-				<div class="related-row">
-					<h4>Related Searches</h4>
-					<ul>
-						<li><a href="products.php">Salads </a></li>
-						<li><a href="products.php">Vegetarian</a></li>
-						<li><a href="products.php">Dinner</a></li>
-						<li><a href="products.php">Diet Soup</a></li>
-						<li><a href="products.php">Sweets</a></li>
-						<li><a href="products.php">Seasonal</a></li>
-						<li><a href="products.php">Breakfast</a></li>
-						<li><a href="products.php">Italian Food</a></li>
-						<li><a href="products.php">Meals</a></li> 
-					</ul>
-				</div>
-				<div class="related-row">
-					<h4>YOU MAY ALSO LIKE</h4>
-					<div class="galry-like">  
-						<a href="#" data-toggle="modal" data-target="#myModal1"><img src="images/s1.jpg" class="img-responsive" alt="img"></a>         
-					</div>
-				</div>
+				
+				
 			</div>
 			<div class="clearfix"> </div> 
 		</div>
@@ -381,7 +601,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //products --> 
 	<div class="container"> 
 		<div class="w3agile-deals prds-w3text"> 
-			<h5>Just call us anytime then you will get want you want :)</h5>
+			<h5>Just call us anytime then you will get what you want :)</h5>
 		</div>
 	</div>
 	<!-- dishes -->
@@ -470,11 +690,11 @@ There are many special staples you can get from these MINT apps .</p>
 				<section>
 					<div class="modal-body">
 						<div class="col-md-5 modal_body_left">
-							<img src="images/s1.jpg" alt=" " class="img-responsive">
+							<img src="images/g1.jpg" alt=" " class="img-responsive">
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
-							<h3 class="item_name">France Special Dish</h3>
-							<p>Proin placerat urna et consequat efficitur, sem odio blandit enim</p>
+							<h3 class="item_name">Sandwich</h3>
+							<p><strong>Breakfast food.</strong><br>Gives you a healthy food in the morning. Come in a set which provides sandwiches and bread. </p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -488,10 +708,10 @@ There are many special staples you can get from these MINT apps .</p>
 							</div>
 							<div class="single-price">
 								<ul>
-									<li>$18</li>  
-									<li><del>$20</del></li> 
+									<li>7.11MYR</li>  
+									<li><del>7.90MYR</del></li> 
 									<li><span class="w3off">10% OFF</span></li> 
-									<li>Ends on : Dec,5th</li>
+									<li>Ends on : June, 1th</li>
 									<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
 								</ul>	
 							</div> 
