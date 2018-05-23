@@ -29,6 +29,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 
 <script>
+	
+	
 	$(document).ready(function(){
 
 		var res = '<?php echo $_GET['selectedRestaurant']; ?>';
@@ -39,7 +41,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             data: {table : 'menu', column : '*', where : 'supplierName="'+res+'"', message : 'searchMenu'},
             success:function(data){
             }
-        });
+    	});
 	});
 </script>
 </head>

@@ -5,7 +5,7 @@ class Database{
 	private $db_host = "localhost";  
 	private $db_user = "root"; 
 	private $db_pass = "spectrum";  
-	private $db_name = "mintdb";	
+	private $db_name = "mint";	
 	
 	private $con = false; // Check to see if the connection is active
     private $myconn = ""; // This will be our mysqli object

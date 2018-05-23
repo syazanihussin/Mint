@@ -28,6 +28,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
 <script>
+	
+		
 	$(document).ready(function(){
 		$.ajax({
             url:"ajax/select.php",

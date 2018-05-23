@@ -37,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				url:"ajax/select.php",
 				dataType:"json",
 				type: "POST",
-				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $_GET['orderID']; ?>+'', message : ''},
+				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $_GET['orderID']; ?>+'', message : 'gg'},
 				success:function(data){
 					if(data[0]['paymentStatus'] === null) {
 						checkingPayment();

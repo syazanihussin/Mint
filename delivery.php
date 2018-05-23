@@ -155,7 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				url:"ajax/select.php",
 				dataType:"json",
 				type: "POST",
-				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $res[0]; ?>+'', message : ''},
+				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $res[0]; ?>+'', message : 'gg'},
 				success:function(data){
 					if(data[0]['staffID'] === null) {
 						searchingDeliveryPerson();

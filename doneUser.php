@@ -107,7 +107,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<?php 
 								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -134,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Thank you for purchasing with us. Enjoy you meals</h3>
+			<h3 class="w3ls-title">Thank you for purchasing with us. Enjoy your meals</h3>
 			<p style="margin-top: 3em;" class="w3lsorder-text">
 				<a href="index.php"  style="padding: 1em 5em 1em 5em;" id="refresh" class="button">DONE</a>
 			</p>
