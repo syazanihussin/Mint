@@ -323,21 +323,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<div class="front"> 
 									<img src="images/g3.jpg" class="img-responsive" alt="img">
 									<div class="agile-product-text">              
-										<h5>Indian Food</h5>  
+										<h5>Chapati</h5>  
 									</div> 
 								</div>
 								<div class="back">
-									<h4>Indian Food</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-									<h6>2<sup>$</sup></h6>
+									<h4>Chapati</h4>
+									<p>Roti chapati is an unleavened flatbread.</p>
+									<h6>2.50<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
-										<input type="hidden" name="w3ls_item" value="Indian Food"> 
-										<input type="hidden" name="amount" value="2.00"> 
+										<input type="hidden" name="w3ls_item" value="Chapati"> 
+										<input type="hidden" name="amount" value="2.50"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+										<a href="#" data-toggle="modal" data-target="#myModal3">More</a>
 									</form>
 								</div>
 							</div>
@@ -349,22 +349,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="flipper agile-products">
 								<div class="front"> 
 									<div class="agile-product-text agile-product-text2">              
-										<h5>Sandwich</h5>  
+										<h5>Sushi</h5>  
 									</div> 
-									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+									<img src="images/g2.jpg" class="img-responsive" alt="img"> 
 								</div>
 								<div class="back">
-									<h4>Sandwich</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-									<h6>2<sup>$</sup></h6>
+									<h4>Sushi</h4>
+									<p>A vinegared rice topped with other ingredients.</p>
+									<h6>12.67<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
-										<input type="hidden" name="w3ls_item" value="Sandwich"> 
-										<input type="hidden" name="amount" value="2.00"> 
+										<input type="hidden" name="w3ls_item" value="Sushi"> 
+										<input type="hidden" name="amount" value="12.67"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+										<a href="#" data-toggle="modal" data-target="#myModal4">More</a>
 									</form>
 								</div>
 							</div>
@@ -375,23 +375,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="flip-container">
 							<div class="flipper agile-products">
 								<div class="front"> 
-									<img src="images/g3.jpg" class="img-responsive" alt="img">
+									<img src="images/g4.jpg" class="img-responsive" alt="img">
 									<div class="agile-product-text">              
-										<h5>Indian Food</h5>  
+										<h5>Chicken Grill</h5>  
 									</div> 
 								</div>
 								<div class="back">
-									<h4>Indian Food</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-									<h6>2<sup>$</sup></h6>
+									<h4>Chicken Grilled</h4>
+									<p>Comes along with white rice and salads.</p>
+									<h6>19.90<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
-										<input type="hidden" name="w3ls_item" value="Indian Food"> 
-										<input type="hidden" name="amount" value="2.00"> 
+										<input type="hidden" name="w3ls_item" value="Grilled Mushroom Chicken"> 
+										<input type="hidden" name="amount" value="19.90"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+										<a href="#" data-toggle="modal" data-target="#myModal5">More</a>
 									</form>
 								</div>
 							</div>
@@ -403,22 +403,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="flipper agile-products">
 								<div class="front"> 
 									<div class="agile-product-text agile-product-text2">              
-										<h5>Sandwich</h5>  
+										<h5>BreakAPlate</h5>  
 									</div> 
-									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+									<img src="images/img1.jpg" class="img-responsive" alt="img"> 
 								</div>
 								<div class="back">
-									<h4>Sandwich</h4>
-									<p>Maecenas condimentum interdum lacus, ac varius nisl.</p>
-									<h6>2<sup>$</sup></h6>
+									<h4>BreakAPlate</h4>
+									<p>Consist of varieties of healthy food for breakfast.</p>
+									<h6>17.90<sup>MYR</sup></h6>
 									<form action="#" method="post">
 										<input type="hidden" name="cmd" value="_cart">
 										<input type="hidden" name="add" value="1"> 
-										<input type="hidden" name="w3ls_item" value="Sandwich"> 
-										<input type="hidden" name="amount" value="2.00"> 
+										<input type="hidden" name="w3ls_item" value="BreakAPlate"> 
+										<input type="hidden" name="amount" value="17.90"> 
 										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 										<span class="w3-agile-line"> </span>
-										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+										<a href="#" data-toggle="modal" data-target="#myModal6">More</a>
 									</form>
 								</div>
 							</div>
@@ -694,8 +694,8 @@ There are many special staples you can get from these MINT apps .</p>
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
 							<h3 class="item_name">Fish Salad</h3>
-							<p><strong>Lunch food.</strong><br>Gives you a healthy food in your lunch meals. 
-							A lovely, fresh fennel salad is such a great summer combo with the delicate, hot fish </p>
+							<p><strong>Lunch food. Italian Style.</strong><br>Gives you a healthy food in your lunch meals. 
+							A lovely, fresh fennel salad is such a great summer combo with the delicate, hot fish. </p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -711,7 +711,7 @@ There are many special staples you can get from these MINT apps .</p>
 								<ul>
 									<li>RM10.95</li>  
 									<li><del></del></li> 
-									<li><span class="w3off">No discount!</span></li> 
+									<li><span class="w3off">No discount</span></li> 
 									<li></li>
 									
 								</ul>	
