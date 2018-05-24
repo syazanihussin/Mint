@@ -147,29 +147,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Terms & Conditions</h3>  
 			<div class="privacy-w3row">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare turpis ut porta aliquet. Morbi quis dictum lacus. Donec scelerisque lacus nec lobortis tempor. Morbi orci arcu, ullamcorper ut arcu vel, ultricies congue lacus. Phasellus porta cursus tempor. Nunc ultricies sapien nec est ornare pulvinar. Vivamus mollis faucibus purus sed blandit. Praesent fermentum dapibus risus id rutrum. Aliquam rutrum vel nulla eu fringilla.</p>
-				<p>Nunc ornare turpis ut porta aliquet. Morbi quis dictum lacus. Donec scelerisque lacus nec lobortis tempor. Morbi orci arcu, ullamcorper ut arcu vel, ultricies congue lacus. Phasellus porta cursus tempor. Nunc ultricies sapien nec est ornare pulvinar. Vivamus mollis faucibus purus sed blandit. Praesent fermentum dapibus risus id rutrum. Aliquam rutrum vel nulla eu fringilla. Curabitur efficitur justo a est tempor, pretium accumsan leo sagittis. Ut imperdiet sapien velit, a auctor neque laoreet sed. Praesent ornare nulla sit amet ullamcorper vulputate. Suspendisse vitae magna finibus, egestas eros quis, ornare risus. Duis magna ex, ultrices quis tellus non, commodo eleifend odio. Donec et faucibus risus. Aliquam laoreet justo sapien. </p>
+				<p>Kindly read the terms and conditions (Terms and Conditions) set out below carefully before ordering any Goods and Services from this website, Mint.com.my.
+				 By ordering any Goods and Services from this website, you have agreed to be bound by these Terms and Conditions.</p>
+				 
 				
 				<h5>GENERAL</h5>
-				<p>-> These Terms are an agreement between You and Mint and apply to You when using or accessing the Site or Services. </p>
-				<p>-> The Terms constitute the entire agreement between You and Mint concerning the Services and supersedes any prior agreements.</p>
-				<p>-> If You do not agree to anything in the Terms You should not use the Site or Services. </p>
-				<p>-> The Terms will remain in full force and effect and apply whenever You access the Site or Services, regardless of how You access the Site or Services, which You may access in several ways, including but not limited to the Web, mobile phones, tablets and RSS feeds </p>
-				<p>-> foodora reserves the right to amend the Terms at any time as notified to You via the Site. Continued use of the Site or Services will be deemed to constitute Your acceptance of those changes. </p>
+				<p>The following terminology applies to these Terms and Conditions and any or all Agreements: "Clients", "You" and "Your" refers to you, the person 
+				 accessing this website and accepting the company's terms and conditions. "The company", "Ourselves", "We" and "Us" refers to our company. "Parties", "Party", or "Us", 
+				 refers to both the client and ourselves, or the client or ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our 
+				 assistance to the client in the most appropriate manner, whether by formal meetings of a fixed duration, or any other means, for the express purpose of meeting the client's needs in 
+				 respect of provision of the company's stated services/products, in accordance with and subject to the prevailing Malaysian Law. Any use of the above terminology or other words in the singular, 
+				 plural, capitalisation and/or/ he/she/ or they, as taken as interchangeable and therefore as referring to same.</p>
 				
 				<h5>PRICES AND PAYMENT</h5>
-				<p>Maecenas malesuada leo dui, at venenatis ligula sodales ut. Cras a feugiat orci. </p>
-				<p>Pellentesque metus enim, aliquet eu felis sed, pretium ultrices ante convallis nec turpis.</p>
-				<p>Phasellus imperdiet nibh et lorem tincidunt aliquam. Integer elementum purus non venenatis volutpat. Curabitur sit amet neque sed arcu pretium iaculis. Phasellus posuere egestas tortor a molestie. Nulla sed urna dignissim, maximus magna et, elementum metus. Ut dolor lorem, mattis eu consectetur non, euismod quis nulla. </p>			
+				<p>1.1 All prices listed on the website of the products and services is the price of listing at that given time. Our company reserves the rights to change and amend these price lists.Gst not included.</p>
+					<p>1.2 Prices and list of pricing will be listed in the website when your order is placed. We accept cash as well as online payment. </p>		
 				
-				<h5>SECURITY</h5>  
-				<p>Phasellus imperdiet nibh et lorem tincidunt aliquam. Integer elementum purus non venenatis volutpat. Curabitur sit amet neque sed arcu pretium iaculis. Phasellus posuere egestas tortor a molestie. Nulla sed urna dignissim, maximus magna et, elementum metus. Ut dolor lorem, mattis eu consectetur non, euismod quis nulla. </p>
-				<p>Donec scelerisque lacus nec lobortis tempor donec et faucibus risus. Aliquam laoreet justo sapien. </p>
-				<p>Pellentesque quis sagittis est. Nam placerat ante at nunc ornare, sed faucibus odio interdum. Nam viverra, purus ac ullamcorper convallis, lorem erat consequat enim, at pharetra magna. </p>
+				<h5>CONFIDENTIALITY</h5>
+				<p>You agree not to disclose information you obtain from us and or from our clients, advertisers, suppliers and forum members. </p>
+				<p>All information submitted to by an end-user customer pursuant to a Program is proprietary information of www.mint.com.my. </p>
+				<p>Such customer information is confidential and may not be disclosed. Publisher agrees not to reproduce, disseminate, sell, distribute or commercially exploit any such proprietary information in any manner.</p>
+				<h5>ENTIRE AGREEMENT</h5>  
+				<p>This Agreement shall be governed by and construed in accordance with the substantive laws of Malaysia, without any reference to conflict-of-laws principles. </p>
+				<p>The Agreement describes and encompasses the entire agreement between us and you, and supersedes all prior or contemporaneous agreements, representations, warranties and understandings with respect to the Site, the contents and materials provided by or through the Site, and the subject matter of this Agreement. </p>
 				
-				<h5>ORDER CONDITIONS, DELIVERY</h5>  
-				<p>Maecenas malesuada leo dui, at venenatis ligula sodales ut. Cras a feugiat orci. </p>
-				<p>Pellentesque metus enim, aliquet eu felis sed, pretium ultrices ante convallis nec turpis.</p>
+				<h5>SEVERABILITY OF TERMS</h5>  
+				<p>In the event that any provision of these Terms and Conditions is found invalid or unenforceable pursuant to any judicial decree or decision, such provision shall be deemed to apply only to the maximum extent permitted by law, and the remainder of these Terms and Conditions shall remain valid and enforceable according to its terms.</p>
 			</div>
 		</div>
 	</div>
