@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Track Delivery</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -118,8 +118,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
+							<li><a href="index.php" >Home</a></li>	
 								<li><a href="about.php">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li>
+								<li><a href="products.php" >Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php 
 								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
@@ -144,14 +146,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Destination</li>
+			
+			<li class="active">Track Delivery</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">We've found Your Delivery Guy</h3>
+			<h3 class="w3ls-title">We've found Your Delivery Guy!</h3>
 			<div id="names" class="add-products-row">
 			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
 					<?php
@@ -264,20 +267,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
+			<h4>Keep in touch!</h4> 
+				<p>Feel free to click on our account!<br></p> 
 				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+				<li><a href="https://www.facebook.com/ " target=_blank class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="https://www.twitter.com/" target=_blank class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
 				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -302,7 +299,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
+						
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -325,10 +322,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
+					<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
 						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
@@ -337,7 +334,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
