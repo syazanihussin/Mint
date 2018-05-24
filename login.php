@@ -246,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="faq.php">FAQ</a></li> 
 						<li><a href="login.php">Returns</a></li>   
-						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="ondelivery.php">Order Status</a></li> 
 						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
