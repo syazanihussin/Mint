@@ -168,12 +168,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					experience in a personality test enjoys trying new things. </p>
 				</div>
 				<div class="col-md-6 w3careers-grids">
-					<h6>4. OWNERSHIP</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+					<h6>4. INTEGRITY</h6>
+					<p> The strength of person's honesty and ethical standing. A person with strong integrity is less likely to be influenced by those of a lesser moral value.Integrity reflects good moral character. </p>
 				</div>
 				<div class="col-md-6 w3careers-grids">
 					<h6>5. HONESTY</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+					<p>Regardless of the career, honest behavior is crucial. Modifying a time card, allowing someone else to take the blame for your 
+					mistakes or exaggerating circumstances on the job are all forms of dishonesty.</p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -191,13 +192,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
 					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
 					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				</ul>  
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -221,8 +216,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
-						<li><a href="careers.php" class="active">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
+						<li><a href="careers.php" class="active">Careers</a></li>
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
