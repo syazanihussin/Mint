@@ -413,8 +413,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
-						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
+						<li><a href="careers.php">Careers</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
