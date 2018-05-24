@@ -150,16 +150,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Privacy Policy</h3>  
 			<div class="privacy-w3row">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ornare turpis ut porta aliquet. Morbi quis dictum lacus. Donec scelerisque lacus nec lobortis tempor. Morbi orci arcu, ullamcorper ut arcu vel, ultricies congue lacus. Phasellus porta cursus tempor. Nunc ultricies sapien nec est ornare pulvinar. Vivamus mollis faucibus purus sed blandit. Praesent fermentum dapibus risus id rutrum. Aliquam rutrum vel nulla eu fringilla.</p>
-				<p>Nunc ornare turpis ut porta aliquet. Morbi quis dictum lacus. Donec scelerisque lacus nec lobortis tempor. Morbi orci arcu, ullamcorper ut arcu vel, ultricies congue lacus. Phasellus porta cursus tempor. Nunc ultricies sapien nec est ornare pulvinar. Vivamus mollis faucibus purus sed blandit. Praesent fermentum dapibus risus id rutrum. Aliquam rutrum vel nulla eu fringilla. Curabitur efficitur justo a est tempor, pretium accumsan leo sagittis. Ut imperdiet sapien velit, a auctor neque laoreet sed. Praesent ornare nulla sit amet ullamcorper vulputate. Suspendisse vitae magna finibus, egestas eros quis, ornare risus. Duis magna ex, ultrices quis tellus non, commodo eleifend odio. Donec et faucibus risus. Aliquam laoreet justo sapien. </p>
-				<p>Donec scelerisque lacus nec lobortis tempor donec et faucibus risus. Aliquam laoreet justo sapien. </p>
-				<p>Pellentesque quis sagittis est. Nam placerat ante at nunc ornare, sed faucibus odio interdum. Nam viverra, purus ac ullamcorper convallis, lorem erat consequat enim velit. </p>
-				<h5>What Does Our Privacy Policy Include?</h5>  
-				<p>Maecenas malesuada leo dui, at venenatis ligula sodales ut. Cras a feugiat orci. </p>
-				<p>Pellentesque metus enim, aliquet eu felis sed, pretium ultrices ante convallis nec turpis.</p>
-				<p>Phasellus imperdiet nibh et lorem tincidunt aliquam. Integer elementum purus non venenatis volutpat. Curabitur sit amet neque sed arcu pretium iaculis. Phasellus posuere egestas tortor a molestie. Nulla sed urna dignissim, maximus magna et, elementum metus. Ut dolor lorem, mattis eu consectetur non, euismod quis nulla. </p>			
-				<h5>How Do We Use Your Personal Information?</h5>  
-				<p>Phasellus imperdiet nibh et lorem tincidunt aliquam. Integer elementum purus non venenatis volutpat. Curabitur sit amet neque sed arcu pretium iaculis. Phasellus posuere egestas tortor a molestie. Nulla sed urna dignissim, maximus magna et, elementum metus. Ut dolor lorem, mattis eu consectetur non, euismod quis nulla. </p>
+			
+				<p>TAKATHU NAK LETAK APOS</p>
+				<p>to establish and maintain your relationship with us;</p>
+				<p>to provide the services you have requested from us;</p>
+				<p>to answer any inquiry you make; </p>
+				<p>to communicate your orders made through our Site to participant restaurants and delivery contractors (e.g. by providing your contact details and delivery address where applicable); </p>
+				<p>to inform you of offers or promotions that we consider you might be interested in; and</p>
+				<p>to conduct marketing research </p>
+
+				<h5>How Do We Use Your Personal Information?</h5> 
+
+				<p>Mint will use the personal information we collect to provide services to you, for the following purposes:</p>
+				<p>- to establish and maintain your relationship with us;</p>
+				<p>- to provide the services you have requested from us;</p>
+				<p>- to answer any inquiry you make; </p>
+				<p>- to communicate your orders made through our Site to participant restaurants and delivery contractors (e.g.by providing your contact details and delivery address where applicable); </p>
+				<p>- to inform you of offers or promotions that we consider you might be interested in; and</p>
+				<p>- to conduct marketing research </p>
+
+				<h5>How do we store and protect your personal information? </h5>
+
+				<p>We store personal information in a combination of computer storage facilities and physical records. In so doing, we have taken numerous steps to protect your personal information from misuse, interference and loss, and unauthorised access, modification or disclosure. </p>
+				<p>Additionally, we take reasonable steps to destroy or permanently de-identify personal information when we no longer need it.
+</p>
+				<p>The internet is not a secure method of transmitting information. We cannot and do not accept responsibility for the security of personal information you send to or receive from us over the internet, or for any unauthorised access or use of that personal information.</p>			
+				
+
 			</div>
 		</div>
 	</div>
@@ -241,7 +258,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
