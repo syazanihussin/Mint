@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint :: About </title>
+<title>Mint :: FAQ </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -93,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
-								<li><a href="about.php" class="active">About</a></li> 
+								<li><a href="about.php" >About</a></li> 
 								<li><a href="restaurant.php" >Restaurant</a></li>
 								<li><a href="products.php" >Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
@@ -267,7 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.php">FAQ</a></li> 
+						<li><a href="faq.php" class="active">FAQ</a></li> 
 						<li><a href="login.php">Returns</a></li>   
 						<li><a href="login.php">Order Status</a></li> 
 						<li><a href="offers.php">Offers</a></li> 
