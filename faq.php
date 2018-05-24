@@ -267,9 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.php" class="active">FAQ</a></li> 
-						<li><a href="login.php">Returns</a></li>   
-						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="faq.php" class="active">FAQ</a></li>
 						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
