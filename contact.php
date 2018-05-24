@@ -222,13 +222,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
 					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
 					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				</ul>
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -253,14 +247,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>help</h3>
 					<ul>
-						<li><a href="faq.php">FAQ</a></li> 
-						<li><a href="login.php">Returns</a></li>   
+						<li><a href="faq.php">FAQ</a></li>  
 						<li><a href="login.php">Order Status</a></li> 
 						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
@@ -288,7 +280,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
+			<p>&copy; All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
