@@ -29,13 +29,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
 	$(document).ready(function(){
+		<?php
+			include('class/mysql_crud.php');
+			$db = new Database();
+			$db->connect();
+			$db->select('delivery_person', '*', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
+			$cli = $db->getResult();
+		?>
 		$("#delivering").click(function(){
 			$.ajax({
 				url:"ajax/update.php",
 				dataType:"json",
 				type: "POST",
-				data: {table : 'orders', updating : 'paymentStatus = "paid"', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
-				success:function(data){	
+				data: {table : 'orders', updating : 'paymentStatus = "paid"', where : 'staffID=<?php echo $cli[0]['staffID']; ?>', message : 'paid'},
+				success:function(data){
 				}
 			});
 
@@ -43,7 +50,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				url:"ajax/select.php",
 				dataType:"json",
 				type: "POST",
-				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				data: {table : 'delivery_person', column : '*', where : 'username="<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
 				success:function(data){
 
 					var balance = data[0]['topup'] - 0.25;
@@ -51,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						url:"ajax/update.php",
 						dataType:"json",
 						type: "POST",
-						data: {table : 'delivery_person', updating : 'topup = '+balance+'', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
+						data: {table : 'delivery_person', updating : 'topup = '+balance+'', where : 'username="<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'paid'},
 						success:function(data){
 						}
 					});
@@ -224,12 +231,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div>   
 		<div style="padding: 0 0 4em 0;" class="container">
 			<h3 class="w3ls-title">Delivery Destination</h3>
+			<h3 id="inserted">Insert user</h3>
 			<div id="names" class="add-products-row">
 			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
 					<?php
-						include('class/mysql_crud.php');
-						$db = new Database();
-						$db->connect();
+						
 						$db->select('delivery_person', '*', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
 						$clientss = $db->getResult();
 						$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$clientss[0]['clientID'].'');
