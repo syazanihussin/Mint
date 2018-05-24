@@ -187,49 +187,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h3 class="w3ls-title">Choose Restaurant</h3>
 				<p class="w3lsorder-text">Here are some suggestion of restaurants you can look for.</p>
 				
-				<div class="menu-agileinfo">  
-
 				
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/bc.jpg" class="img-responsive" alt="img">Black Canyon</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/absthai.jpg" class="img-responsive" alt="img">Absolute Thai</a>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/dp.jpg" class="img-responsive" alt="img">Dapur Penyet</a>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/acl.jpg" class="img-responsive" alt="img">Ah Cheng Laksa</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/johhnny.jpg" class="img-responsive" alt="img">Johnny's Restaurant</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/toast.jpg" class="img-responsive" alt="img">Toast Box</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/littlepenangcafe.jpg" class="img-responsive" alt="img">Little Penang Cafe</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/fnc.jpg" class="img-responsive" alt="img">Fish n Co</a>
-				</div> 
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/tp.png" class="img-responsive" alt="img">The Plated</a>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
-					<a href="products.php"><img src="images/mfm.jpg" class="img-responsive" alt="img">Manhattan Fish Market</a>
-				</div>
-
-
-
-				</div>
+				
 				<div class="clearfix"> </div> 
 			</div> 
 			<div class="clearfix"> </div>
