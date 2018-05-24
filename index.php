@@ -406,7 +406,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
-						<li><a href="careers.php">Careers</a></li>   
+						<li><a href="careers.php">Careers</a></li>  
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -414,7 +414,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="faq.php">FAQ</a></li> 
 						<li><a href="login.php">Returns</a></li>   
-						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="ondelivery.php">Order Status</a></li> 
 						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
@@ -424,7 +424,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>   
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
@@ -441,7 +441,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
+<<<<<<< HEAD
+			<p>&copy; All rights reserved | Design by Mint</a></p>
+=======
 			<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
+>>>>>>> b9a906c04a126a9d6d59b272ba0510dfae1c9d94
 		</div>
 	</div>
 	<!-- //footer --> 
