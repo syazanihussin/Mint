@@ -215,7 +215,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
+			<h4>Keep in touch!</h4> 
+				<p>Feel free to click on our account!<br></p>  
 				<ul>
 				<li><a href="https://www.facebook.com/ " target=_blank class="fa fa-facebook icon facebook"> </a></li>
 					<li><a href="https://www.twitter.com/" target=_blank class="fa fa-twitter icon twitter"> </a></li>
@@ -278,7 +279,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-		<center><p>&copy;2018 <a>MintDelivery | </a> All rights reserved.</p></center>
+		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
