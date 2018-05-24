@@ -96,16 +96,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
-<<<<<<< HEAD
-								<li><a href="index.php">Home</a></li>	
-								
-=======
-								<li><a href="index.php" class="active">Home</a></li>	
->>>>>>> afe35fe897fda9553c288efc27ca4e954684cddf
-=======
+
 								<li><a href="index.php" >Home</a></li>	
->>>>>>> 496088d4e8938cbd59b787eadf6e9083eae766a0
 								<li><a href="about.php">About</a></li> 
 								<li><a href="restaurant.php" class="active">Restaurant</a></li>
 								<li><a href="products.php" >Food</a></li>
