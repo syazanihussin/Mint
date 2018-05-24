@@ -141,9 +141,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="faq-w3agile"> 
 				<h5>Top 10 Frequently asked questions(FAQ)</h5> 
 				<ul class="faq">
-					<li class="item1"><a href="#" title="click here">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempor vehicula ipsum nec ?</a>
+					<li class="item1"><a href="#" title="click here">Is it worth it the salary that you get from Mint ?</a>
 						<ul>
-							<li class="subitem1"><p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
+							<li class="subitem1"><p>Ya, for me its worth it because you just take from the restaurant that request by the customer then, you will get money by deliver the food.</p></li>										
+						</ul>
+					</li>
+					<li class="item1"><a href="#" title="click here">Is it worth it the salary that you get from Mint ?</a>
+						<ul>
+							<li class="subitem1"><p>Ya, for me its worth it because you just take from the restaurant that request by the customer then, you will get money by deliver the food.</p></li>										
 						</ul>
 					</li>
 					
