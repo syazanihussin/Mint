@@ -28,26 +28,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
 <script>
+	
+		
 	$(document).ready(function(){
 		$.ajax({
             url:"ajax/select.php",
             dataType:"json",
             type: "POST",
-            data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+            data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
         	success:function(data){
+				if(data[0]['topup'] > 0 ) {
+					$.ajax({
+						url:"ajax/select.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+						success:function(data){
+						}
+					});
+				} else {
+					$("#alert").text("You don't have enough balance to accept an order. Your current balance is RM" + parseFloat(Math.round(data[0]['topup'] * 100) / 100).toFixed(2) + ". Click here to topup.");
+				}
             }
         });
 
  		$("#refresh").click(function(){
 			$.ajax({
-                url:"ajax/select.php",
-                dataType:"json",
-                type: "POST",
-                data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
-        		success:function(data){
-					window.location.replace('driverHome.php');
-                }
-            });
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				success:function(data){
+					if(data[0]['topup'] > 0 ) {
+						$.ajax({
+							url:"ajax/select.php",
+							dataType:"json",
+							type: "POST",
+							data: {table : 'orders', column : '*', where : 'staffID is NULL AND paymentStatus is NULL', message : 'available'},
+							success:function(data){
+								window.location.replace('driverHome.php');
+							}
+						});
+					} else {
+						$("#alert").text("You don't have enough balance to accept an order. Your current balance is RM" + parseFloat(Math.round(data[0]['topup'] * 100) / 100).toFixed(2) + ". Click here to topup.");
+					}
+				}
+			});
     	});
 	});
 </script>
@@ -146,14 +172,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div style="padding: 2em 0;" class="container">	
 		<ol style="background: none;" class="breadcrumb w3l-crumbs">
 			<li><a href="driverHome.php"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Request</li>
+			<li class="active">Order</li>
 		</ol>
 	</div>
 			  
 	<!-- add-products -->
 	<div>  
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 style="margin-top: -1em;" class="w3ls-title">Request List</h3>
+			<h3 style="margin-top: -1em;" class="w3ls-title">Order List</h3>
 			<p class="w3lsorder-text">
 				<?php
 					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
@@ -165,23 +191,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				?>
 			</p>
 			<div id="names" class="add-products-row">
+				<a id="alert" href="topup.php?username=<?php echo $_SESSION['driver'][0]['username']; ?>" style="font-size: 1.5em; color: black;"></a>
 				<?php
 					if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 						if(isset($_SESSION['available'])){
 							include('class/mysql_crud.php');
 							$db = new Database();
 							$db->connect();
+							$db->select('delivery_person', 'staffID', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
+							$staffs = $db->getResult();
 
 							foreach($_SESSION['available'] as $available) {
 								
 								$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$available['orderID']);
 								$results = $db->getResult();
+								$qua = 0;
+								foreach($results as $result) {
+									$qua += $result['quantity'];
+								}
+								$tot = $available['subtotal'] + 5;
 								if($available) {
 									echo '
 									<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2em 2em;">
-										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">2</span>
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">'.$qua.'</span>
 											<div class="shopping-cart-total">
-												<span id="tot" class="lighter-text">Total: RM80.20</span>
+												<span id="tot" class="lighter-text">Total: RM'.sprintf('%0.2f', $tot).'</span>
 												<span class="main-color-text"></span>
 											</div>
 										</div>
@@ -192,11 +226,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											$foods = $db->getResult();
 											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
 											$supplier = $db->getResult();
+											
 											echo
 											'<li class="clearfix">
 												<div style="margin: 1em 0 1em 0;">
-													<span style="font-size: 15px;" class="item-price">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
-													<span style="font-size: 17px;" class="item-price">Location: '.$supplier[0]['address'].'</span></br>
+													<span style="font-size: 16px;">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 16px;">Location: '.$supplier[0]['address'].'</span></br>
 												</div>
 												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
 												<span class="item-name">'.$foods[0]['menuName'].'</span>
@@ -214,14 +249,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</ul>
 										<ul class="shopping-cart-items">
 											<li style="margin-bottom: 4em;" class="clearfix">
-												<span class="item-name">Amount to pay</span>
-												<span class="item-price">Subtotal: </span>
-												<span id="sub" class="item-quantity"></span></br>
+												<span class="item-name">Amount to receive</span>
+												<span class="item-price">Subtotal:</span>
+												<span id="sub" class="item-quantity">RM'.$available['subtotal'].'</span></br>
 												<span class="item-price">Delivery Charge: </span>
 												<span class="item-quantity">RM5.00</span>
 											</li>
 										</ul>
-										<a href="#" id="accept" style="width: 100%" class="button">Accept Request</a>
+										<form action="ajax/update.php" method="post">
+											<input type="hidden" name="message" value="request_accepted">
+											<input hidden type="number" name="staffID" value="'.$staffs[0]['staffID'].'">
+											<input hidden type="number" name="orderID" value="'.$available['orderID'].'">
+											<input type="submit" id="accept" style="width: 100%" class="button"value="Accept Request">
+										</form>
 									</div>
 									';
 								} else {

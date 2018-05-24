@@ -47,7 +47,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							data: {table : 'delivery_person', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginDriver'},
 							success:function(data){
 								if(data[0] === undefined) {
-									alert("Wrong username or password");
+									$.ajax({
+										url:"ajax/select.php",
+										dataType:"json",
+										type: "POST",
+										data: {table : 'admin', column : '*', where : 'username="'+userName+'" AND password="'+password+'"', message : 'loginAdmin'},
+										success:function(data){
+											if(data[0] === undefined) {
+												alert("Wrong username or password");
+											} else {
+												window.location.replace("adminHome.php");
+											}
+										}
+									});
 								} else {
 									window.location.replace("driverHome.php");
 								}

@@ -18,6 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
 <link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/cart style 2.css" rel="stylesheet">
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -28,26 +29,98 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- //web-fonts -->
 <script>
 	$(document).ready(function(){
-		
-		var url = "" + window.location.href;
-		var res = url.split("?");
-		
-		$("#locating").click(function(){
-			var delivery_destination = $("#pac-input").val();
-			var dest = "payment.php?" + res[1] + "&deliveryTo=" + delivery_destination;
-			window.location.replace(dest);
+		$("#delivering").click(function(){
+			$.ajax({
+				url:"ajax/update.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'orders', updating : 'paymentStatus = "paid"', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
+				success:function(data){	
+				}
+			});
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				success:function(data){
+
+					var balance = data[0]['topup'] - 0.25;
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'delivery_person', updating : 'topup = '+balance+'', where : 'staffID='+<?php echo $_SESSION['driver'][0]['staffID']; ?>+'', message : 'paid'},
+						success:function(data){
+						}
+					});
+				}
+			});
+
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+				success:function(data){
+
+					var balance = parseFloat(data[0]['deliveryCharge']);
+					balance += 0.25;
+
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'income', updating : 'deliveryCharge = '+balance+'', where : 'incomeID = 1', message : 'paid'},
+						success:function(data){
+						}
+					});
+				}
+			});
+
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'delivery_person', column : '*', where : 'username = "<?php echo $_SESSION['driver'][0]['username']; ?>"', message : 'balance'},
+				success:function(data){
+					$.ajax({
+						url:"ajax/select.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', column : '*', where : 'orderID = '+data[0]['clientID'], message : 'balance'},
+						success:function(data){
+
+							var charge = (data[0]['subtotal'] * 0.05);
+
+							$.ajax({
+								url:"ajax/select.php",
+								dataType:"json",
+								type: "POST",
+								data: {table : 'income', column : '*', where : 'incomeID = 1', message : 'balance'},
+								success:function(data){
+									var balance = parseFloat(data[0]['restaurantCharge']);
+									balance += charge;
+									$.ajax({
+										url:"ajax/update.php",
+										dataType:"json",
+										type: "POST",
+										data: {table : 'income', updating : 'restaurantCharge = '+balance+'', where : 'incomeID = 1', message : 'paid'},
+										success:function(data){
+											window.location.replace('doneDriver.php');
+										}
+									});
+								}
+							});
+						}
+					});
+				}
+			});
 		});
 	});
 </script>
-
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      
-    </style>
 </head>
 <body> 
 	<!-- banner -->
@@ -65,7 +138,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
-								if(!isset($_SESSION['customer'])){
+								if(!isset($_SESSION['driver'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li> 
+									';
+								}
+								else if(isset($_SESSION['driver'])  && count($_SESSION['driver']) == 0){
 									echo '
 									<li class="head-dpdn">
 										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
@@ -77,24 +163,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
-
-								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
-									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
-									<li class="head-dpdn">
-										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
-										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
-									';
-								}
+									
 							?>
-							
-							
 							<li class="head-dpdn">
-								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
+								<a href="helpDriver.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
 						</ul>
 					</div>
@@ -114,17 +186,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>  
-							<h1><a href="index.php">Mint<span>An Oasis Of Food</span></a></h1>
+							<h1><a href="driverHome.php">Mint<span>An Oasis Of Food</span></a></h1>
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
-								<li><a href="about.php">About</a></li> 
-								<li><a href="contact.php">Contact Us</a></li>
-								<?php
-								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								<li><a href="driverHome.php" class="active">Home</a></li>	
+								<li><a href="aboutDriver.php">About</a></li> 
+								<li><a href="contactDriver.php">Contact Us</a></li>
+								<?php 
+								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
-									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['driver'][0]['username'] . ' <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="logout.php">Logout</a></li>    
 										</ul>
@@ -133,17 +205,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div> 
 					</nav>
 				</div>
 			</div>
-			<!-- //navigation --> 
+			<!-- //navigation -->
 		</div>
 	</div>
 	<!-- //banner -->    
@@ -156,86 +221,113 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 			  
 	<!-- add-products -->
-	<div>  
+	<div>   
 		<div style="padding: 0 0 4em 0;" class="container">
-			<h3 class="w3ls-title">Choose Your Delivery Destination</h3>
-			<div id="map" style="margin-top: 3em; width: 100%; height: 30em;"></div>
-				<div class="agileits_search">
-					<input id="pac-input" type="text" size="50" placeholder="Enter Your Delivery Destination">
-					<input type="submit" id="locating" value="Confirm Destination">
+			<h3 class="w3ls-title">Delivery Destination</h3>
+			<div id="names" class="add-products-row">
+			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
+					<?php
+						include('class/mysql_crud.php');
+						$db = new Database();
+						$db->connect();
+						$db->select('delivery_person', '*', NULL, 'username = "'.$_SESSION['driver'][0]['username'].'"');
+						$clientss = $db->getResult();
+						$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$clientss[0]['clientID'].'');
+						$results = $db->getResult();
+						$db->select('orders', '*', NULL, 'orderID = '.$clientss[0]['clientID'].'');
+						$orderss = $db->getResult();
+						$tot = $orderss[0]['subtotal'] + 5;
+						$qua = 0;
+						foreach($results as $result) {
+							$qua += $result['quantity'];
+						}
+						echo
+							'<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2.7em 2em 0;">
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">'.$qua.'</span>
+											<div class="shopping-cart-total">
+												<span id="tot" class="lighter-text">Total: RM'.sprintf('%0.2f', $tot).'</span>
+												<span class="main-color-text"></span>
+											</div>
+										</div>
+										<ul id="purchases" class="shopping-cart-items">';
+
+										foreach($results as $result) {
+											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
+											$foods = $db->getResult();
+											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
+											$supplier = $db->getResult();
+											echo
+											'<li class="clearfix">
+												<div style="margin: 1em 0 1em 0;">
+													<span style="font-size: 16px;">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 16px;">Location: '.$supplier[0]['address'].'</span></br>
+												</div>
+												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
+												<span class="item-name">'.$foods[0]['menuName'].'</span>
+												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
+												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
+											</li>';
+										}
+									echo
+										'</ul>
+										<ul class="shopping-cart-items">
+											<li class="clearfix">
+												<span class="item-name">Delivery to</span>
+												<span class="item-price">'.$orderss[0]['deliveryTo'].'</span>
+											</li>
+										</ul>
+										<ul class="shopping-cart-items">
+											<li style="margin-bottom: 4em;" class="clearfix">
+												<span class="item-name">Amount to receive</span>
+												<span class="item-price">Subtotal: </span>
+												<span id="sub" class="item-quantity">RM'.$orderss[0]['subtotal'].'</span></br>
+												<span class="item-price">Delivery Charge: </span>
+												<span class="item-quantity">RM5.00</span>
+											</li>
+										</ul>
+										<button id="delivering" style="width: 100%" class="button" >Order Delivered</button>
+									</div>
+									';
+					?>
 					<script>
-						function initAutocomplete() {
+						var map;
+						function initMap() {
+							var directionsService = new google.maps.DirectionsService;
+							var directionsDisplay = new google.maps.DirectionsRenderer;
 							var map = new google.maps.Map(document.getElementById('map'), {
-							center: {lat: 2.999695, lng: 101.710688},
-							zoom: 13,
+								zoom: 6,
+								center: {lat: 41.85, lng: -87.65}
+							});
+							directionsDisplay.setMap(map);
+							calculateAndDisplayRoute(directionsService, directionsDisplay);
+						}
+
+						function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+							var waypts = []
+							waypts.push({
+								location: '<?php echo $supplier[0]['address']; ?>',
+								stopover: true
 							});
 
-							// Create the search box and link it to the UI element.
-							var input = document.getElementById('pac-input');
-							var input2 = document.getElementById('locating');
-							var searchBox = new google.maps.places.SearchBox(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-							map.controls[google.maps.ControlPosition.TOP_LEFT].push(input2);
+							directionsService.route({
+								origin: 'UPM Kolej 6, Serdang, Selangor, Malaysia',
+								destination: '<?php echo $orderss[0]['deliveryTo']; ?>',
+								waypoints: waypts,
+								optimizeWaypoints: true,
+								travelMode: 'DRIVING'
 
-							// Bias the SearchBox results towards current map's viewport.
-							map.addListener('bounds_changed', function() {
-							searchBox.setBounds(map.getBounds());
-							});
-
-							var markers = [];
-							// Listen for the event fired when the user selects a prediction and retrieve
-							// more details for that place.
-							searchBox.addListener('places_changed', function() {
-							var places = searchBox.getPlaces();
-
-							if (places.length == 0) {
-								return;
-							}
-
-							// Clear out the old markers.
-							markers.forEach(function(marker) {
-								marker.setMap(null);
-							});
-							markers = [];
-
-							// For each place, get the icon, name and location.
-							var bounds = new google.maps.LatLngBounds();
-							places.forEach(function(place) {
-								if (!place.geometry) {
-								console.log("Returned place contains no geometry");
-								return;
-								}
-								var icon = {
-								url: place.icon,
-								size: new google.maps.Size(71, 71),
-								origin: new google.maps.Point(0, 0),
-								anchor: new google.maps.Point(17, 34),
-								scaledSize: new google.maps.Size(25, 25)
-								};
-
-								// Create a marker for each place.
-								markers.push(new google.maps.Marker({
-								map: map,
-								icon: icon,
-								title: place.name,
-								position: place.geometry.location
-								}));
-
-								if (place.geometry.viewport) {
-								// Only geocodes have viewport.
-								bounds.union(place.geometry.viewport);
+							}, function(response, status) {
+								if (status === 'OK') {
+									directionsDisplay.setDirections(response);
 								} else {
-								bounds.extend(place.geometry.location);
+									window.alert('Directions request failed due to ' + status);
 								}
-							});
-							map.fitBounds(bounds);
 							});
 						}
 					</script>
 				</div> 
-				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initAutocomplete" async defer></script>
-				<div class="clearfix"> </div>  	 
-		</div>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initMap" async defer></script>
+			
 	</div>
 	<!-- //add-products --> 
 	<!-- subscribe -->

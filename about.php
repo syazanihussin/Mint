@@ -98,6 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<li><a href="about.php" class="active">About</a></li> 
+								<li><a href="products.php" >Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
 								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
@@ -133,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<!-- banner-text -->
 		<div class="banner-text">	
 			<div class="container">
-			<h2>Delicious food ordered <br> <span>and will delivered to you.</span></h2>
+			<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2>
 			</div>
 		</div>
 	</div>

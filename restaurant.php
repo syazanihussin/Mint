@@ -34,12 +34,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="header">
 			<div class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-					<div class="w3ls-header-left">
+				<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
+<<<<<<< HEAD
 								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
 							</li> 
 							<li class="head-dpdn">
@@ -48,6 +49,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="head-dpdn">
 								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
 							</li> 
+=======
+								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
+							</li> 
+							<?php
+								if(!isset($_SESSION['customer'])){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+
+								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
+									echo '
+									<li class="head-dpdn">
+										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+									</li> 
+									<li class="head-dpdn">
+										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
+									</li> <li class="head-dpdn">
+										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
+									</li>
+									';
+								}
+							?>
+							
+							
+>>>>>>> afe35fe897fda9553c288efc27ca4e954684cddf
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -73,25 +107,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
 								<li><a href="index.php">Home</a></li>	
 								
+=======
+								<li><a href="index.php" class="active">Home</a></li>	
+>>>>>>> afe35fe897fda9553c288efc27ca4e954684cddf
 								<li><a href="about.php">About</a></li> 
-								<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="icons.php">Web Icons</a></li>
-										<li><a href="codes.php">Short Codes</a></li>     
-									</ul>
-								</li>  
 								<li><a href="contact.php">Contact Us</a></li>
+								<?php
+								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+									echo '
+									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="logout.php">Logout</a></li>    
+										</ul>
+									</li>';
+								}
+							?>
 							</ul>
 						</div>
-						<div class="cart cart box_1"> 
-							<form action="#" method="post" class="last"> 
-								<input type="hidden" name="cmd" value="_cart" />
-								<input type="hidden" name="display" value="1" />
-								<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-							</form>   
-						</div>
+						<?php
+							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
+								echo '
+								<div class="cart cart box_1"> 
+									<form action="#" method="post" class="last"> 
+										<input type="hidden" name="cmd" value="_cart" />
+										<input type="hidden" name="display" value="1" />
+										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+									</form>   
+								</div> 
+								';
+							}
+						?>
 					</nav>
 				</div>
 			</div>
@@ -115,11 +163,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 			  
 	<!-- add-products -->
-	<div style="padding: 4em 0;">  
+	<div style="padding: 4em 0;"> 
 		<div class="container">
-			<h3 class="w3ls-title">Choose Restaurant</h3>
-			<p class="w3lsorder-text">Here are available restaurants based on your location search</p>
+			
 			<div class="add-products-row">
+			
 				<?php
 					if(isset($_SESSION['restaurant'])){
 						foreach($_SESSION['restaurant'] as $restaurant) {
@@ -143,7 +191,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>  	 
 		</div>
 	</div>
+	
+	<div class="products">	 
+		<div class="container">
+			<div class="wthree-menu">  
+				
+				<div class="container">
+				<h3 class="w3ls-title">Choose Restaurant</h3>
+				<p class="w3lsorder-text">Here are some of available restaurants you can look for.</p>
+				
+				<div class="menu-agileinfo">  
+
+				
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/bc.jpg" class="img-responsive" alt="img">Black Canyon</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/absthai.jpg" class="img-responsive" alt="img">Absolute Thai</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/dp.jpg" class="img-responsive" alt="img">Dapur Penyet</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/acl.jpg" class="img-responsive" alt="img">Ah Cheng Laksa</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/johhnny.jpg" class="img-responsive" alt="img">Johnny's Restaurant</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/toast.jpg" class="img-responsive" alt="img">Toast Box</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/sakaesushi.jpg" class="img-responsive" alt="img">Sakae Sushi</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/littlepenangcafe.jpg" class="img-responsive" alt="img">Little Penang Cafe</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/fnc.jpg" class="img-responsive" alt="img">Fish n Co</a>
+				</div> 
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/tp.png" class="img-responsive" alt="img">The Plated</a>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-6 menu-w3lsgrids"> 
+					<a href="products.php"><img src="images/mfm.jpg" class="img-responsive" alt="img">Manhattan Fish Market</a>
+				</div>
+
+
+
+				</div>
+				<div class="clearfix"> </div> 
+			</div> 
+			<div class="clearfix"> </div>
+		</div>
+	</div>
 	<!-- //add-products --> 
+		
+	
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -219,6 +326,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div> 
 	</div>
+
+
 	<div class="copyw3-agile"> 
 		<div class="container">
 			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>

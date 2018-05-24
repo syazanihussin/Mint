@@ -18,6 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">  
 <link href="css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons --> 
+<link href="css/cart style 2.css" rel="stylesheet">
 <!-- //Custom Theme files --> 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>  
@@ -26,19 +27,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
 <link href="//fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
 <!-- //web-fonts -->
+<script>
+	$(document).ready(function(){
+		checkingPayment();
+		
+		function checkingPayment() {
+						
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $_GET['orderID']; ?>+'', message : 'gg'},
+				success:function(data){
+					if(data[0]['paymentStatus'] === null) {
+						checkingPayment();
+					} else {
+						window.location.replace('doneUser.php');
+					}
+				}
+			});
+		} 
+	});
+</script>
 </head>
 <body> 
 	<!-- banner -->
-	<div class="banner about-w3bnr">
+	<div style="background: none;" class="banner about-w3bnr">
 		<!-- header -->
 		<div class="header">
-			<div class="w3ls-header"><!-- header-one --> 
+			<div style="background: rgba(64, 68, 105, 1);" class="w3ls-header"><!-- header-one --> 
 				<div class="container">
-				<div class="w3ls-header-left">
+					<div class="w3ls-header-left">
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
-						<ul>
+						<ul> 
 							<li class="head-dpdn">
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
@@ -50,12 +73,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li> 
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-									</li> <li class="head-dpdn">
+									</li> 
+									<li class="head-dpdn">
 										<a href="register.php"><i class="fa fa-car" aria-hidden="true"></i> Join our delivery team</a>
-									</li>
+									</li> 
 									';
 								}
-
 								else if(isset($_SESSION['customer'])  && count($_SESSION['customer']) == 0){
 									echo '
 									<li class="head-dpdn">
@@ -68,9 +91,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</li>
 									';
 								}
+									
 							?>
-							
-							
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
@@ -96,10 +118,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php">Home</a></li>	
-								<li><a href="about.php" >About</a></li> 
-								<li><a href="contact.php" class="active">Contact Us</a></li>
-								<?php
+								<li><a href="index.php" class="active">Home</a></li>	
+								<li><a href="about.php">About</a></li> 
+								<li><a href="contact.php">Contact Us</a></li>
+								<?php 
 								if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
 									echo '
 									<li class="w3pages"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">' . $_SESSION['customer'][0]['username'] . ' <span class="caret"></span></a>
@@ -111,107 +133,133 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							</ul>
 						</div>
-						<?php
-							if(isset($_SESSION['customer'])  && count($_SESSION['customer']) != 0){
-								echo '
-								<div class="cart cart box_1"> 
-									<form action="#" method="post" class="last"> 
-										<input type="hidden" name="cmd" value="_cart" />
-										<input type="hidden" name="display" value="1" />
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-									</form>   
-								</div> 
-								';
-							}
-						?>
 					</nav>
 				</div>
 			</div>
-			<!-- //navigation --> 
-		</div>
-		<!-- //header-end --> 
-		<!-- banner-text -->
-		<div class="banner-text">	
-			<div class="container">
-			<h2>Delicious food from the <br> <span>Best Chefs For you.</span></h2> 
-			</div>
+			<!-- //navigation -->
 		</div>
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	<div class="container">	
-		<ol class="breadcrumb w3l-crumbs">
-			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Contact Us</li>
+	<div style="padding: 2em 0;" class="container">	
+		<ol style="background: none;" class="breadcrumb w3l-crumbs">
+			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active">Destination</li>
 		</ol>
 	</div>
-	<!-- //breadcrumb -->
-	<!-- contact -->
-	<div id="contact" class="contact cd-section">
-		<div class="container">
-			<h3 class="w3ls-title">Contact us</h3>
-			<p class="w3lsorder-text">Feel free to keep in touch with us. </p> 
-			<div class="contact-row agileits-w3layouts">  
-				<div class="col-xs-6 col-sm-6 contact-w3lsleft">
-					<div class="contact-grid agileits">
-						<h4>Drop us a line! </h4>
-						<form action="#" method="post"> 
-							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="email" name="Email" placeholder="Email" required=""> 
-							<input type="text" name="Phone Number" placeholder="Phone Number" required="">
-							<textarea name="Message" placeholder="Message..." required=""></textarea>
-							<input type="submit" value="Submit" >
-						</form> 
-					</div>
-				</div>
-				<div class="col-xs-6 col-sm-6 contact-w3lsright">
-					<h6><span> </span></h6>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Location</h5>
-							<p>MintDelivery Sdn. Bhd (1042588 U)
-							<p> University Putra Malaysia</p>
-							 <p>  43400 Serdang, Selangor.</p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row w3-agileits">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Customer Service</h5>
-							<p>+603 8912 2566</p>
-							<p>+6012 2266 789</p>
-							<p>10am-10pm daily</p>
-						</div>
-					
-						<div class="clearfix"> </div>
-					</div>
-					<div class="address-row">
-						<div class="col-xs-2 address-left">
-							<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-						</div>
-						<div class="col-xs-10 address-right">
-							<h5>Email</h5>
-							<p><a href="mailto:info@example.com">mint@gmail.com</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>  
-				</div>
-				<div class="clearfix"> </div>
-			</div>	
-		</div>	
-		<!-- map -->
-		<div class="map agileits">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
-		</div>
-		<!-- //map --> 
+			  
+	<!-- add-products -->
+	<div>  
+		<div style="padding: 0 0 4em 0;" class="container">
+			<h3 class="w3ls-title">We've found Your Delivery Guy</h3>
+			<div id="names" class="add-products-row">
+			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
+					<?php
+						include('class/mysql_crud.php');
+						$db = new Database();
+						$db->connect();
+						
+						$db->select('order_menu', 'menuID, quantity', NULL, 'orderID = '.$_GET['orderID'].'');
+						$results = $db->getResult();
+						$db->select('orders', '*', NULL, 'orderID = '.$_GET['orderID'].'');
+						$orderss = $db->getResult();
+						$db->select('delivery_person', '*', NULL, 'staffID = '.$orderss[0]['staffID'].'');
+						$clientss = $db->getResult();
+						$tot = $orderss[0]['subtotal'] + 5;
+						$qua = 0;
+						foreach($results as $result) {
+							$qua += $result['quantity'];
+						}
+						echo
+							'<div class="shopping-cart" style="float: left; box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1); margin: 2.7em 2em 0;">
+										<div class="shopping-cart-header"><i class="fa fa-shopping-cart cart-icon"></i><span class="badge">'.$qua.'</span>
+											<div class="shopping-cart-total">
+												<span id="tot" class="lighter-text">Total: RM'.sprintf('%0.2f', $tot).'</span>
+												<span class="main-color-text"></span>
+											</div>
+										</div>
+										<ul class="shopping-cart-items">
+											<li class="clearfix">
+												<span class="item-name">Delivery Guys Infomation</span>
+												<span class="item-price">'.$clientss[0]['transportType'].'</span>
+												<span class="item-quantity">'.$clientss[0]['platNo'].'</span>
+											</li>
+										</ul>
+										<ul id="purchases" class="shopping-cart-items">';
+
+										foreach($results as $result) {
+											$db->select('menu', '*', NULL, 'menuID = '.$result['menuID']);
+											$foods = $db->getResult();
+											$db->select('supplier', '*', NULL, 'supplierName = "'.$foods[0]['supplierName'].'"');
+											$supplier = $db->getResult();
+											echo
+											'<li class="clearfix">
+												<div style="margin: 1em 0 1em 0;">
+													<span style="font-size: 16px;">Restaurant: '.$supplier[0]['supplierName'].'</span></br>
+													<span style="font-size: 16px;">Location: '.$supplier[0]['address'].'</span></br>
+												</div>
+												<img src="'.$foods[0]['menuImage'].'" alt="item1" width="50" height="50" />
+												<span class="item-name">'.$foods[0]['menuName'].'</span>
+												<span class="item-price">RM'.$foods[0]['menuPrice'].'</span>
+												<span class="item-quantity">Quantity: '.$result['quantity'].'</span>
+											</li>';
+										}
+									echo
+										'</ul>
+										<ul class="shopping-cart-items">
+											<li style="margin-bottom: 4em;" class="clearfix">
+												<span class="item-name">Amount to pay</span>
+												<span class="item-price">Subtotal: </span>
+												<span id="sub" class="item-quantity">RM'.$orderss[0]['subtotal'].'</span></br>
+												<span class="item-price">Delivery Charge: </span>
+												<span class="item-quantity">RM5.00</span>
+											</li>
+										</ul>
+										<a hidden href="#" id="delivered" style="width: 100%" class="button">Order Delivered</a>
+									</div>
+									';
+					?>
+					<script>
+						var map;
+						function initMap() {
+							var directionsService = new google.maps.DirectionsService;
+							var directionsDisplay = new google.maps.DirectionsRenderer;
+							var map = new google.maps.Map(document.getElementById('map'), {
+								zoom: 6,
+								center: {lat: 41.85, lng: -87.65}
+							});
+							directionsDisplay.setMap(map);
+							calculateAndDisplayRoute(directionsService, directionsDisplay);
+						}
+
+						function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+							var waypts = []
+							waypts.push({
+								location: '<?php echo $supplier[0]['address']; ?>',
+								stopover: true
+							});
+
+							directionsService.route({
+								origin: 'UPM Kolej 6, Serdang, Selangor, Malaysia',
+								destination: '<?php echo $orderss[0]['deliveryTo']; ?>',
+								waypoints: waypts,
+								optimizeWaypoints: true,
+								travelMode: 'DRIVING'
+
+							}, function(response, status) {
+								if (status === 'OK') {
+									directionsDisplay.setDirections(response);
+								} else {
+									window.alert('Directions request failed due to ' + status);
+								}
+							});
+						}
+					</script>
+				</div> 
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEgVJUH2bVNp4EWv_wWkqM68XNNw62Bc8&libraries=places&callback=initMap" async defer></script>
+			
 	</div>
-	<!-- //contact -->   
+	<!-- //add-products --> 
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -272,7 +320,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>     
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 

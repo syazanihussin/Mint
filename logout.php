@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    unset($_SESSION['customer']);
-    unset($_SESSION['driver']);
+    session_destroy();
     header("Location: index.php");
 ?>

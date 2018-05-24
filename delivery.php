@@ -132,6 +132,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				type: "POST",
 				data: {table : 'menu', column : '*', where : 'menuName="'+menuName+'"', message : 'delivery'},
 				success:function(data){
+
+					subtotal += data[0]['menuPrice'] * <?php echo $_GET[$quan] ?>;
+
+					$.ajax({
+						url:"ajax/update.php",
+						dataType:"json",
+						type: "POST",
+						data: {table : 'orders', updating : 'subtotal = '+ subtotal +'', where : 'orderID = <?php echo $res[0]; ?>', message : 'topup'},
+						success:function(data){
+						}
+					});
+
 					$.ajax({
 						url:"ajax/insert.php",
 						dataType:"json",
@@ -146,7 +158,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<?php 
 		}
 		?>
-    });
+		$("#loadingg").html('<div style="padding: 4em;" class="d"><div class="dot dot-1"></div><div class="dot dot-2"></div><div class="dot dot-3"></div></div><svg xmlns="http://www.w3.org/2000/svg" version="1.1"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/></filter></defs></svg>');
+		searchingDeliveryPerson();
+		
+		function searchingDeliveryPerson() {
+						
+			$.ajax({
+				url:"ajax/select.php",
+				dataType:"json",
+				type: "POST",
+				data: {table : 'orders', column : '*', where : 'orderID='+<?php echo $res[0]; ?>+'', message : 'gg'},
+				success:function(data){
+					if(data[0]['staffID'] === null) {
+						searchingDeliveryPerson();
+					} else {
+						window.location.replace('trackdelivery.php?orderID='+<?php echo $res[0]; ?>);
+					}
+				}
+			});
+		}
+	});
+	
   </script>
 </head>
 <body> 
@@ -265,31 +297,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div>  
 		<div class="container">
 			<h3 class="w3ls-title">Searching For Delivery Guys...</h3>
-			<p id="sub">Huhu</p>
-			<p id="tot">haha</p>
-			<?php
-				if(!isset($_SESSION['delivery'])){
-					 
-					'<div style="padding: 4em;" class="d">
-						<div class="dot dot-1"></div>
-						<div class="dot dot-2"></div>
-						<div class="dot dot-3"></div>
-					</div>
-
-					<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-						<defs>
-							<filter id="goo">
-							<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-							<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
-							</filter>
-						</defs>
-					</svg>';	
-				}
-
-				else {
-
-				}
-			?>
+			<div id="loadingg"></div>
 			<div class="clearfix"> </div> 	 
 		</div>
 	</div>

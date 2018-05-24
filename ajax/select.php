@@ -10,6 +10,18 @@ if($_POST['message'] == "") {
     echo json_encode($res); //echo array of data, return data in array
 }
 
+else if($_POST['message'] == "gg") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names
+    $res = $db->getResult();
+    echo json_encode($res); //echo array of data, return data in array
+}
+
+else if($_POST['message'] == "balance") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names
+    $res = $db->getResult();
+    echo json_encode($res); //echo array of data, return data in array
+}
+
 else if($_POST['message'] == "login") {
     $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where'], 'customerID DESC'); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();
@@ -23,6 +35,14 @@ else if($_POST['message'] == "loginDriver") {
     session_start();
     $_SESSION['driver'] = $db->getResult();
     $res = $_SESSION['driver'];  
+    echo json_encode($res);
+}
+
+else if($_POST['message'] == "loginAdmin") {
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    session_start();
+    $_SESSION['admin'] = $db->getResult();
+    $res = $_SESSION['admin'];  
     echo json_encode($res);
 }
 
@@ -82,7 +102,7 @@ else if($_POST['message'] == "delivery") {
 
 
 else if($_POST['message'] == "available") {
-    $db->select($_POST['table'], $_POST['column']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
+    $db->select($_POST['table'], $_POST['column'], NULL, $_POST['where']); // Table name, Column Names, WHERE conditions, ORDER BY conditions
     session_start();
     $_SESSION['available'] = $db->getResult();
     $res = $_SESSION['available'];  
