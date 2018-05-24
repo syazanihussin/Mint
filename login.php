@@ -90,9 +90,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '
-									<li class="head-dpdn">
-										<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-									</li> 
+									
 									<li class="head-dpdn">
 										<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
 									
@@ -200,20 +198,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
+			<h4>Keep in touch!</h4> 
+				<p>Feel free to click on our account!<br></p> 
 				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+					<li><a href="https://www.facebook.com/ " target=_blank class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="https://www.twitter.com/" target=_blank class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				</ul>
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -221,7 +212,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="email" name="email" placeholder="Enter your Email..." required="">
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
-				</form>  
+				</form> 
 				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
@@ -238,7 +229,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -261,11 +251,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
+						<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
 						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
-					</ul>  
+					</ul>   
 				</div> 
 				<div class="clearfix"> </div>
 			</div>
