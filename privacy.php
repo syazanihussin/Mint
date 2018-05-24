@@ -143,7 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="container">	
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="#"><i class="fa fa-home"></i> Home</a></li> 
-			<li class="active">Menu</li>
+			<li class="active">Privacy</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="w3ls-title w3ls-title1">Privacy Policy</h3>  
 			<div class="privacy-w3row">
 			
-				<p>TAKATHU NAK LETAK APOS</p>
+				
 				<p>to establish and maintain your relationship with us;</p>
 				<p>to provide the services you have requested from us;</p>
 				<p>to answer any inquiry you make; </p>

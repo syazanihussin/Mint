@@ -273,7 +273,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
+		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
