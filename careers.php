@@ -164,7 +164,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-6 w3careers-grids">
 					<h6>3. OPENNESS</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+					<p>Moderate positive relationships with creativity, intelligence and knowledge. A person with a high level of openness to 
+					experience in a personality test enjoys trying new things. </p>
 				</div>
 				<div class="col-md-6 w3careers-grids">
 					<h6>4. OWNERSHIP</h6>
