@@ -154,11 +154,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h5>Here  are some Career Solutions :</h5>
 				<div class="col-md-6 w3careers-grids">
 					<h6>1. INNOVATION</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+					<p>Innovation can also mean changing careers model or adapting existing products and services to deliver better quality for customers.
+					Evolving and thinking of creative solutions.  </p>
 				</div>
 				<div class="col-md-6 w3careers-grids">
-					<h6>2. NEW TRENDS</h6>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultrices orci at augue sollicitudin, sed rhoncus leo dictum. Duis sed elit tempus, convallis elit eget, ornare nibh. Sed eu risus eget magna condimentum blandit.  </p>
+					<h6>2. CHALLENGES</h6>
+					<p>Be energetic, commercially focused and organised. Working in any kind of client-facing role is good experience for being part of the Mint team – 
+					because our partners are central to new challenges,develop really strong, effective relationships and good communications are key.</p>
 				</div>
 				<div class="col-md-6 w3careers-grids">
 					<h6>3. OPENNESS</h6>
