@@ -253,7 +253,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li><a href="faq.php">FAQ</a></li> 
 						<li><a href="login.php">Returns</a></li>   
-						<li><a href="login.php">Order Status</a></li> 
+						<li><a href="ondelivery.php">Order Status</a></li> 
 						<li><a href="offers.php">Offers</a></li> 
 					</ul>  
 				</div>
@@ -263,12 +263,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="terms.php">Terms & Conditions</a></li>  
 						<li><a href="privacy.php">Privacy Policy</a></li>
 						<li><a href="login.php">Return Policy</a></li> 
-					</ul>     
+					</ul>      
 				</div>
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-					<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">All Day Menu</a></li>
 						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
 						<li><a href="restaurant.php">Dinner</a></li>
@@ -280,7 +280,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
+			<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
