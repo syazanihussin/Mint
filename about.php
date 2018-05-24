@@ -38,10 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<p>Food delivery platform | UPM</p>
 					</div>
 					<div class="w3ls-header-right">
-						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
+						<ul>
 							<?php
 								if(!isset($_SESSION['customer'])){
 									echo '
@@ -291,7 +288,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->

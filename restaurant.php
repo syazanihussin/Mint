@@ -40,16 +40,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="w3ls-header-right">
 						<ul> 
 							<li class="head-dpdn">
-<<<<<<< HEAD
-								<a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="signup.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Signup</a>
-							</li> 
-							<li class="head-dpdn">
-								<a href="offers.php"><i class="fa fa-gift" aria-hidden="true"></i> Offers</a>
-							</li> 
-=======
 								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
 							</li> 
 							<?php
@@ -81,7 +71,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							?>
 							
 							
->>>>>>> afe35fe897fda9553c288efc27ca4e954684cddf
 							<li class="head-dpdn">
 								<a href="help.php"><i class="fa fa-question-circle" aria-hidden="true"></i> Help</a>
 							</li>
