@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Login</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -139,8 +139,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div> 
 						<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.php" class="active">Home</a></li>	
+								<li><a href="index.php" >Home</a></li>	
+								<li><a href="about.php">About</a></li>
 								<li><a href="about.php">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								
 							</ul>
@@ -271,7 +273,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->

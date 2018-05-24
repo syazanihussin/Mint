@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Food</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -114,6 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li>
 								<li><a href="products.php" class="active">Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
@@ -160,7 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<ol class="breadcrumb w3l-crumbs">
 			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
 			<li><a href="restaurant.php">Restaurant</a></li> 
-			<li class="active">Dishes</li>
+			<li class="active">Food</li>
 		</ol>
 	</div>
 	<!-- //breadcrumb -->
@@ -171,14 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="product-top">
 					<h4>Food Collection at <?php echo $_GET['selectedRestaurant']; ?></h4>
 					<ul> 
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Filter By<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Low price</a></li> 
-								<li><a href="#">High price</a></li>
-								<li><a href="#">Latest</a></li>  
-							</ul> 
-						</li>
+						
 						<li class="dropdown head-dpdn">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Food Type<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -266,22 +260,266 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							}
 						}
 					?>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g6.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Fish salad</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Fish salad</h4>
+									<p>A lovely, fresh fennel salad with the delicate, hot fish.</p>
+									<h6>10.95<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Fish salad"> 
+										<input type="hidden" name="amount" value="10.95"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal1">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div> 
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sandwich</h5>  
+									</div> 
+									<img src="images/g1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sandwich</h4>
+									<p>Comes in a set which provides sandwiches and bread.</p>
+									<h6>7.11<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sandwich"> 
+										<input type="hidden" name="amount" value="7.11"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal2">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g3.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Chapati</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Chapati</h4>
+									<p>Roti chapati is an unleavened flatbread.</p>
+									<h6>2.50<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Chapati"> 
+										<input type="hidden" name="amount" value="2.50"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal3">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Sushi</h5>  
+									</div> 
+									<img src="images/g2.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Sushi</h4>
+									<p>A vinegared rice topped with other ingredients.</p>
+									<h6>12.67<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Sushi"> 
+										<input type="hidden" name="amount" value="12.67"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal4">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g4.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Chicken Grill</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Chicken Grilled</h4>
+									<p>Comes along with white rice and salads.</p>
+									<h6>19.90<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Grilled Mushroom Chicken"> 
+										<input type="hidden" name="amount" value="19.90"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal5">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>BreakAPlate</h5>  
+									</div> 
+									<img src="images/img1.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>BreakAPlate</h4>
+									<p>Consist of varieties of healthy food for breakfast.</p>
+									<h6>10.90<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Break A Plate"> 
+										<input type="hidden" name="amount" value="17.90"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal6">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g9.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>Tikka Chicks</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>Tikka Chicks</h4>
+									<p>With roasted potatoes and cauliflower</p>
+									<h6>11.00<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Tikka Chicks"> 
+										<input type="hidden" name="amount" value="11.00"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal7">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div> 
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<div class="agile-product-text agile-product-text2">              
+										<h5>Mee Kari</h5>  
+									</div> 
+									<img src="images/img2.jpg" class="img-responsive" alt="img"> 
+								</div>
+								<div class="back">
+									<h4>Mee Kari</h4>
+									<p>Fulled the bowl with the varities of toppings.</p>
+									<h6>5.50<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="Mee Kari"> 
+										<input type="hidden" name="amount" value="5.90"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal8">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+					<div class="col-xs-6 col-sm-4 product-grids">
+						<div class="flip-container">
+							<div class="flipper agile-products">
+								<div class="front"> 
+									<img src="images/g7.jpg" class="img-responsive" alt="img">
+									<div class="agile-product-text">              
+										<h5>SandSoup</h5>  
+									</div> 
+								</div>
+								<div class="back">
+									<h4>SandSoup</h4>
+									<p>Consist of sandwich and soup for early breakfast.</p>
+									<h6>4.60<sup>MYR</sup></h6>
+									<form action="#" method="post">
+										<input type="hidden" name="cmd" value="_cart">
+										<input type="hidden" name="add" value="1"> 
+										<input type="hidden" name="w3ls_item" value="SandSoup"> 
+										<input type="hidden" name="amount" value="4.60"> 
+										<button type="submit" class="w3ls-cart pw3ls-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+										<span class="w3-agile-line"> </span>
+										<a href="#" data-toggle="modal" data-target="#myModal9">More</a>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+
+
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 			<div class="col-md-3 rsidebar">
 				<div class="rsidebar-top">
 					<div class="slider-left">
-						<h4>CHOOSE BY AGE</h4>            
+						<h4>MEALS</h4>            
 						<div class="row row1 scroll-pane">
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids</label>
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Youngers</label>  
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Adults</label> 
-							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Senior Citizen</label>  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Breakfast</label>
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Lunch</label>  
+							<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Dinner</label>   
 						</div> 
 					</div>
 					<div class="sidebar-row">
-						<h4>By Cuisine</h4>
+						<h4>Cuisine</h4>
 						<ul class="faq">
 							<li class="item1"><a href="#">Indian Food<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
@@ -291,7 +529,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="subitem1"><a href="#">Trending Food</a></li>										
 								</ul>
 							</li>
-							<li class="item2"><a href="#">Italian Food<span class="glyphicon glyphicon-menu-down"></span></a>
+							<li class="item2"><a href="#">Chinese Food<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
 									<li class="subitem1"><a href="#">Panzanella</a></li>										
 									<li class="subitem1"><a href="#">Margherita Pizza </a></li>										
@@ -299,7 +537,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="subitem1"><a href="#">Corn Cannelloni</a></li>										
 								</ul>
 							</li>
-							<li class="item3"><a href="#">American Food<span class="glyphicon glyphicon-menu-down"></span></a>
+							<li class="item3"><a href="#">Malay Food<span class="glyphicon glyphicon-menu-down"></span></a>
+								<ul>
+									<li class="subitem1"><a href="#">Sandwiches</a></li>										
+									<li class="subitem1"><a href="#">Hot dog</a></li>										
+									<li class="subitem1"><a href="#">Chicken bog</a></li>										
+								</ul>
+							</li>
+							<li class="item3"><a href="#">Others<span class="glyphicon glyphicon-menu-down"></span></a>
 								<ul>
 									<li class="subitem1"><a href="#">Sandwiches</a></li>										
 									<li class="subitem1"><a href="#">Hot dog</a></li>										
@@ -352,26 +597,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</div>
 					</div>			 
 				</div>
-				<div class="related-row">
-					<h4>Related Searches</h4>
-					<ul>
-						<li><a href="products.php">Salads </a></li>
-						<li><a href="products.php">Vegetarian</a></li>
-						<li><a href="products.php">Dinner</a></li>
-						<li><a href="products.php">Diet Soup</a></li>
-						<li><a href="products.php">Sweets</a></li>
-						<li><a href="products.php">Seasonal</a></li>
-						<li><a href="products.php">Breakfast</a></li>
-						<li><a href="products.php">Italian Food</a></li>
-						<li><a href="products.php">Meals</a></li> 
-					</ul>
-				</div>
-				<div class="related-row">
-					<h4>YOU MAY ALSO LIKE</h4>
-					<div class="galry-like">  
-						<a href="#" data-toggle="modal" data-target="#myModal1"><img src="images/s1.jpg" class="img-responsive" alt="img"></a>         
-					</div>
-				</div>
+				
+				
 			</div>
 			<div class="clearfix"> </div> 
 		</div>
@@ -379,7 +606,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //products --> 
 	<div class="container"> 
 		<div class="w3agile-deals prds-w3text"> 
-			<h5>Just call us anytime then you will get want you want :)</h5>
+			<h5>Have your choices here and <br>enjoy the food!</h5>
 		</div>
 	</div>
 	<!-- dishes -->
@@ -388,9 +615,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="w3ls-title">Special Foods</h3>
 			<div class="spldishes-agileinfo">
 				<div class="col-md-3 spldishes-w3left">
-					<h5 class="w3ltitle">Staple Specials</h5>
-					<p>
-There are many special staples you can get from these MINT apps .</p>
+					<h5 class="w3ltitle">Available Foods</h5>
+					<p>Some of the delecious food you can have for your breakfast, lunch or maybe dinner. Just click!</p>
 				</div> 
 				<div class="col-md-9 spldishes-grids">
 					<!-- Owl-Carousel -->
@@ -398,57 +624,57 @@ There are many special staples you can get from these MINT apps .</p>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set A</h4>
-								<span>Mexican bread, Meat melted chesse and Rasberry dessert</span>
+								<h4>Sandwich</h4>
+								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set B</h4>
-								<span>Sushi Ajinamoto </span>
+								<h4>Chinese Dish</h4>
+								<span>The most famous Chinese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set C</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Indian Food</h4>
+								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g4.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set D</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Absolute Thai</h4>
+								<span>Lunch time with Grilled Mushroom Chicken.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g5.jpg" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set E</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Burger Lab</h4>
+								<span>Provide many kind of burger in many sizes. These menu comes with sets. This is set A.</span>
 							</div>
 						</a> 
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g1.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set F</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Sandwich</h4>
+								<span>Provide you breakfast food like a king.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g2.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set G</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+								<h4>Chinese Dish</h4>
+								<span>The most famous Chinese food in Malaysia.</span>
 							</div>
 						</a>
 						<a href="products.php" class="item g1">
 							<img class="lazyOwl" src="images/g3.jpg" title="Our latest gallery" alt=""/>
 							<div class="agile-dish-caption">
-								<h4>Set H</h4>
-								<span>Neque porro quisquam est qui dolorem </span>
+							<h4>Indian Food</h4>
+								<span>Kind of bread which you can have it without any specific times.</span>
 							</div>
 						</a>
 					</div> 
@@ -458,7 +684,7 @@ There are many special staples you can get from these MINT apps .</p>
 		</div>
 	</div>
 	<!-- //dishes --> 
-	<!-- modal --> 
+	<!-- modal1 --> 
 	<div class="modal video-modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -468,11 +694,64 @@ There are many special staples you can get from these MINT apps .</p>
 				<section>
 					<div class="modal-body">
 						<div class="col-md-5 modal_body_left">
-							<img src="images/s1.jpg" alt=" " class="img-responsive">
+							<img src="images/g6.jpg" alt=" " class="img-responsive">
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
-							<h3 class="item_name">France Special Dish</h3>
-							<p>Proin placerat urna et consequat efficitur, sem odio blandit enim</p>
+							<h3 class="item_name">Fish Salad</h3>
+							<p><strong>Lunch food. Italian Style.</strong><br>Gives you a healthy food in your lunch meals. 
+							A lovely, fresh fennel salad is such a great summer combo with the delicate, hot fish. </p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">15 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM10.95</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Fish Salad" /> 
+								<input type="hidden" name="amount" value="10.95" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal1 -->
+	<!-- modal2 --> 
+	<div class="modal video-modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g1.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Sandwich</h3>
+							<p><strong>Breakfast food.</strong><br>Gives you a healthy food in the morning. Come in a set which provides sandwiches and bread. </p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -486,32 +765,22 @@ There are many special staples you can get from these MINT apps .</p>
 							</div>
 							<div class="single-price">
 								<ul>
-									<li>$18</li>  
-									<li><del>$20</del></li> 
+									<li>RM7.11</li>  
+									<li><del>RM7.90</del></li> 
 									<li><span class="w3off">10% OFF</span></li> 
-									<li>Ends on : Dec,5th</li>
-									<li><a href="#"><i class="fa fa-gift" aria-hidden="true"></i> Coupon</a></li>
+									<li>Ends on : June, 1th</li>
+									
 								</ul>	
 							</div> 
-							<p class="single-price-text">Fusce a egestas nibh, eget ornare erat. Proin placerat, urna et consequat efficitur, sem odio blandit enim, sit amet euismod turpis est mattis lectus. Vestibulum maximus quam et quam egestas imperdiet. In dignissim auctor viverra. </p>
 							<form action="#" method="post">
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="add" value="1" /> 
-								<input type="hidden" name="w3ls_item" value="France Special" /> 
-								<input type="hidden" name="amount" value="18.00" /> 
+								<input type="hidden" name="w3ls_item" value="Sandwich" /> 
+								<input type="hidden" name="amount" value="7.11" /> 
 								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
 							</form>
 							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
-							<div class="single-page-icons social-icons"> 
-								<ul>
-									<li><h4>Share on</h4></li>
-									<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-									<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
-									<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-									<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-									<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-								</ul>
-							</div> 
+							
 						</div> 
 						<div class="clearfix"> </div>
 					</div>
@@ -519,7 +788,432 @@ There are many special staples you can get from these MINT apps .</p>
 			</div>
 		</div>
 	</div> 
-	<!-- //modal -->
+	<!-- //modal2 -->
+<!-- modal3 --> 
+<div class="modal video-modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal3">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g3.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Chapati</h3>
+							<p><strong>Indian Style.</strong><br>Serve with Indian curry, main dishes, or even use to make sandwich wraps. Enjoy!</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">15 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM2.50</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Chapati" /> 
+								<input type="hidden" name="amount" value="2.50" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal3 -->
+	<!-- modal4 --> 
+	<div class="modal video-modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModal4">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g2.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Sushi</h3>
+							<p><strong>Japanese food.</strong><br>A vinegared rice topped with other ingredients.
+							 Sushi tastes of rice, mildly sweet, a bit salty and a bit sour.  </p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">33 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM12.67</li>  
+									<li><del>RM14.90</del></li> 
+									<li><span class="w3off">15% OFF</span></li> 
+									<li>Ends on : June, 1th</li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Sushi" /> 
+								<input type="hidden" name="amount" value="12.67" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal4 -->
+	<!-- modal5 --> 
+	<div class="modal video-modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModal5">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g4.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Chicken Grill<</h3>
+							<p><strong>Lunch food. </strong><br>Gives you a healthy food in your lunch meals. 
+							Comes along with white rice and salads.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">18 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM19.90</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Chicken Grill<" /> 
+								<input type="hidden" name="amount" value="19.90" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal5 -->
+	<!-- modal6 --> 
+	<div class="modal video-modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModal6">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/img1.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Break A Plate<</h3>
+							<p><strong>Breakfast food. </strong><br>Consist of varieties of healthy food for breakfast.
+							 Including sausages, vegetables, bread, eggs and others.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">23 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM10.90</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Break A Plate" /> 
+								<input type="hidden" name="amount" value="10.90" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal6 -->
+		<!-- modal6 --> 
+		<div class="modal video-modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModal6">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/img1.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Break A Plate</h3>
+							<p><strong>Breakfast food. </strong><br>Consist of varieties of healthy food for breakfast.
+							 Including sausages, vegetables, bread, eggs and others.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">23 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM10.90</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Break A Plate" /> 
+								<input type="hidden" name="amount" value="10.90" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal6 -->
+		<!-- modal7 --> 
+		<div class="modal video-modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModal7">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g9.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Tikka Chicks</h3>
+							<p><strong>Lunch food. Malay style. </strong>
+							<br>With roasted potatoes and cauliflower.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="w3act"><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">19 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM11.00</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Tikka Chicks" /> 
+								<input type="hidden" name="amount" value="11.00" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal7 -->
+		<!-- modal8 --> 
+		<div class="modal video-modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModal8">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/img2.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">Mee Kari</h3>
+							<p><strong>Dinner food. </strong>
+							<br>Consist of varieties of healthy food for dinner.
+							Fulled the bowl with the varities of toppings.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">33 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM5.50</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="Mee Kari" /> 
+								<input type="hidden" name="amount" value="5.50" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal8 -->
+		<!-- modal9 --> 
+		<div class="modal video-modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModal9">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="col-md-5 modal_body_left">
+							<img src="images/g7.jpg" alt=" " class="img-responsive">
+						</div>
+						<div class="col-md-7 modal_body_right single-top-right"> 
+							<h3 class="item_name">SandSoup</h3>
+							<p><strong>Breakfast food. </strong>
+							<br>Consist of varieties of healthy food.
+							 Including of sandwich and soup for early breakfast.</p>
+							<div class="single-rating">
+								<ul>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li class="rating">10 reviews</li>
+									<li><a href="#">Add your review</a></li>
+								</ul> 
+							</div>
+							<div class="single-price">
+								<ul>
+									<li>RM4.60</li>  
+									<li><del></del></li> 
+									<li><span class="w3off">No discount</span></li> 
+									<li></li>
+									
+								</ul>	
+							</div> 
+							<form action="#" method="post">
+								<input type="hidden" name="cmd" value="_cart" />
+								<input type="hidden" name="add" value="1" /> 
+								<input type="hidden" name="w3ls_item" value="SandSoup" /> 
+								<input type="hidden" name="amount" value="4.60" /> 
+								<button type="submit" class="w3ls-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i> Add to cart</button>
+							</form>
+							<a href="#" class="w3ls-cart w3ls-cart-like"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Wishlist</a>
+							
+						</div> 
+						<div class="clearfix"> </div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div> 
+	<!-- //modal9 -->
 	<!-- subscribe -->
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
@@ -597,7 +1291,7 @@ There are many special staples you can get from these MINT apps .</p>
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->   

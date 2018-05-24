@@ -150,7 +150,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Careers</h3> 
 			<h5>About Job</h5>
-			<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas faucibus ipsum et libero euismod iaculis. Integer consectetur congue laoreet. Morbi eget leo elementum, vulputate eros et, egestas diam. Nam egestas, quam id viverra congue, elit mi eleifend libero, eget vulputate ante lorem vel quam. Sed suscipit ligula eu mi bibendum, vel mollis enim finibus. Suspendisse vitae est tortor. Donec aliquet leo vitae ligula mattis, vitae auctor mi pellentesque. Integer eu dui accumsan, convallis neque id, malesuada urna. </p>
+			<p>This Mint is a platform for UPM students to earn enough income for their days. It helps students who have financial problems to spend on themselves. In addition, Mint is also an application to facilitate UPM students who do not have vehicles to buy food outside if cafe in UPM is closed. This greatly facilitates all students in UPM. So the work we offer is that you only need to take and deliver food ordered from a student. DONT WORRY DELIVERY JUST AROUND THE UPM ONLY :) </p>
 			<div class="w3careers-row">
 				<h5>Here  are some Career Solutions :</h5>
 				<div class="col-md-6 w3careers-grids">
@@ -255,7 +255,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->

@@ -120,6 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php" class="active">Home</a></li>	
 								<li><a href="about.php">About</a></li> 
+								<li><a href="restaurant.php" >Restaurant</a></li>
 								<li><a href="products.php" >Food</a></li>
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
@@ -448,7 +449,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Admin Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer --> 
