@@ -217,11 +217,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="col-md-6 social-icons w3-agile-icons">
 				<h4>Keep in touch</h4>  
 				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+				<li><a href="https://www.facebook.com/ " target=_blank class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="https://www.twitter.com/" target=_blank class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
 				</ul>
 			</div> 
 			<div class="col-md-6 subscribe-right">
@@ -268,10 +266,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
+					<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
-						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
+						<li><a href="restaurant.php">Dinner</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
@@ -280,7 +278,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; All rights reserved | Design by <a> Mint</a></p>
+		<center><p>&copy;2018 <a>MintDelivery | </a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
