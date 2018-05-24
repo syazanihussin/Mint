@@ -152,7 +152,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div style="padding: 4em 0;"> 
 		<div class="container">
-			
+			<h3 class="w3ls-title">Choose Restaurant</h3>
+			<p class="w3lsorder-text">Here are the results of your enter locations.</p>
+				
 			<div class="add-products-row">
 			
 				<?php
@@ -182,12 +184,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="products">	 
 		<div class="container">
 			<div class="wthree-menu">  
-				
 				<div class="container">
-				<h3 class="w3ls-title">Choose Restaurant</h3>
-				<p class="w3lsorder-text">Here are some suggestion of restaurants you can look for.</p>
-				
-				
 				
 				<div class="clearfix"> </div> 
 			</div> 
