@@ -383,13 +383,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
 					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
 					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
-				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				</ul>
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  

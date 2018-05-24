@@ -253,7 +253,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -288,7 +287,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a>Mint</a></p>
+			<p>&copy; All rights reserved | Design by <a>Mint</a></p>
 		</div>
 	</div>
 	<!-- //footer -->
