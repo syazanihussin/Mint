@@ -152,8 +152,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<li class="item1"><a href="#" title="click here">How does it work?</a>
 					<ul>
 						<li class="subitem1"><p>Enter your address to find some of your favorite local restaurants available for delivery. 
-						Select items you'd like to have delivered and enter any special instructions (if applicable). Pay with cash, or credit, 
-						then kick back and relax; we've got it from here. Your friendly local food runner will be knocking on your door before you know it! </p></li>										
+						Select items you'd like to have delivered and enter any special instructions (if applicable). Only pay with cash; we've got it from here. Your friendly local food runner will be knocking on your door before you know it! </p></li>										
 					</ul>
 				</li>
 				<li class="item2"><a href="#" title="click here">Did my order go through?</a>
@@ -196,7 +195,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</li>
 				<li class="item7"><a href="#" title="click here">The price is included GST?</a>
 					<ul>
-						<li class="subitem1"><p>Not GST included in our delivery. Charge based on food and delivery.</p></li>										
+						<li class="subitem1"><p>Not GST included in our delivery. Based on food and delivery charge.</p></li>										
 					</ul>
 				</li>
 			</ul> 
