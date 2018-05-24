@@ -39,9 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="w3ls-header-right">
 						<ul> 
-							<li class="head-dpdn">
-								<i class="fa fa-phone" aria-hidden="true"></i> Call us: +01 222 33345 
-							</li> 
+							
 							<?php
 								if(!isset($_SESSION['driver'])){
 									echo '
@@ -99,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="driverHome.php">Home</a></li>	
 								<li><a href="aboutDriver.php" class="active">About</a></li> 
-								<li><a href="contactDriver.php">Contact Us</a></li>
+								
 								<?php
 								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
@@ -137,65 +135,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--  about-page -->
 	<div class="about">
 		<div class="container"> 
-			<h3 class="w3ls-title w3ls-title1">About Us</h3>
+			<h3 class="w3ls-title w3ls-title1">About Driver</h3>
 			<div class="about-text">	
-				<p>Mint is an online food ordering & delivery company founded in 2018 by Mint.Co who wants to bring conveniences to hungry diners 
-				by providing the marvelous delivery service. Our mission is to provide reliable food delivery to diners and at the same time, assisting 
-				restaurants to manage their delivery manpower efficiently.In the spirit of diversifying the food culture and the depth of culinary 
-				types of the world around, we’re also keen on ensuring that diners are given the exposure of diversification which allows everyone to have 
-				a catch and the enjoyment of the experience of trying something new or that’s out of the norm. As so we provide an array of culinary fields 
-				such as Chinese, Western, Fusion, Italian, Korean, Thai, Portuguese, Middle Eastern, Mediterranean, Indian, Desserts, Pastries of all kinds,
-				 your local favorites like Mamak and a whole lot more.</p> 
-				<div class="ftr-toprow">
-					<div class="col-md-4 ftr-top-grids">
-						<div class="ftr-top-left">
-							<i class="fa fa-truck" aria-hidden="true"></i>
-						</div> 
-						<div class="ftr-top-right">
-						<h4>Food Delivery</h4>
-						<p>Once you ordered the food will be delivered to you as soon as possible.</p>
-					</div> 
-					<div class="clearfix"> </div>
-				</div> 
-				<div class="col-md-4 ftr-top-grids">
-					<div class="ftr-top-left">
-						<i class="fa fa-user" aria-hidden="true"></i>
-					</div> 
-					<div class="ftr-top-right">
-						<h4>Low Delivery Charge</h4>
-						<p>We consider the consumer as a student so special cost for delivery charge. </p>
-					</div> 
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-4 ftr-top-grids">
-					<div class="ftr-top-left">
-						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-					</div> 
-					<div class="ftr-top-right">
-						<h4>No GST</h4>
-						<p>No GST need to be pay. Just spent of your food. </p>
-					</div>
-						<div class="clearfix"> </div>
-					</div> 
-					<div class="clearfix"> </div>
-				</div> 
+				<center><p>The driver is the person who deliver the foods. <br> 
+				Also known as the delivery guy. He used to complete the journey of food to its correct destination.</p></center>
+ 
 				<div class="clearfix"> </div>
 			</div>
-			<div class="history">
-				<h3 class="w3ls-title">How does it work ?</h3>
-				<p>Meals are delivered to diner’s doorstep with just a few simple clicks. Mint allows diners to enjoy variety of food from more 
-				than 200 restaurants at the comfort of their own premise hassle free!
-
-				Paying your food is also as flexible as you can want it to be, at Mint we hold no barriers against customers who insist on paying by cash. 
-				Not a fan of handling notes in your wallet, no problem, process your transactions with your credit or debit card.
-
-				In the norm of also enhancing user capabilities on the go, diners can also by using our website Mint. </p> 
-				<h3 class="w3ls-title">Our history</h3>
-				<p>Throughout Delivereat’s years of serving patrons, we have established partnerships and business acquaintances with large 
-				chain outlets that you’re probably familiar with as a foodie, aren’t we all? Venture your heart out into the broad world of culinary wonders with your well known
-				 giants in the industries like Sushi King, Chili’s, Sakae Sushi, Morganfield’s, Nandos, Kenny Rogers and Roasters, Subway, Tealive, Yoshinoya and Hanamaru, and many
-				  more! We’re also no strangers to outlets of smaller scales as so don’t feel left out if you’re a foodie of a varied preference.</p> 
-			</div>
+			
 		</div>
 	</div>
 	<!-- //about-page --> 
@@ -203,20 +150,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
+				<h4>Keep in touch!</h4>  
+				<p>Feel free to click on our account!<br></p> 
 				<ul>
 					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
 					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
+					
 				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -241,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
+						   
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -264,10 +206,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
+					<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
 						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
@@ -276,7 +218,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->

@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint :: Help Driver </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -99,7 +99,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="driverHome.php">Home</a></li>	
 								<li><a href="aboutDriver.php">About</a></li> 
-								<li><a href="contactDriver.php">Contact Us</a></li>
+								
 								<?php
 								if(isset($_SESSION['driver'])  && count($_SESSION['driver']) != 0){
 									echo '
@@ -146,51 +146,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="subitem1"><p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
 						</ul>
 					</li>
-					<li class="item2"><a href="#" title="click here">The standard Lorem Ipsum passage Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices ?</a>
-						<ul>
-							<li class="subitem1"><p> Tincidunt ut laoreet dolore At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item3"><a href="#" title="click here">Consectetuer adipiscing elit Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices?</a>
-						<ul>
-							<li class="subitem1"><p>Dincidunt ut laoreet dolore At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item4"><a href="#" title="click here">Sed diam nonummy nibh euismod Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices?</a>
-						<ul>
-							<li class="subitem1"><p>At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li> 
-					<li class="item5"><a href="#" title="click here">Euismod tincidunt laoreet Etiam faucibus viverra libero vel efficitur ?</a>
-						<ul>
-							<li class="subitem1"><p>At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item6"><a href="#" title="click here">Voluptas sit aspernatur aut Ut semper nisl ut laoreet ultrices ?</a>
-						<ul>
-							<li class="subitem1"><p>At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item7"><a href="#" title="click here">Donec ut quam ligula feugiat Ut semper nisl ut laoreet ultrices ?</a>
-						<ul>
-							<li class="subitem1"><p>At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item8"><a href="#" title="click here">The standard Lorem Ipsum Ut semper nisl ut laoreet ultrices passage ?</a>
-						<ul>
-							<li class="subitem1"><p>Lorem ipsum dolor sit amet At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item9"><a href="#" title="click here">Consectetuer adipiscing Ut semper nisl ut laoreet ultrices elit ?</a>
-						<ul>
-							<li class="subitem1"><p>Lorem ipsum dolor sit amet At vero eos et Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li>
-					<li class="item10"><a href="#" title="click here">Sed diam nonummy Ut semper nisl ut laoreet ultrices nibh euismod ?</a>
-						<ul>
-							<li class="subitem1"><p>Consectetuer adipiscing elit, sed diam nonummy nibh euismod  consectetuer adipiscing elit, sed diam nonummy nibh euismod accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p></li>										
-						</ul>
-					</li> 
+					
 				</ul>
 				<!-- script for tabs -->
 				<script type="text/javascript">
@@ -233,20 +189,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="subscribe agileits-w3layouts"> 
 		<div class="container">
 			<div class="col-md-6 social-icons w3-agile-icons">
-				<h4>Keep in touch</h4>  
+			<h4>Keep in touch!</h4> 
+				<p>Feel free to click on our account!<br></p> 
 				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
-					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
+				<li><a href="https://www.facebook.com/ " target=_blank class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="https://www.twitter.com/" target=_blank class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
-					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
-					<li><a href="#" class="fa fa-rss icon rss"> </a></li> 
+					
 				</ul> 
-				<ul class="apps"> 
-					<li><h4>Download Our app : </h4> </li>
-					<li><a href="#" class="fa fa-apple"></a></li>
-					<li><a href="#" class="fa fa-windows"></a></li>
-					<li><a href="#" class="fa fa-android"></a></li>
-				</ul> 
+				
 			</div> 
 			<div class="col-md-6 subscribe-right">
 				<h3 class="w3ls-title">Subscribe to Our <br><span>Newsletter</span></h3>  
@@ -271,7 +222,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<li><a href="about.php">About Us</a></li>
 						<li><a href="contact.php">Contact Us</a></li>  
 						<li><a href="careers.php">Careers</a></li>  
-						<li><a href="help.php">Partner With Us</a></li>   
+						 
 					</ul>
 				</div> 
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
@@ -294,10 +245,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="col-xs-6 col-sm-3 footer-grids w3-agileits">
 					<h3>Menu</h3> 
 					<ul>
-						<li><a href="restaurant.php">All Day Menu</a></li> 
+					<li><a href="restaurant.php">All Day Menu</a></li>
+						<li><a href="restaurant.php">Breakfast</a></li>
 						<li><a href="restaurant.php">Lunch</a></li>
 						<li><a href="restaurant.php">Dinner</a></li>
-						<li><a href="restaurant.php">Flavours</a></li> 
 					</ul>  
 				</div> 
 				<div class="clearfix"> </div>
@@ -306,7 +257,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-			<p>&copy; 2017 Staple Food. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+		<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
 		</div>
 	</div>
 	<!-- //footer -->
