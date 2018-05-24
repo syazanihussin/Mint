@@ -203,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				In the norm of also enhancing user capabilities on the go, diners can also by using our website Mint. </p> 
 				<h3 class="w3ls-title">Our history</h3>
-				<p>Throughout Delivereat’s years of serving patrons, we have established partnerships and business acquaintances with large 
+				<p>Throughout Mint’s years of serving patrons, we have established partnerships and business acquaintances with large 
 				chain outlets that you’re probably familiar with as a foodie, aren’t we all? Venture your heart out into the broad world of culinary wonders with your well known
 				 giants in the industries like Sushi King, Chili’s, Sakae Sushi, Morganfield’s, Nandos, Kenny Rogers and Roasters, Subway, Tealive, Yoshinoya and Hanamaru, and many
 				  more! We’re also no strangers to outlets of smaller scales as so don’t feel left out if you’re a foodie of a varied preference.</p> 
