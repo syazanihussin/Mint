@@ -441,11 +441,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="copyw3-agile"> 
 		<div class="container">
-<<<<<<< HEAD
-			<p>&copy; All rights reserved | Design by Mint</a></p>
-=======
 			<center><p>&copy;2018 <a>Mint</a> All rights reserved.</p></center>
->>>>>>> b9a906c04a126a9d6d59b272ba0510dfae1c9d94
 		</div>
 	</div>
 	<!-- //footer --> 
