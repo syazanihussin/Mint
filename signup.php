@@ -113,8 +113,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="index.php" >Home</a></li>	
 								<li><a href="about.php">About</a></li> 
-								<li><a href="about.php">About</a></li> 
+								
 								<li><a href="restaurant.php" >Restaurant</a></li>
+								<li><a href="products.php">Food</a></li> 
 								<li><a href="contact.php">Contact Us</a></li>
 								<?php
 								if(isset($_SESSION['customer'])){
@@ -173,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<input type="submit" class="sub" id="signup" value="SIGN UP">
+					<a href = "index.php"><input type="submit" class="sub" id="signup" value="SIGN UP">
 				
 				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 

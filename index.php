@@ -169,7 +169,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						google.maps.event.addDomListener(window, 'load', init);
 					</script>
-					<input type="submit" id="search" value="Search">
+					<a href="restaurant.php"><input type="submit" id="search" value="Search">
 				</div> 
 			</div>
 		</div>
@@ -179,7 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="add-products">  
 		<div class="container">
 			<div class="add-products-row">
-				<div class="w3ls-add-grids">
+				<div class="w3ls-add-grids w3ls-add-grids-left">
 					<a href="restaurant.php"> 
 						
 						<h4>Get your food<span><br>now!</span></h4>
