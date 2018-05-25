@@ -153,7 +153,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</li>
 					<li class="item1"><a href="#" title="click here">How to register to be a deliver guy in Mint  ?</a>
 						<ul>
-							<li class="subitem1"><p>You go to the homepage click at the top of this application thats wrote "Join our delivery team".</p></li>										
+							<li class="subitem1"><p>Just go at the homepage click at the top of this application thats wrote "Join our delivery team" then there will be a register form for delivery guy .</p></li>										
 						</ul>
 					</li>
 					
