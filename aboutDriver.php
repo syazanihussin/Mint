@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Mint | Food Delivery Platform</title>
+<title>Mint | AboutDriver</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Staple Food Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -137,11 +137,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">About Driver</h3>
 			<div class="about-text">	
-				<center><p>The driver is the person who deliver the foods. <br> 
-				Also known as the delivery guy. He used to complete the journey of food to its correct destination.</p></center>
- 
+				<center><p>Mint delivery is online food odering and delivery company founded in 2018. Our team members are required skills will 
+				differ depending on the exact work environment. Join with Mint members, people a 
+				delivery driver for a restaurant, need cash handling and customer service experience.</p>
+				<br><p><h3><a href="register.php">Let's join team partner with Mint!!!</a></h3> </p>
+				<p>Be eligible for the best new-partner Mint. 
+				U may receive a commission for join with us.</p></center>
 				<div class="clearfix"> </div>
 			</div>
+			<br>			
+			<center><header><h1>Type of Partnerships</h1></header></center>		
+			<br>
+			<br>					
+					<div class="row"><div class="col-xs-12 col-md-10 col-md-offset-1">																														<div class="row row-horizontal">
+										    									        	<div class="col-xs-12 col-md-3">
+						<img src="https://cdn.grab.com/my/wp-content/uploads/sites/8/2016/06/ico-brand.png"><br>
+							<br>
+							<h3 class="color-green text-center">Brand</h3>
+								<p class="text-center">Build your brand with Mint through strategic marketing campaigns</p>
+					</div>
+									        									        	<div class="col-xs-12 col-md-3">
+										        	<img src="https://cdn.grab.com/my/wp-content/uploads/sites/8/2016/06/icon-calendar-2.png">
+										        	<br>
+													<br>
+													<h3 class="color-green text-center">EVENT</h3>
+										        	<p class="text-center">Personalise your events with our customised codes to provide affordable rides</p>
+									        	</div>
+									        									        	<div class="col-xs-12 col-md-3">
+										        	<img src="https://cdn.grab.com/my/wp-content/uploads/sites/8/2016/06/ico-fleet.png">
+										        	<br><br>
+													<h3 class="color-green text-center">TEAM</h3>
+										        	<p class="text-center">Grow your business when you partner us as a team partner</p>
+									        	</div>
+									        									        	<div class="col-xs-12 col-md-3">
+										        	<img src="https://cdn.grab.com/my/wp-content/uploads/sites/8/2016/06/ico-situation.png">
+										        	<br><br>
+													<h3 class="color-green text-center">VENUE</h3>
+										        	<p class="text-center">Transform your premises with our venue website to enable on-demand multiple ride bookings</p>
+									        	</div>
+									        										</div><!-- /row -->
+																				
+										</div></div>										
+									
+			
 			
 		</div>
 	</div>
