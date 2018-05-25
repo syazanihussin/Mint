@@ -157,7 +157,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Sign Up to your account</h3>  
 			<div class="login-agileinfo"> 
-				
+				<form>
 					<input class="agile-ltext" id="username" type="text" name="Username" placeholder="Username" required="">
 					<input class="agile-ltext" id="email" type="email" name="Your Email" placeholder="Your Email" required="">
 					<input class="agile-ltext" id="phone" type="text" name="Your Phone No" placeholder="Your Phone No" required="">
@@ -173,8 +173,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</ul>
 						<div class="clearfix"> </div>
 					</div>   
-					<a href = "index.php"><input type="submit" class="sub" id="signup" value="SIGN UP">
-				
+					<input type="submit" class="sub" id="signup" value="SIGN UP">
+				</form>
 				<p>Already have an account?  <a href="login.php"> Login Now!</a></p> 
 			</div>	 
 		</div>
