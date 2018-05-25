@@ -151,9 +151,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="subitem1"><p>Yup, cause Mint wanna help student to get some income for themselves .</p></li>										
 						</ul>
 					</li>
-					<li class="item1"><a href="#" title="click here">All the deliver from UPM student ?</a>
+					<li class="item1"><a href="#" title="click here">How to register to be a deliver guy in Mint  ?</a>
 						<ul>
-							<li class="subitem1"><p>Yup, cause Mint wanna help student to get some income for themselves .</p></li>										
+							<li class="subitem1"><p>You go to the homepage click at the top of this application thats wrote "Join our delivery team".</p></li>										
 						</ul>
 					</li>
 					
