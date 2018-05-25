@@ -181,17 +181,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	
-	<div class="products">	 
-		<div class="container">
-			<div class="wthree-menu">  
-				<div class="container">
-				
-				<div class="clearfix"> </div> 
-			</div> 
-			<div class="clearfix"> </div>
-		</div>
-	</div>
-	<!-- //add-products --> 
+
 		
 	
 	<!-- subscribe -->
