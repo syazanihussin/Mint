@@ -231,7 +231,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div>   
 		<div style="padding: 0 0 4em 0;" class="container">
 			<h3 class="w3ls-title">Delivery Destination</h3>
-			<h3 id="inserted">Insert user</h3>
 			<div id="names" class="add-products-row">
 			<div id="map" style="float:left; margin-top: 3em; width: 67%; height: 36em;"></div>
 					<?php
