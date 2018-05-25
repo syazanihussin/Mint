@@ -4,7 +4,7 @@ class Database{
 	
 	private $db_host = "localhost";  
 	private $db_user = "root"; 
-	private $db_pass = "spectrum";  
+	private $db_pass = "";  
 	private $db_name = "mint";	
 	
 	private $con = false; // Check to see if the connection is active
