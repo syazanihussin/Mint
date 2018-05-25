@@ -179,17 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div class="add-products">  
 		<div class="container">
-			<div class="add-products-row">
-				
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="restaurant.php"> 
-						<h4>Search your <span><br>FAVOURITE</span></h4>
-						<h5>Ordered in website app only.</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
-				<div class="clearfix"> </div> 
-			</div>  
+			
 
 			<div class="offers-wthreerow2">
 				<div class="add-products-row">
