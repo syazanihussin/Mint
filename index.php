@@ -179,17 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- add-products -->
 	<div class="add-products">  
 		<div class="container">
-			<div class="add-products-row">
-				
-				<div class="w3ls-add-grids w3ls-add-grids-right">
-					<a href="restaurant.php"> 
-						<h4>Search your <span><br>FAVOURITE</span></h4>
-						<h5>Ordered in website app only.</h5>
-						<h6>Order Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h6>
-					</a>
-				</div> 
-				<div class="clearfix"> </div> 
-			</div>  
+			
 
 			<div class="offers-wthreerow2">
 				<div class="add-products-row">
@@ -221,7 +211,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<h3 class="w3ls-title">How to order online food?</h3>
 			<p class="w3lsorder-text">Get your favourite food in some simple steps.</p>
 			<div class="order-agileinfo">  
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
+				<div class="col-md-2 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-map" aria-hidden="true"></i> 
 						<h4>Enter location<br>& select <br>restaurant.</h4>
@@ -249,7 +239,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<span>4</span>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-3 col-xs-6 order-w3lsgrids"> 
+				<div class="col-md-2 col-sm-3 col-xs-6 order-w3lsgrids"> 
 					<div class="order-w3text"> 
 						<i class="fa fa-truck" aria-hidden="true"></i>
 						<h4>Enjoy the food.</h4>
