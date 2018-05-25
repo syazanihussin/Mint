@@ -152,14 +152,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Privacy Policy</h3>  
 			<div class="privacy-w3row">
-			
-				
-				<p>to establish and maintain your relationship with us;</p>
-				<p>to provide the services you have requested from us;</p>
-				<p>to answer any inquiry you make; </p>
-				<p>to communicate your orders made through our Site to participant restaurants and delivery contractors (e.g. by providing your contact details and delivery address where applicable); </p>
-				<p>to inform you of offers or promotions that we consider you might be interested in; and</p>
-				<p>to conduct marketing research </p>
 
 				<h5>How Do We Use Your Personal Information?</h5> 
 
