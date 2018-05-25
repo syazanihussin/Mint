@@ -150,7 +150,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //banner -->    
 	<!-- breadcrumb -->  
-	
+	<div class="container">	
+		<ol class="breadcrumb w3l-crumbs">
+			<li><a href="index.php"><i class="fa fa-home"></i> Home</a></li> 
+			<li class="active"><a href="restaurant.php">Destination</a></li> 
+			
+		</ol>
+	</div>
 			  
 	<!-- add-products -->
 	<div>  
