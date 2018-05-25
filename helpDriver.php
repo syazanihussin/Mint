@@ -146,11 +146,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="subitem1"><p>Ya, for me its worth it because you just take from the restaurant that request by the customer then, you will get money by deliver the food.</p></li>										
 						</ul>
 					</li>
-					<li class="item1"><a href="#" title="click here">Is it worth it the salary that you get from Mint ?</a>
+					<li class="item1"><a href="#" title="click here">All the deliver from UPM student ?</a>
 						<ul>
-							<li class="subitem1"><p>Ya, for me its worth it because you just take from the restaurant that request by the customer then, you will get money by deliver the food.</p></li>										
+							<li class="subitem1"><p>Yup, cause Mint wanna help student to get some income for themselves .</p></li>										
 						</ul>
 					</li>
+					<li class="item1"><a href="#" title="click here">All the deliver from UPM student ?</a>
+						<ul>
+							<li class="subitem1"><p>Yup, cause Mint wanna help student to get some income for themselves .</p></li>										
+						</ul>
+					</li>
+					
 					
 				</ul>
 				<!-- script for tabs -->
