@@ -170,7 +170,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						google.maps.event.addDomListener(window, 'load', init);
 					</script>
-					<a href="restaurant.php"><input type="submit" id="search" value="Search">
+					<input type="submit" id="search" value="Search">
 				</div> 
 			</div>
 		</div>
