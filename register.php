@@ -42,7 +42,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         type: "POST",
                         data: {table : 'delivery_person', column : 'username, password, email, phoneNo, transportType, platNo', inserting : '"'+userName+'","'+password+'","'+email+'","'+phoneNo+'","'+transportType+'","'+platNo+'"', session : userName, message : 'register'},
         			    success:function(data){
-                            window.location.replace("driverHome.php");
+                            window.location.replace("login.php");
 						}
                     });
                 });

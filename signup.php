@@ -40,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         type: "POST",
                         data: {table : 'customer', column : 'username, password, phoneNo, email', inserting : '"'+userName+'","'+password+'","'+phoneNo+'","'+email+'"', session : userName, message : 'signup'},
         			    success:function(data){
-                            window.location.replace("index.php");
+                            window.location.replace("login.php");
                         }
                     });
                 });

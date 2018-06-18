@@ -6,17 +6,13 @@ $db->connect();
 
 if($_POST['message'] == "signup") {
     $db->insert($_POST['table'],$_POST['column'],$_POST['inserting']); 
-    session_start();
-    $_SESSION['customer'][0]['username'] = $_POST['session'];
-    $res = $_SESSION['customer'];  
+    $res = $db->getResult();  
     echo json_encode($res);
 }
 
 else if($_POST['message'] == "register") {
     $db->insert($_POST['table'],$_POST['column'],$_POST['inserting']); 
-    session_start();
-    $_SESSION['driver'][0]['username'] = $_POST['session'];
-    $res = $_SESSION['driver']; 
+    $res = $db->getResult(); 
     echo json_encode($res);
 }
 
